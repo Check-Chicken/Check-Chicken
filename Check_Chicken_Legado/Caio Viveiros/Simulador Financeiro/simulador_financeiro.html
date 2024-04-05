@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="screen" id="div_tela">
+        <h1 class="titulo">SIMULADOR FINANCEIRO</h1>
+        <div class="conteiner">
+            <div class="box box1">
+                <p class="texto">QUANTAS AVES PERDEU NESTE MÊS</p>
+                <input id="input_qtd_perdida"><br>
+                <p class="texto">POR QUANTO VOCÊ VENDE SEU QUILO</p>
+                <input id="input_preco_kg"><br>
+                <p class="texto">QUANTO VOCÊ PAGA POR QUILO DE RAÇÃO</p>
+                <input id="input_preco_kg_racao"><br>
+                <button class="simular" onclick="CalcularKgPerdido()">SIMULAR</button>
+            </div>
+            <div class="box box2" id="div_resultado">
+            </div>
+        </div>
+        <img class="logo" src="images/logo_novo.png">
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function CalcularKgPerdido() {
+        // Coleta de dados do input
+        var qtd_ave_perdida = Number(input_qtd_perdida.value)
+
+        // Calculo do KG perdido
+        var peso_galinha = 2.1 // Peso medio para o abate de frangos no Brasil (IBGE 2022)
+        var kg_perdido = qtd_ave_perdida * peso_galinha
+
+        // Exibicao dos dados
+        div_resultado.innerHTML = `${kg_perdido.toFixed(2)} KG<br><span class="destaque" onclick="HelpKGPerdido()">EM AVES PERDIDAS</span>`
+        div_resultado.innerHTML += `
+            <div class="box-setas1">
+                <button class="seta" onclick="CalcularPrejuizo()">-></button>
+            </div>`
+    }
+    function HelpKGPerdido() {
+        alert('Calculamos a quantidade de quilos perdidos baseados no Peso medio do abate de frangos no Brasil que de acordo o IBGE estava em torno de 2.1 kg em 2022')
+    }
+
+    function CalcularPrejuizo() {
+        // Coleta de dados dos inputs
+        var qtd_ave_perdida = Number(input_qtd_perdida.value)
+        var preco_kg = Number(input_preco_kg.value)
+
+        // Calculo do prejuizo
+        var peso_galinha = 2.1
+        var kg_perdido = qtd_ave_perdida * peso_galinha
+        var prejuizo = kg_perdido * preco_kg
+
+        // Exibicao dos dados
+        div_resultado.innerHTML = `${prejuizo.toFixed(2)} REAIS<br><span class="destaque" onclick="HelpPrejuizo()">DE PREJUIZO</span>`
+        div_resultado.innerHTML += `
+            <div class="box-setas2">
+                <button class="seta" onclick="CalcularKgPerdido()"><-</button>
+                <button class="seta" onclick="CalcularPrejuizoRacao()">-></button>
+            </div>`
+    }
+    function HelpPrejuizo() {
+        alert('Multiplicamos a quantidade de quilos perdidos pelo seu preço de venda')
+    }
+
+    function CalcularPrejuizoRacao() {
+        // Coleta de dados dos inputs
+        var qtd_ave_perdida = Number(input_qtd_perdida.value)
+        var preco_racao = Number(input_preco_kg_racao.value)
+
+        // Calculo do prejuizo proveniente do desperdicio de racao
+        var peso_galinha = 2.1
+        var kg_perdido = qtd_ave_perdida * peso_galinha
+        var prejuizo_racao = kg_perdido * preco_racao
+
+        // Exibicao dos dados
+        div_resultado.innerHTML = `${prejuizo_racao.toFixed(2)} REAIS<br><span class="destaque" onclick="HelpPrejuizoRacao()">DESPERDIÇADOS<br> EM RAÇÃO</span>`
+        div_resultado.innerHTML += `
+            <div class="box-setas3">
+                <button class="seta" onclick="CalcularPrejuizo()"><-</button>
+                <button class="seta" onclick="PrejuizoAnual()">-></button>
+            </div>`
+    }
+    function HelpPrejuizoRacao() {
+        alert('Baseamos a quantidade de ração desperdiçada atraves da quantidade de quilos de aves perdidos, com base na taxa de conversão alimentar dos frangos de 1.0, ou seja 1 KG de ração converte-se em 1 KG de peso vivo')
+    }
+
+    function PrejuizoAnual() {
+        // Coleta de dados dos inputs
+        var qtd_ave_perdida = Number(input_qtd_perdida.value)
+        var preco_kg = Number(input_preco_kg.value)
+        var preco_racao = Number(input_preco_kg_racao.value)
+
+        // Calculo da perspectiva total mensal e anual de prejuizo
+        var peso_galinha = 2.1
+        var kg_perdido = qtd_ave_perdida * peso_galinha
+        var prejuizo = kg_perdido * preco_kg
+        var prejuizo_racao = kg_perdido * preco_racao
+        var prejuizo_total_mes = prejuizo + prejuizo_racao
+        var prejuizo_total_ano = (prejuizo + prejuizo_racao) * 12
+
+        // Exibicao dos dados
+        div_tela.innerHTML += `<div id="div_dash" class="dash"></div>`
+        div_dash.innerHTML = `
+            <div class="total">
+                <span class="destaque" onclick=HelpPrejuizoAnual()>TOTALIZANDO O PREJUIZO DE</span><br>
+                ${prejuizo_total_mes.toFixed(2)} REAIS 
+                <span class="destaque" onclick=HelpPrejuizoAnual()>MENSAIS</span><br>
+                ${prejuizo_total_ano.toFixed(2)} REAIS
+                <span class="destaque" onclick=HelpPrejuizoAnual()>ANUAIS</span>
+            </div>
+            <button onclick="" class="botao-ajuda">VER COMO A CHECK<br>CHICKEN PODE ME AJUDAR</button>`
+    }
+    function HelpPrejuizoAnual() {
+        alert('Perspectiva mensal e anual do seu prejuizo total estimado a partir destes dados inseridos')
+    }
+</script>

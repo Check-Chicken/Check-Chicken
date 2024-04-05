@@ -1,0 +1,191 @@
+body {
+    margin: 0px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    display: flex;
+    font-size: 24px;
+    background-image: url(images/fundo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button {
+    font-family: "Big Shoulders Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    margin: auto;
+    padding-top: 37px;
+    font-size: 80px;
+    color: #5CB767;
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.box {
+    width: 390px;
+    height: 440px;
+    border-radius: 30px;
+    margin: 13px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    border: 0px;
+    border-radius: 40px;
+    width: 70%;
+    height: 30px;
+    margin-top: 4px;
+    padding-left: 10px;
+    padding: auto;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.simular {
+    border: 0px;
+    border-radius: 30px;
+    background-color: #FA8939;
+    color: white;
+    width: 50%;
+    height: 70px;
+    font-size: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.simular:hover {
+    background-color: #dd772d;
+}
+
+.box1 {
+    background-color: #5CB767;
+}
+
+.box2 {
+    background-color: #49794F;
+    font-size: 60px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 250px;
+}
+
+.texto {
+    margin: 0px;
+    padding-bottom: 4px;
+}
+
+.destaque {
+    color: #5CB767;
+    text-align: center;
+    cursor: pointer;
+}
+
+.destaque:hover {
+    color: #FA8939;
+}
+
+.seta {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    background-color: #FA8939;
+    color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.seta:hover {
+    background-color: #dd772d;
+}
+
+.box-setas1 {
+    display: flex;
+    width: 100%;
+    position: relative;
+    top: 90px;
+    left: 243px;
+}
+
+.box-setas2 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    top: 90px;
+}
+
+.box-setas3 {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: relative;
+    top: 54px;
+}
+
+.dash {
+    background-color: #49794F;
+    width: 816px;
+    height: 448px;
+    border-radius: 30px;
+    margin: 13px;
+    padding: 5px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.total {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+}
+
+.botao-ajuda {
+    border: 0px;
+    border-radius: 30px;
+    background-color: #FA8939;
+    color: white;
+    width: 50%;
+    height: 90px;
+    font-size: 25px;
+    position: relative;
+    bottom: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.botao-ajuda:hover {
+    background-color: #dd772d;
+}
+
+.menor {
+    font-size: 50px;
+}

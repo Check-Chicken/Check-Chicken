@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="screen" id="div_tela">
+        <h1 class="titulo" onclick="location.reload()">SIMULADOR FINANCEIRO</h1>
+        <div class="conteiner">
+            <div class="box box1">
+                <p class="texto">QUANTAS AVES VOCÊ TEM NO SEU AVIÁRIO</p>
+                <input id="input_qtd_aves"><br>
+                <p class="texto">QUANTAS AVES PERDEU NESTE MÊS</p>
+                <input id="input_qtd_perdida"><br>
+                <p class="texto">QUAL O PREÇO MÉDIO DO SEU QUILO DE AVE</p>
+                <input id="input_preco_medio"><br>
+                <p class="texto">CUSTO MÉDIO DE PRODUÇÃO MENSAL</p>
+                <input id="input_custo_producao"><br>
+                <button class="simular" onclick="CalcularKgPerdido()">SIMULAR</button>
+            </div>
+            <div class="conteiner-resultado">
+                <div class="box box2" id="div_resultado"></div>
+                <div class="box box3" id="div_informacao"></div>
+            </div>
+        </div>
+        <img class="logo" src="images/logo_novo.png">
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function CalcularKgPerdido() {
+        // Coleta de dados do input
+        let qtd_aves = Number(input_qtd_aves.value)
+        let qtd_ave_perdida = Number(input_qtd_perdida.value)
+
+        // Calculo do KG perdido
+        let peso_galinha = 2.1 // Peso medio para o abate de frangos no Brasil (IBGE 2022)
+        let kg_perdido = qtd_ave_perdida * peso_galinha
+
+        // Exibição do resultado
+        div_resultado.innerHTML = `${kg_perdido.toFixed(2)} KG <br><span>EM AVES PERDIDAS</span>`
+
+        // Inserção de botão
+        div_resultado.innerHTML += `
+            <div class="seta_unica">
+                <button class="seta" onclick="CalcularPrejuizo()">></button>
+            </div>`
+
+        // Exibição da explicação do calculo realizado
+        div_informacao.innerHTML = `<div>Calculamos a quantidade de quilos perdidos baseados no peso médio do abate de frangos no Brasil que de acordo o IBGE estava em torno de 2.1 kg em 2022.</div>`
+    }
+    function CalcularPrejuizo() {
+        // Coleta de dados dos inputs
+        let qtd_ave_perdida = Number(input_qtd_perdida.value)
+        let preco_medio = Number(input_preco_medio.value)
+
+        // Calculo do prejuizo
+        let peso_galinha = 2.1
+        let kg_perdido = qtd_ave_perdida * peso_galinha
+        let prejuizo = kg_perdido * preco_medio
+        let prejuizo_formatado = prejuizo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) // Formata o valor em R$ 0,00
+
+        // Exibição do resultado
+        div_resultado.innerHTML = `${prejuizo_formatado} REAIS<br><span>DE PREJUIZO EM FRANGO</span>`
+
+        // Inserção de botão
+        div_resultado.innerHTML += `
+            <div class="seta_dupla">
+                <button class="seta" onclick="CalcularKgPerdido()"><</button>
+                <button class="seta" onclick="CalcularPrejuizoProducao()">></button>
+            </div>`
+
+        // Exibição da explicação do calculo realizado
+        div_informacao.innerHTML = `<div class="informacao">Multiplicamos a quantidade de quilos perdidos pelo seu preço médio de venda e informamos quanto deixou de ganhar com a perda dessas aves.</div>`
+    }
+    function CalcularPrejuizoProducao() {
+        // Coleta de dados dos inputs
+        let qtd_aves = Number(input_qtd_aves.value)
+        let qtd_ave_perdida = Number(input_qtd_perdida.value)
+        let custo_producao = Number(input_custo_producao.value)
+
+        // Calculo do prejuizo
+        let custo_producao_galinha = custo_producao / qtd_aves
+        let prejuizo_producao = custo_producao_galinha * qtd_ave_perdida
+        let prejuizo_producao_formatado = prejuizo_producao.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+        // Exibição do resultado
+        div_resultado.innerHTML = `${prejuizo_producao_formatado} REAIS<br><span>DE PREJUÍZO EM PRODUÇÃO</span>`
+
+        // inserção de botão
+        div_resultado.innerHTML += `
+            <div class="seta_dupla">
+                <button class="seta" onclick="CalcularPrejuizo()"><</button>
+                <button class="seta" onclick="CalcularPrejuizoTotal()">></button>
+            </div>`
+
+        // Exibição da explicação do calculo realizado
+        div_informacao.innerHTML = `<div class="informacao">O cálculo feito é baseado no custo médio da produção de galinhas que inclui: insumos (ração, água, ...), infraestrutura (energia, funcionários, galpão, ...) e adicionais (veterinário, vacinas, ...).</div>`
+    }
+    function CalcularPrejuizoTotal() {
+        // Coleta de dados dos inputs
+        let qtd_aves = Number(input_qtd_aves.value)
+        let qtd_ave_perdida = Number(input_qtd_perdida.value)
+        let preco_medio = Number(input_preco_medio.value)
+        let custo_producao = Number(input_custo_producao.value)
+
+        // Calculo do prejuizo
+        let peso_galinha = 2.1
+        let kg_perdido = qtd_ave_perdida * peso_galinha
+        let prejuizo = kg_perdido * preco_medio
+        let custo_producao_galinha = custo_producao / qtd_aves
+        let prejuizo_producao = custo_producao_galinha * qtd_ave_perdida
+        let prejuizo_total = prejuizo + prejuizo_producao
+        let prejuizo_total_formatado = prejuizo_total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        let prejuizo_total_ano = prejuizo_total * 12
+        let prejuizo_total_ano_formatado = prejuizo_total_ano.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+        // Inserção da tela de dashboard
+        div_tela.innerHTML += `<div id="div_dash" class="dash"></div>`
+
+        // Exibição do resultado
+        div_dash.innerHTML = `<span>TOTALIZANDO O PREJUIZO DE</span>`
+        div_dash.innerHTML += `<div class="conteiner-resultado2" id="div_conteiner"></div>`
+        div_conteiner.innerHTML = `${prejuizo_total_formatado} REAIS <span>MENSAIS<br></span>${prejuizo_total_ano_formatado} REAIS <span>ANUAIS</span>`
+
+        // Inserção do botão
+        div_dash.innerHTML += `<button onclick="cadastro()" class="botao-ajuda">VER COMO A CHECK<br>CHICKEN PODE ME AJUDAR</button>`
+    }
+</script>

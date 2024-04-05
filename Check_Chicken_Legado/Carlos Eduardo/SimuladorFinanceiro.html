@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira CheckChicken</title>
+    <link rel="stylesheet" href="style.css">
+    <div id="textoExibido"></div>
+    
+</head>
+<body>
+
+     <!-- Header -->
+ <div class="header">
+    <img src="../Carlos Eduardo/logoCheckChicken.png" href="index.html">
+    <a class="logo"></a>
+  </div>
+    
+    <div class="section" id="calc_scroll">
+        <div class="divContainer">
+          <div class="divSimulador">
+            <div>
+              <span class="tituloItem">Informe a quantidade de lotes do seu aviário:</span><br>
+              <div class="inputContainer">
+                <input type="number" class="inputSimulador"
+                  id="input_lotesAviario" value="10">
+              </div>
+            </div>
+            <div>
+              <span class="tituloItem">Informe a quantidade de galinhas por lote: </span>
+              <div class="inputContainer">
+                <input class="inputSimulador" id="input_galinhasPorLote" value="0">
+              </div>
+            </div>
+            <div>
+              <span class="tituloItem">Informe o preço da unidade de galinha do seu lote: </span><br>
+              <div class="inputContainer">
+                <input class="inputSimulador" id="input_precoGalinha" value="10">
+              </div>
+            </div>
+            <div>
+              <span class="tituloItem"> Informe a taxa de mortalidade dos seus lotes:  </span><br>
+              <div class="inputContainer">
+                <input class="inputSimulador" id="input_taxaMortalidadeMensal" value="10">
+              </div>
+              <span class="tituloItem">Qual o custo de produção mensal por galinha: (Ração, água, ...)</span><br>
+              <div class="inputContainer">
+                <input class="inputSimulador" id="input_custoProducao" value="10">
+              </div>
+              <span class="tituloItem">Quanto é gasto em custos adicionais mensais: (Veterinário, vacinas, cuidados, ...)</span><br>
+              <div class="inputContainer">
+                <input class="inputSimulador" id="input_custosAdicionais" value="10">
+              </div>
+              <button class="botaoResultado" onclick="aparecerResultado()">
+                Simular
+              </button>
+            </div>
+    
+          </div>
+        </div>
+        
+</body>
+</html>
+<script src="simuladorFinanceiro.js"></script> 

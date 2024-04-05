@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro Check Chicken</title>
+</head>
+<body>
+        <h1>Check Chicken</h1>
+            <h2>Simule quanto você está perdendo mensalmente</h2>
+            <p>
+                Informe a quantidade de galinhas perdidas este mês no seu aviário:
+                <input type="number" id="input_qtdGalinhas">
+                <p>
+                Informe o preço que você vende o seu KG de frango:
+                <input type="number" id="input_precoKG">
+                <p>
+                Informe o gasto mensal que você tem com ração:
+                <input type="number" id="input_racao">
+                <p>
+                    <button onclick="calcularGastos()">
+                        SIMULAR PERDA
+                    </button>
+        <div id="mensagem_calculo">
+        </div>
+</body>
+
+</html>
+
+<script>
+    function calcularGastos() {
+        var quantidadeDeGalinhas = Number(input_qtdGalinhas.value)
+        var precoRacao = Number(input_racao.value)
+        var precoDoKilo = Number(input_precoKG.value)
+        var peso_galinha = 2.4
+        var kg_perdido = quantidadeDeGalinhas * peso_galinha
+        var prejuizo = kg_perdido * precoDoKilo
+        var prejuizo_racao = kg_perdido * precoRacao
+        mensagem_calculo.innerHTML = `Produtor, você está perdendo ${kg_perdido}KG<br>
+        Resultando em R$${prejuizo} perdidos <br>
+        E perdendo R$${prejuizo_racao} em ração.  `
+    }
+</script>

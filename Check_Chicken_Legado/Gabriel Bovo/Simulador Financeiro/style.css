@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #b8ffa6;
+}
+
+.header{
+    border-bottom: 3px solid #03b53e;
+    background-color: #03b53e   
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.header .container {
+    justify-content: space-between;
+}
+
+.titulo {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.navbar {
+    color:#000000;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 100px;
+}
+
+.base {
+    background-color: #b8ffa6;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: space-between;
+    margin: auto;
+    border-radius: 5px;
+    border: 5   px solid #70d17d; /* Define a borda de 2px de largura, sólida e preta */
+    padding: 10px; /* Opcional: adiciona um espaçamento interno */
+}
+
+h1 {
+    font-family: Sans-serif;
+    color: #000000;
+    width: fit-content;
+}
+
+h3 {
+    font-family: Sans-serif;
+    color: #000000;
+    width:fit-content;
+    margin: auto;
+}
+
+p {
+    font-family: Sans-serif;
+    color: #000000;
+    width:fit-content;
+    margin: auto;
+}
+.caixa{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    background-color: #03b53e;
+    color: rgb(255, 255, 255);
+    padding: 10px 35px;
+    text-decoration:none;
+    cursor: pointer;
+    border:rgb(255, 255, 255);
+}
+
+img {
+    width:100px;/* Largura desejada */
+    height:100px;/* Altura automática para manter a proporção */
+}
+
+input{
+    border: 2px solid #8aff86;
+}

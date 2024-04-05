@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Check Chiken</title>
+</head>
+<body>
+    Quantos lotes o seu aviário possui?<br>
+    <input id="lotes_aviario"><br>
+    <br>
+    Quantas galinhas você possui em cada lote?<br>
+    <input id="quantidade_galinhas"><br>
+    <br>
+    Quantas galinhas você perde por lote?<br>
+    <input id="galinhas_perdidas_lote"><br>
+    <br>
+    Qual o valor de venda para cada KG de galinha?<br>
+    <input id="valor_kg"><br>
+    <br>
+    Quanto voçê gasta em média com a produção de uma galinha<br>
+    <input id="Kg_producao"><br>
+    <br>
+    <button onclick="simulaçao()">
+    Fazer simulaçao
+    </button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function simulaçao(){
+
+        //Pegar valores
+        var galinhas = Number(quantidade_galinhas.value)
+        var lotes = Number (lotes_aviario.value)
+        var galinhasPerdidasLote = Number(galinhas_perdidas_lote.value)
+        var valor_por_kg = Number(valor_kg.value)
+        var producao = Number(Kg_producao.value)
+
+        //fazer as contas
+        var peso_medio = 2.5
+
+        //Galinhas perdidas
+        var galinhas_perdidas_total = galinhasPerdidasLote * lotes
+
+        //galinha sperdidas em KG
+        var kg_galinhas_perdidas = galinhas_perdidas_total * peso_medio
+
+        //galnha perdida em R$ (unidade)
+        var ganho_medio_galinhas = peso_medio * valor_por_kg
+
+        //investimento na produção por unidade
+        var investimento_producao_perdida = producao * galinhas_perdidas_total
+
+        //Perda de galinha média em R$
+        var quantidade_perda_media = galinhas_perdidas_total * ganho_medio_galinhas
+
+        //perda média total (produção + galinha)
+        var totalPerda = investimento_producao_perdida + quantidade_perda_media
+
+        resultado.innerHTML = `<br> A estimativa de perda é:<br>
+                                ${kg_galinhas_perdidas} Kg em aves, o equivalente a R$${quantidade_perda_media}
+                                <br>
+                                R$${investimento_producao_perdida} em investimento
+                                <br>
+                                Totalizando R$ ${totalPerda} de prejuizo.
+                                <br>`
+
+        //Prejuizo na perspectiva de 1 ano
+        var prejuizo_total_ano = totalPerda * 12
+
+        resultado.innerHTML += `Por ano isso te custa R$ ${prejuizo_total_ano}`
+
+
+    }
+</script>

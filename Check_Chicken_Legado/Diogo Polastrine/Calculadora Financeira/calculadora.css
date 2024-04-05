@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+body{
+    background-image: url(./assets/galinhasfundo.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#header{
+    background-color: #28632f;
+    text-align: center;
+    padding: 15px;    
+    box-shadow: 0px 5px 4px 1px rgba(1, 71, 15, 0.2);
+
+}
+
+#h1-1{
+    font-size: 45px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    display: inline;
+}
+
+#h1-2{
+    font-size: 45px;
+    color: #feaa10;
+    font-family: "Montserrat", sans-serif;
+    display: inline;
+}
+
+
+
+#tituloCalculadora1 {
+    color: #5CB767;
+    text-align: center;
+    margin: 0;
+
+}
+
+#tituloCalculadora2 {
+    color: #FA8939;
+    text-align: center;
+    margin: 0;
+
+}
+
+#imgLogo1{
+    width: 200px;
+    height: 120px;
+    
+}
+
+#imgLogo2{
+    width: 100px;
+    height: 60px;
+}
+
+.subtext{
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+
+}
+
+#caixaGeral{
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+}
+
+#caixaPrincipal{
+    border-radius: 10%;
+    background-color: #F8F5F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 30px;
+    opacity: 80%;
+    box-shadow: 5px 5px 4px 1px rgba(1, 71, 15, 0.2);
+    
+}
+
+#caixaSecundaria{
+    border-radius: 10%;
+    background-color: #F8F5F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 0 30px;
+    opacity: 90%;
+    box-shadow: -5px 5px 4px 1px rgba(1, 71, 15, 0.2);
+
+    
+}
+
+#caixaGalinha:hover{
+    background-color: #fddfab;
+}
+
+#caixaGalinha{
+    background-color: #F8F5F0;
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    margin: auto;
+    padding: 100px;
+    border-radius: 100%;
+    opacity: 80%;
+    box-shadow: 0px 5px 4px 1px rgba(1, 71, 15, 0.2);
+
+}
+
+p{
+    text-align: center;
+    margin-top: 20px;
+}
+
+img{
+    width: 200px;
+}
+
+#caixaBotao{
+    margin-top: 20px;
+    background-color: #5cb867;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0px 5px 4px 1px rgba(1, 71, 15, 0.2);
+
+}
+
+#caixaBotao:hover{
+    margin-top: 20px;
+    background-color: #28632f;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0px 5px 4px 1px rgba(1, 71, 15, 0.2);
+
+}
+
+
+
+#textoExibido{
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: #1f5926;
+
+}
+
+input{
+    border: 0px;
+    border-radius: 40px;
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+
+#resultadosBotao{
+    display: flex;
+    margin: auto;
+    background-color: #5cb867;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0px 5px 4px 1px rgba(1, 71, 15, 0.2);
+    width: 300px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+}
+
+#resultadosBotao:hover{
+    display: flex;
+    margin: auto;
+    background-color: #28632f;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: 0px 5px 4px 1px rgba(1, 71, 15, 0.2);   
+}

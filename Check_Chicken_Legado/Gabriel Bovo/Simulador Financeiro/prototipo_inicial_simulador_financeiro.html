@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckChicken - Página Inicial</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">CheckChicken</h1>
+            <ul class="navbar">
+                <li>
+                    <button onclick="inicial()">Inicial</button>
+                </li>
+                <li>
+                    <button onclick="inicial()">Simulador</button>
+                </li>
+                <li>
+                    <button onclick="inicial()">Login</button>
+                </li>
+                <li>
+                    <button onclick="inicial()">Cadastro</button>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="base caixa">
+    
+        <div id="imagem"> <img onclick="galinha( )" src="https://static.vecteezy.com/system/resources/previews/024/280/397/non_2x/chicken-hen-isolated-on-transparent-background-ai-generated-free-png.png"></div>
+    
+        <h1>CheckChicken</h1>
+    
+        <h3>Simule o quanto você está <br> perdendo em seu aviário:</h3>
+
+        <p>Por favor, forneça o número de aves perdidas neste mês:</p>
+        <input id="input_qtd_perdida"><br>
+
+        <p>O preço por quilograma(KG) de frango é [insira o preço aqui]:</p>
+        <input id="input_preco_kg"><br>
+
+        <p>Qual é o preço por quilograma(KG) de ração que você paga?</p>
+        <input id="input_preco_kg_racao"><br>
+
+        <button onclick="CalcularPrejuizo()">Simular</button>
+
+        <div id="div_resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function CalcularPrejuizo() {
+        //Valores dos inputs
+        var qtd_ave_perdida = Number(input_qtd_perdida.value)
+        var preco_kg = Number(input_preco_kg.value)
+        var preco_racao = Number(input_preco_kg_racao.value)
+
+        var peso_galinha = 2.4 //Peso medio do abate no Brasil
+        var kg_perdido = qtd_ave_perdida * peso_galinha //Calculo de quilos perdidos com base em aves perdidas
+        var prejuizo = kg_perdido * preco_kg //Calculo do prejuizo
+        var prejuizo_racao = kg_perdido * preco_racao //Prejuizo de ração desperdiçada
+
+        //Exibição 
+        div_resultado.innerHTML = `<br>
+        Este mês voce perdeu: <b>R$${kg_perdido}</b> KG em aves.
+        <br> Resultando em um prejuízo financeiro de <b>R$${prejuizo}</b> e <b>R$${prejuizo_racao}</b> desperdiçados em ração.
+        <br><br>`
+
+        //Prejuizo na perspectiva de 1 ano
+        var prejuizo_total_ano = (prejuizo + prejuizo_racao) * 12
+
+        div_resultado.innerHTML += `Em um período anual, gera um prejuizo de <b>R$${prejuizo_total_ano}</b>. <br> <i>Para saber mais sobre como otimizar seus processos e reduzir esses custos, entre em contato conosco.</i>`
+    }
+
+    function galinha(){
+        alert(`Cocó`)
+    }
+
+</script>

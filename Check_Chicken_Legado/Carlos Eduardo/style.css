@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+}
+
+/* Style do header com background e padding pra posicionamento */
+.header {
+  overflow: hidden;
+  background-color: #dcb691;
+  padding: 20px 10px;
+  margin: 0;
+  font-family: "Dosis", sans-serif;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Style dos links do header */
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header img{
+  width: 120px;
+}
+
+
+/* Links pra direita */
+.header-right {
+  float: right;
+}
+
+/* Calculadora */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  font-family: 'Dosis', sans-serif;
+}
+
+.tituloSimulador {
+  margin: 48px 126px;
+  font-family: 'Dosis', sans-serif;;
+  font-size: 32px;
+  width: 100%;
+  text-align: center;
+}
+.divContainer {
+  margin: 200px 126px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 2px solid #FFBF00 ;
+  gap: 16px;
+  padding: 0px 0px 4px 0px;
+}
+
+.tituloItem {
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/*style da Div de resultados
+.divResultado {
+  font-family: 'Dosis', sans-serif;
+  gap: 24px;
+  display: none;
+  flex-direction: column;
+  background: url(https://preview.redd.it/pwpks2a80bj31.gif?width=800&auto=webp&s=48bfc3ad55d7d05c07ff193152deac92c9bb090e);
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 50%;
+  border-radius: 24px;
+  box-shadow: 0px 8px 16px 0px #00000025;
+  padding: 24px 24px;
+  height: fit-content;
+  transition: 5s;
+  bottom: 0;
+  z-index: 1;
+}
+*/
+
+.divSimulador {
+  font-size: 16px;
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 400px;
+}
+
+.inputSimulador {
+  font-family: 'Dosis', sans-serif;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 32px;
+  width: 100%;
+  min-width: fit-content;
+}
+
+
+.botaoSimulador {
+  font-family: 'Dosis', sans-serif;
+  border-radius: 40px;
+  font-size: 24px;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #FFBF00;
+  box-shadow: 0px 4px 8px 0px #00000025;
+}
+
+.botaoSimulador:hover {
+  background-color: #E6A817;
+  cursor: pointer;
+}
+
+.botaoResultado {
+  margin: 40px 0px 0px 0px;
+  padding: 8px 16px;
+  background-color: #0C2626;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  font-family: 'Dosis', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botaoResultado:hover {
+  background-color: #FFBF00;
+  color: #0C2626;
+  cursor: pointer;
+}
+
+
+.tituloResultado {
+  align-self: stretch;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.valoresContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.valoresTitulo {
+  font-size: 16px;
+
+}
+.valoresResultado {
+  font-size: 32px;
+}
+
+.ctaContainer {
+  background-color: #FFBF00;
+  color: #0C2626;
+  border-radius: 40px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: row;
+}
+.ctaText {
+  font-size: 16px;
+  font-weight: 600;
+}
+.ctaLink {
+  font-size: 16px;
+  color: #0C2626;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.ctaLink:hover {
+  color: #154242;
+}

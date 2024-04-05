@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+
+<body>
+    <div>
+        Quantas aves você perdeu neste mes:
+        <input id="input_qtd_perdida"><br>
+        Por quanto voce vende seu KG de frango:
+        <input id="input_preco_kg"><br>
+        Quanto voce paga por KG de ração:
+        <input id="input_preco_kg_racao"><br>
+        <button onclick="CalcularPrejuizo()">Simular</button>
+        <div id="div_resultado"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function CalcularPrejuizo() {
+        //Valores dos inputs
+        var qtd_ave_perdida = Number(input_qtd_perdida.value)
+        var preco_kg = Number(input_preco_kg.value)
+        var preco_racao = Number(input_preco_kg_racao.value)
+
+        var peso_galinha = 2.4 //Peso medio do abate no Brasil
+        var kg_perdido = qtd_ave_perdida * peso_galinha //Calculo de quilos perdidos com base em aves perdidas
+        var prejuizo = kg_perdido * preco_kg //Calculo do prejuizo
+        var prejuizo_racao = kg_perdido * preco_racao //Prejuizo de ração desperdiçada
+
+        //Exibição 
+        div_resultado.innerHTML = `<br>
+        Este mes voce perdeu ${kg_perdido} KG em aves
+        <br>
+        <br>
+        o que equivale a R$ ${prejuizo} de prejuizo
+        <br>
+        <br>
+        e R$ ${prejuizo_racao} desperdiçados em ração
+        <br>
+        <br>`
+
+        //Prejuizo na perspectiva de 1 ano
+        var prejuizo_total_ano = (prejuizo + prejuizo_racao) * 12
+
+        div_resultado.innerHTML += `Por ano isso te custa R$ ${prejuizo_total_ano}`
+    }
+</script>
