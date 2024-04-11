@@ -4,20 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="style_cadastro.css">
 </head>
 <body>
-    Usuário:<input id="input_usuario"><br>
-    Senha:<input id="input_senha"><br>
-    <button onclick="cadastro()">Cadastre-se</button>
+    <div class="cabecalho">
+        <div>
+            <img src="">
+        </div>
+    </div>
+    <div class="dadoscadastrais">
+        Nome Completo:<input placeholder="Nome Completo" id="input_nome"><br>
+        Data de Nascimento: <input type="date" id="input_nascimento"><br>
+        <div>
+            Documento: <input id="input_cpf">
+            <select>
+                <option value="rg">RG</option>
+                <option value="cpf">CPF</option>
+                <option value="rne">RNE</option>
+            </select><br>
+        </div>
+        Telefone para contato: <input placeholder="(DDD) XXXXX-XXXX" id="input_telefone"><br>
+        E-mail: <input placeholder="E-mail" id="input_email"><br>
+        Cofirme seu E-mail: <input placeholder="Confirme seu E-mail" id="input_confirmarEmail"><br>
+        Usuário:<input placeholder="Usuário" id="input_usuario"><br>
+        Senha:<input placeholder="Senha" id="input_senha"><br>
+        Confirme sua senha:<input placeholder="Confirme a senha" id="input_confirmarSenha"><br>
+        <button onclick="cadastro()">Cadastre-se</button>
+    </div>
 </body>
 </html>
 
 <script>
     function cadastro() {
+        const TELEFONE = input_telefone.value
+        const EMAIL = input_email.value
+        const CONFIRMAREMAIL = input_confirmarEmail.value
         const USUARIO = input_usuario.value
         const SENHA = input_senha.value
+        const CONFIRMARSENHA = input_confirmarSenha.value
         let validacaoNumero = 0
-        let ContemNumero = true
+        let NaoContemNumero = true
         let validacaoArroba = SENHA.indexOf("@")
         let validacaoChicken = SENHA.toUpperCase().indexOf("CHICKEN")
         let validacaoSenha = false
@@ -25,7 +51,7 @@
         for (let numeros = 0; numeros <= 9; numeros += 1) {
             validacaoNumero = SENHA.indexOf(numeros)
             if (validacaoNumero != -1) {
-                ContemNumero = false
+                NaoContemNumero = false
             }
         }
 
@@ -35,6 +61,10 @@
             alert(`A senha deve conter a palavra chave`)
         } else if (validacaoArroba == -1) {
             alert(`A senha deve conter @`)
+        } else if (CONFIRMARSENHA != SENHA) {
+            alert(`A senha e sua confirmação não batem`)
+        } else if (CONFIRMAREMAIL != EMAIL) {
+            alert(`O email e sua confirmação não batem`)
         } else {
             let validacaoSenha = true
         }
