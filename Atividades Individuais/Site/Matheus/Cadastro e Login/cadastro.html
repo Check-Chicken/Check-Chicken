@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    Usuário:<input id="input_usuario"><br>
+    Senha:<input id="input_senha"><br>
+    <button onclick="cadastro()">Cadastre-se</button>
+</body>
+</html>
+
+<script>
+    function cadastro() {
+        const USUARIO = input_usuario.value
+        const SENHA = input_senha.value
+        let validacaoNumero = 0
+        let ContemNumero = true
+        let validacaoArroba = SENHA.indexOf("@")
+        let validacaoChicken = SENHA.toUpperCase().indexOf("CHICKEN")
+        let validacaoSenha = false
+
+        for (let numeros = 0; numeros <= 9; numeros += 1) {
+            validacaoNumero = SENHA.indexOf(numeros)
+            if (validacaoNumero != -1) {
+                ContemNumero = false
+            }
+        }
+
+        if (ContemNumero) {
+            alert(`A senha deve conter caracteres numéricos`)
+        } else if (validacaoChicken == -1) {
+            alert(`A senha deve conter a palavra chave`)
+        } else if (validacaoArroba == -1) {
+            alert(`A senha deve conter @`)
+        } else {
+            let validacaoSenha = true
+        }
+    }
+</script>
