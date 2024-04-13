@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckChiken - Página Cadastro</title>
+
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">Check Ckicken</h1>
+            <ul class="navbar">
+                <li>
+                    <button id="inicio" class="botão">Inicio</button>
+                </li>
+                <li>
+                    <button id="servicos" class="botão">Serviços</button>
+                </li>
+                <li>
+                    <button id="sobrenos" class="botão">Sobre nós</button>
+                </li>
+                <li>
+                    |
+                </li>
+                <li>
+                    <button id="login" class="botão">Login</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main" id="main">
+        <span>Informe seu nome completo:</span> <br> 
+        <input class="input" id="input_nome" onkeyup="maiusculo()" placeholder="Nome Completo"> <br> 
+        <span>Informe sua data de nascimento:</span> <br> 
+        <input class="input" type="date" id="input_dtNasc" placeholder="Idade"> <br> 
+        <div>
+        <span>Selecione seu documento e informe os digitos:</span> 
+        <select class="select" id="select_documento">
+            <option value="rg" aria-placeholder="RG">RG</option>
+            <option value="cpf" aria-placeholder="CPF">CPF</option>
+            <option value="rne" aria-placeholder="RNE">RNE</option>
+        </select> <br> <br>
+        </div>
+        <input class="input" id="input_documento" placeholder="Digito"> <br> 
+        <span>Informe seu telefone:</span> <br> 
+        <input class="input" id="input_telefone" placeholder="Telefone"> <br> 
+        <span>Informe seu email:</span> <br> 
+        <input class="input" id="input_email" placeholder="Email"> <br> 
+        <span>Crie uma senha:</span> <br> 
+        <input class="input" id="input_senha" placeholder="Senha"> <br> 
+        <span>Repita sua senha:</span> <br>
+        <input class="input" id="input_senharepetida" placeholder="Senha"> <br> <br>
+        <button class="boton" onclick="concluido()">Concluir</button>
+        <div id="exibir"></div>
+    </div>
+    <div class="direitos">
+        <h2>DIREITOS RESERVADOS CHECK CHICKEN</h2>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function maiusculo() {
+        let nome = document.getElementById("input_nome")
+        nome.value = nome.value.toUpperCase()
+    }
+
+    function concluido() {
+        let nome = input_nome.value
+        let dtNasc = input_dtNasc.value
+        let select = select_documento.value
+        let digito = input_documento.value
+        let telefone = input_telefone.value
+        let email = input_email.value
+        let senha = input_senha.value
+        let senharepetida = input_senharepetida.value
+        let correct = ''
+
+        const indicegmail = email.indexOf("@gmail.com");
+        const indicehotmail = email.indexOf("@hotmail.com");
+
+        const indiceN = senha.indexOf("0");
+        const indiceNu = senha.indexOf("1");
+        const indiceNum = senha.indexOf("2");
+        const indiceNume = senha.indexOf("3");
+        const indiceNumer = senha.indexOf("4");
+        const indiceNumero = senha.indexOf("5");
+        const indiceNumeroA = senha.indexOf("6");
+        const indiceNumeroB = senha.indexOf("7");
+        const indiceNumeroC = senha.indexOf("8");
+        const indiceNumeroD = senha.indexOf("9");
+
+        if (select == 'rg') {
+            if (digito.length < 8 || digito.length > 13) {
+                alert('RG Invalido')
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        } else if (select == 'cpf') {
+            if (digito.length < 11 || digito.length > 12) {
+                alert('CPF Invalido')
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        } else if (select == 'rne') {
+            if (digito.length < 11 || digito.length > 20) {
+                alert('RNE Invalido')
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        }
+
+        if (correct == 'true') {
+            if (telefone.length < 9 || telefone.length > 15) {
+                alert('Numero de Telefone Invalido')
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        }
+
+
+        if (correct == 'true') {
+            if (indicegmail == -1 && indicehotmail == -1) {
+                alert('email incorreto')
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        }
+
+        if (correct == 'true') {
+            if (indiceN == -1 && indiceNu == -1 && indiceNum == -1 && indiceNume == -1 && indiceNumer == -1 && indiceNumero == -1 && indiceNumeroA == -1 && indiceNumeroB == -1 && indiceNumeroC == -1 && indiceNumeroD == -1) {
+                alert("A senha precisa ter pelo menos 1 caractere númerico")
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        }
+
+        if (correct == 'true') {
+            if (senha.length < 10) {
+                alert("A senha precisa ter pelo menos 10 caracteres")
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        }
+
+        if (correct == 'true') {
+            if (senharepetida != senha) {
+                alert("As senhas não estão iguais")
+                correct = 'false'
+            } else {
+                correct = 'true'
+            }
+        }
+
+        if (correct == 'true') {
+            main.style.display = 'none'
+        }
+    }
+</script>
