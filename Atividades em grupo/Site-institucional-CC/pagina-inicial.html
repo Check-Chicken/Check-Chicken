@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
+        rel="stylesheet">
+    <title>Pagina Inicial</title>
+</head>
+
+<body>
+    <div class="conteiner">
+        <header>
+            <div class="header">
+                <img class="logo" src="images\logo_novo.png">
+                <div class="botoes">
+                    <button id="inicio" onclick="inicio()">Início</button>
+                    <button id="servicos" onclick="servicos()">Serviços</button>
+                    <button id="sobre" onclick="sobre()">Sobre nós</button>
+                    <button id="login" onclick="login()">Login</button>
+                </div>
+            </div>
+        </header>
+
+        <div id="caixaTexto">
+            <span class="orange">MONITORE</span> <span>SEUS AVIÁRIOS DE FORMA</span>
+            <span class="orange">INTELIGENTE</span> <span>E <span class="orange">REDUZA</span>
+                AS SUAS PERDAS</span>
+            <button id="botao-simulador" onclick="simulador()">Conheça nosso simulador financeiro!</button>
+        </div>
+
+
+
+</body>
+<footer>
+    <div id="div_direitos">DIREITOS RESERVADOS CHECK CHICKEN</div>
+</footer>
+</div>
+
+</html>
+
+<script>
+    function simulador() {
+        window.location.href = "calculadora.html"
+    }
+    function inicio() {
+        window.location.href = "pagina-inicial.html";
+    }
+    function servicos() {
+        window.location.href = "pagina-inicial.html";
+    }
+    function sobre() {
+        window.location.href = "sobre-nos.html";
+    }
+    function login() {
+        window.location.href = "login.html";
+    }
+</script>

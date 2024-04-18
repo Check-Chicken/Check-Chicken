@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
+        rel="stylesheet">
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <div class="conteiner">
+        <header>
+            <div class="header">
+                <img class="logo" src="images\logo_novo.png">
+                <div class="botoes">
+                    <button id="inicio" onclick="inicio()">Início</button>
+                    <button id="servicos" onclick="servicos()">Serviços</button>
+                    <button id="sobre" onclick="sobre()">Sobre nós</button>
+                    <button id="login" onclick="login()">Login</button>
+                </div>
+            </div>
+        </header>
+        <div>
+            
+            <div id="div_corpo">
+                Nome do produtor:
+                <input class="inputs" type="text" id="input_nomeProdutor" placeholder="Insira seu nome aqui"> <br>
+                Data de nascimento:
+                <input class="inputs" type="date" id="input_dataNasc"><br>
+                CPF:
+                <input class="inputs" type="number" id="input_cpf" placeholder="000.000.000-00"><br>
+                Telefone para contato:
+                <input class="inputs" type="tel" id="input_tel" placeholder="(00) 9 0000-0000"> <br>
+                Informe o e-mail de login:
+                <input class="inputs" type="email" id="input_email" placeholder="exemplo@gmail.com"> <br>
+                Repita o email informado a cima
+                <input class="inputs" type="email"  id="input_email2" placeholder="exemplo@gmail.com"><br>
+                Senha:
+                <input class="inputs" type="password" id="input_senha" placeholder="*********"> <br>
+                <div id="erro_senha"></div>
+                Repita a senha informada acima
+                <input class="inputs" type="password" id="input_senha2" placeholder="*********"> <br>
+                <br>
+                <button id="concluir" onclick="concluir()">CONCLUIR</button>
+                <div id="resultado"></div>
+                
+            </div>
+            
+        </div>
+
+        </header>
+</body>
+<footer>
+    <div id="div_direitos">DIREITOS RESERVADOS CHECK CHICKEN</div>
+</footer>
+
+</html>
+<script>
+    // funcoes dos botoes
+    function inicio() {
+        window.location.href = "pagina-inicial.html";
+    }
+    function servicos() {
+        window.location.href = "pagina-inicial.html";
+    }
+    function sobre() {
+        window.location.href = "sobre-nos.html";
+    }
+    function login() {
+        window.location.href = "login.html";
+    }
+
+    // funcao cadastro
+    function concluir() {
+        const nome = input_nomeProdutor.value
+        const dataNasc = input_dataNasc.value
+        const cpf = Number(input_cpf.value)
+        const telefone = Number(input_tel.value)
+        const email = input_email.value
+        const email2 = input_email2.value
+        const senha = input_senha.value
+        const senha2 = input_senha2.value
+        // validacao variaveis
+        
+        
+        
+        for(let numero = 0; numero<= 9; numero ++ ){
+            
+            if (senha.indexOf('@') ===-1 || senha.indexOf('#') ===-1 || senha.indexOf(numero)===-1) {
+                erro_senha.innerHTML = `A senha deve conter pelo menos um caractere especial como @ ou #,<br>pelo menos um número.`
+            }
+        }
+        if (email.indexOf('@') ===-1 || email.indexOf('.') ===-1) {
+            
+     alert('Email inválido')
+     
+    } else if (email2 != email) {
+        alert('Os emails estão diferentes')
+    } 
+    else {
+        alert('Cadastrado com sucesso')
+        window.location.href = "cadastrov2.html"
+    }
+}
+
+</script>

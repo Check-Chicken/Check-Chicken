@@ -1,0 +1,178 @@
+/* style-paginainicial */
+body {
+    margin: 0px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    display: flex;
+    font-size: 24px;
+    background-image: url("images/fundo-galinhas.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.logo {
+    width: 10vw;
+    height: 10vh;
+    padding: 25px;
+    display: block;
+    
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #F5F4F9;
+    width: 100vw;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+footer{
+    width: 100%;
+    height: 15vh;
+    background-color: #4A7A57;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: lighter;
+    margin-top: 100px;
+    
+}
+#div_direitos{
+    font-size: 24px;
+    color: white;
+    font-family: Montserrat;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+#inicio {
+    width: 10vw;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#servicos {
+    width: 10vw;
+    margin-left: 50px;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#sobre {
+    width: 10vw;
+    margin-left: 50px;
+    padding: 20px;
+    margin-top: 1vh;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#login {
+    width: 10vw;
+    margin-left: 750px;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#caixaTexto {
+    background-color: white;
+    width: 500px; 
+    max-width: 800px; 
+    margin-top: 150px;
+    margin-left: 1100px;
+    border-radius: 20px;
+    padding: 20px;
+ 
+    font-size: 60px;
+    text-align: center; 
+    line-height: 2em;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+#inicio:hover{
+    background-color: #5CB767;
+}
+#servicos:hover{
+    background-color: #5CB767;
+}
+#sobre:hover{
+    background-color: #5CB767;
+}
+#login:hover{
+    background-color: #5CB767;
+}
+
+.orange {
+    color: #FC8939;
+    
+}
+
+#caixaTexto span:not(.orange) {
+    color: #4A7A57;
+    
+}
+#botao-simulador {
+    border: 0px;
+    border-radius: 30px;
+    background-color: #FA8939;
+    color: white;
+    width: 80%;
+    height: 110px;
+    font-size: 25px;
+    position: relative;
+    bottom: 30px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+#botao-simulador:hover{
+    background-color: #ffa15f;
+}

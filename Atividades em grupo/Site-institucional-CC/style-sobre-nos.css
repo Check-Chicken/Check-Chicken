@@ -1,0 +1,194 @@
+/* style-sobrenos */
+body {
+    margin: 0px;
+    font-family: "Big Shoulders Display", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    display: flex;
+    font-size: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #49794F;
+    background: linear-gradient(#49794F,#5CB767 );
+}
+.logo {
+    width: 10vw;
+    height: 10vh;
+    padding: 25px;
+    display: block;
+    
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #F8F5F0;
+    width: 100vw;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+footer{
+    width: 100%;
+    height: 15vh;
+    background-color: #4A7A57;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: lighter;
+    
+}
+#div_direitos{
+    font-size: 24px;
+    color: white;
+    font-family: Montserrat;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}
+#inicio {
+    width: 10vw;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#servicos {
+    width: 10vw;
+    margin-left: 50px;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#sobre {
+    width: 10vw;
+    margin-left: 50px;
+    padding: 20px;
+    margin-top: 1vh;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#login {
+    width: 10vw;
+    margin-left: 750px;
+    padding: 20px;
+    margin-top: 35px;
+    background-color: #49794F;
+    border-radius: 30px;
+    color: white;
+    font-family: "Big Shoulders Display", sans-serif;
+    border: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+#div_galinha {
+    display: flex;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 100px;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.imagemGalinha {
+    width: 652px;
+    height: 736px; 
+    border-radius: 0px 50px 50px 0px;
+    margin-top: 25px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+
+}
+
+.titulo {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 100px;
+    text-align: left;
+    color: #FC8939;
+    background-color: #49794F;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    width: 530px;
+    text-shadow: #c46b2c 0 -1px;
+    padding: 10px;
+    
+}
+
+.textoGalinha {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
+    width: 700px;
+    padding: 20px;
+    color: white;
+    text-shadow: #49794F 0 -1px;
+    background-color: #49794F;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+}
+#inicio:hover{
+    background-color: #5CB767;
+}
+#servicos:hover{
+    background-color: #5CB767;
+}
+#sobre:hover{
+    background-color: #5CB767;
+}
+#login:hover{
+    background-color: #5CB767;
+}
+b{
+    color:#FC8939;
+}

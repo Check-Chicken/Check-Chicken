@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style-loginv2.css">
+  <title>Login</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="pagina-inicialv2.html">
+          <img src="images/logo_novo.png" alt="gfg_logo">
+        </a>
+      </div>
+
+      <div class="nav-menu hide">
+        <a href="pagina-inicialv2.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre-nos.html">Sobre Nós</a>
+
+      </div>
+
+    </nav>
+  </header>
+
+
+  <div id="div_corpo">
+    <img id="logo_login" src="images\logo_galinha.png">
+
+    <p> Seja bem vindo!</p>
+    <div id="div_inputs">
+      Email: <br>
+      <input type="email" id="input_email" placeholder="exemplo@gmail.com"><br><br>
+
+      Senha: <br>
+      <input type="password" id="input_senha" placeholder="***********"><br><br>
+
+      <button id="botao_entrar">ENTRAR</button><br><br>
+      <a href=""><span id="recuperacao">Esqueceu sua senha?</span></a><br>
+      <a href="cadastrov2.html"><span id="cadastre-se">Não tem uma conta? Cadastre-se aqui!</span></a>
+    </div><br><br>
+  </div>
+</body>
+<footer>
+  <div id="div_direitos">
+    <img src="images/facebook.png" alt="" width="35vw">
+    <img src="images/instagram.png" alt="" width="30vw" style="color: white;">
+
+    <br>
+    Info * Suporte <br><br>
+    Política de privacidade * Termos de uso <br><br>
+    <span style="color: #EBB894;"> © 2023 by CheckChicken </span>
+
+  </div>
+  <form action=""></form>
+</footer>
+
+</div>
+
+</html>
+
+<script>
+  function inicio() {
+    window.location.href = "pagina-inicial.html";
+  }
+  function servicos() {
+    window.location.href = "pagina-inicial.html";
+  }
+  function sobre() {
+    window.location.href = "sobre-nos.html";
+  }
+
+  function login() {
+    const email = input_email.value
+    const senha = input_senha.value
+    for (let numero = 0; numero <= 9; numero++) {
+
+      if (senha.indexOf('@') === -1 || senha.indexOf('#') === -1 || senha.indexOf(numero) === -1 || senha.length <= 8) {
+        alert('senha Inválida')
+      }
+    }
+
+    if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+
+      alert('Email inválido')
+    }
+    else {
+      alert('Cadastrado com sucesso')
+      window.location.href = ""
+    }
+  }
+</script>
