@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style-cadastrov2.css">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="pagina-inicialv2.html">
+                    <img src="images/logo_novo.png" alt="gfg_logo">
+                </a>
+            </div>
+
+            <div class="nav-menu hide">
+                <a href="pagina-inicialv2.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="sobre-nos.html">Sobre Nós</a>
+
+            </div>
+            <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
+            <!-- Button to open the modal login form -->
+
+            <!-- The Modal -->
+            <div id="div_login" class="modal">
+
+
+                <!-- Modal Content -->
+                <form class="modal-content animate">
+                    <div class="imgcontainer">
+                        <img src="images/logo_galinha.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+
+                        Email:
+                        <input type="text" placeholder="Email" required id="email"><br>
+
+                        Senha:
+                        <input type="password" placeholder="Senha" required id="senha"><br>
+
+                        <button id="logar" onclick="">Entrar</button><br>
+
+                        <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
+                        <br>
+                        <a href="cadastrov2.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
+                            Não tem uma conta? Cadastre-se aqui!
+                        </a>
+                        </label>
+                    </div>
+
+                    <div class="container" style="background-color:#F8F5F0">
+
+                        <button id="botao-cancelar" type="button"
+                            onclick="document.getElementById('div_login').style.display='none'"
+                            class="botao-cancelar">Cancelar</button>
+
+                        <span class="senha"><a href="#">Esqueceu a senha?</a></span>
+
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div class="formulario">
+        <form class="cadastrar" action="#">
+
+            <div class="form_grupo">
+
+                Nome Completo:
+                <input type="text" class="inputs" placeholder="Nome" required id="inputNomeProdutor">
+            </div><br>
+            <div class="form_grupo">
+
+                Data de nascimento:
+                <input type="date" class="inputs" placeholder="Data" required id="inputDataNasc">
+            </div><br>
+            <div class="form_grupo">
+
+                <label for="documento">Documento:</label>
+                <div class="input-select">
+
+                    <!-- Input para o usuario colocar o documento -->
+                    <input type="text" class="inputs" maxlength="15" id="inputDocumento" placeholder="XXXXXXXXX"
+                        required>
+
+                    <!-- select para o tipo de documento  -->
+                    <select class="selects" id="selectDocumento">
+                        <option value="rg">RG</option>
+                        <option value="rne">RNE</option>
+                        <option value="cpf">CPF</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form_grupo">
+
+                Telefone para contato
+                <input type="tel" maxlength="12" class="inputs" id="inputContato" placeholder="00 000000000" required>
+
+                <select class="selects" id="tipoContato">
+                    <option value="celular">Celular</option>
+                    <option value="fixo">Fixo</option>
+                </select>
+            </div><br>
+            <div class="form_grupo">
+
+                Email:
+                <input type="email" class="inputs" id="inputEmail" placeholder="Email">
+            </div><br>
+            <div class="form_grupo">
+
+                Senha:
+                <input type="password" class="inputs" id="inputSenha" placeholder="*********" required>
+            </div><br>
+            <div class="form_grupo">
+
+
+                Repita a senha:
+                <input type="password" class="inputs" id="inputSenha2" placeholder="*********" required>
+                <div id="erro_senha"></div>
+            </div><br>
+
+            <button id="botao-cadastrar" onclick="concluir()">CADASTRAR</button><br>
+            <div id="entrarCom">
+                <p style="text-align: center;">Entrar com:</p>
+                <a href=""><img class="entrarCom" src="images/google.png" alt=""
+                        style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
+                <a href=""><img class="entrarCom" src="images/facebook (1).png" alt=""
+                        style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+                <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt=""
+                        style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+<footer>
+    <div id="div_direitos">
+        <img src="images/facebook.png" alt="" width="35vw">
+        <img src="images/instagram.png" alt="" width="30vw" style="color: white;">
+
+        <br>
+        Info * Suporte <br><br>
+        Política de privacidade * Termos de uso <br><br>
+        <span style="color: #EBB894;"> © 2023 by CheckChicken </span>
+
+    </div>
+</footer>
+
+</html>
+
+<script>
+
+    function concluir() {
+        const nome = inputNomeProdutor.value
+        const dataNasc = inputDataNasc.value
+        const numberDocumento = (inputDocumento.value)
+        const documento = selectDocumento.value
+        const contato = (inputContato.value)
+        const tipoTelefone = tipoContato.value
+        const email = inputEmail.value
+        const senha = inputSenha.value
+        const validacaoSenha = inputSenha2.value
+        let numeroSenha = false
+
+
+        // Validação dos documentos
+        if (documento == "rg" && numberDocumento.length != 10) {
+            alert("RG inválido")
+        } else if (documento == "rne" && numberDocumento.length != 7) {
+            alert("RNE inválido")
+        } else if (documento == "cpf" && numberDocumento.length != 11) {
+            alert("CPF inválido")
+        }
+
+        // Validação dos contatos
+        if (tipoTelefone == "celular" && contato.length != 11) {
+            alert("Número de celular inválido, verifique se coloucou o DDD")
+        } else if (tipoTelefone == "fixo" && contato.length != 10) {
+            alert("Número de telefone inválido, verifique se colocou o DDD")
+        }
+
+        // Validação de email
+        if (email.indexOf("@") <= 0 || email.indexOf(".") <= 0) {
+            alert("Email inválido")
+        }
+        // Validação de senha
+        if (senha.indexOf('@') ===-1 && senha.indexOf('#') === -1 || senha.length  < 8) {
+            alert(`Senha iválida, verifique se tem um caractere especial
+            como, @ ou #, e se tem no mínimo 8 digitos`)
+        }
+            // erro_senha.innerHTML = `A senha deve conter:<br>no mínimo 8 caracteres<br>pelo menos um caractere especial como @ ou #<br>pelo menos um número.`
+            else{for (let numero = 0; numero <= 9; numero++) {
+                if (senha.indexOf(numero.toString()) > 0) {
+                    numeroSenha = true;
+                    break;
+                    }
+                }
+            }
+            if (numeroSenha == false) {
+                alert("A senha deve conter pelomenos um número")
+            }
+
+            if(senha != validacaoSenha){
+                alert("verifique se as senha estão iguais")
+            }
+            else {
+                alert('Cadastrado com sucesso')
+                window.location.href = "loginv2.html"
+            }
+        }    
+
+</script>

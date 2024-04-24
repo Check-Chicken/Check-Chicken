@@ -46,7 +46,7 @@
       Senha: <br>
       <input type="password" id="input_senha" placeholder="***********"><br><br>
 
-      <button id="botao_entrar">ENTRAR</button><br><br>
+      <button id="botao_entrar" onclick="login()">ENTRAR</button><br><br>
       <a href=""><span id="recuperacao">Esqueceu sua senha?</span></a><br>
       <a href="cadastrov2.html"><span id="cadastre-se">Não tem uma conta? Cadastre-se aqui!</span></a>
     </div><br><br>
@@ -84,20 +84,31 @@
   function login() {
     const email = input_email.value
     const senha = input_senha.value
-    for (let numero = 0; numero <= 9; numero++) {
+    let numeroSenha = false
+   
+     // Validação de email
+     if (email.indexOf("@") <= 0 || email.indexOf(".") <= 0) {
+            alert("Email inválido")
+        }
+        // Validação de senha
+        if (senha.indexOf('@') <0 && senha.indexOf('#') <0 || senha.length  < 8) {
+            alert(`Senha iválida, verifique se tem um caractere especial
+            como, @ ou #, e se tem no mínimo 8 digitos`)
+        }
+            // erro_senha.innerHTML = `A senha deve conter:<br>no mínimo 8 caracteres<br>pelo menos um caractere especial como @ ou #<br>pelo menos um número.`
+            else{for (let numero = 0; numero <= 9; numero++) {
+                if (senha.indexOf(numero.toString()) > 0) {
+                    numeroSenha = true;
+                    break;
+                    }
+                }
+            }
+            if (numeroSenha == false) {
+                alert("A senha deve conter pelomenos um número")
+            }
+            else {
+                window.location.href = "pagina-inicialv2.html"
+            }
 
-      if (senha.indexOf('@') === -1 || senha.indexOf('#') === -1 || senha.indexOf(numero) === -1 || senha.length <= 8) {
-        alert('senha Inválida')
-      }
-    }
-
-    if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
-
-      alert('Email inválido')
-    }
-    else {
-      alert('Cadastrado com sucesso')
-      window.location.href = ""
-    }
   }
 </script>

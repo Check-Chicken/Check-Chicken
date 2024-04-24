@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="container">
-                        
+
                         Email:
                         <input type="text" placeholder="Email" required id="email"><br>
 
@@ -80,57 +80,71 @@
         <form class="cadastrar" action="#">
 
             <div class="form_grupo">
-                
+
                 Nome Completo:
-                <input type="text" class="inputs" placeholder="Nome" required id="input_nomeProdutor">
+                <input type="text" class="inputs" placeholder="Nome" required id="inputNomeProdutor">
             </div><br>
             <div class="form_grupo">
-                
+
                 Data de nascimento:
-                <input type="date" class="inputs" placeholder="Data" required id="input_dataNasc">
+                <input type="date" class="inputs" placeholder="Data" required id="inputDataNasc">
             </div><br>
             <div class="form_grupo">
+
                 <label for="documento">Documento:</label>
                 <div class="input-select">
-                
-                    <input type="text" class="inputs" maxlength="15" id="documento" placeholder="XXXXXXXXX" required>
-                
-                    <select class="selects">
-                        <option value="RG">RG</option>
+
+                    <!-- Input para o usuario colocar o documento -->
+                    <input type="text" class="inputs" maxlength="15" id="inputDocumento" placeholder="XXXXXXXXX"
+                        required>
+
+                    <!-- select para o tipo de documento  -->
+                    <select class="selects" id="selectDocumento">
+                        <option value="rg">RG</option>
                         <option value="rne">RNE</option>
-                        <option value="CPF">CPF</option>
+                        <option value="cpf">CPF</option>
                     </select>
                 </div>
             </div>
             <br>
             <div class="form_grupo">
-                
+
                 Telefone para contato
-                <input type="tel" maxlength="12" class="inputs" id="telefone" placeholder="00 000000000" required>
-                
-                <select class="selects">
+                <input type="tel" maxlength="12" class="inputs" id="inputContato" placeholder="00 000000000" required>
+
+                <select class="selects" id="tipoContato">
                     <option value="celular">Celular</option>
                     <option value="fixo">Fixo</option>
                 </select>
             </div><br>
             <div class="form_grupo">
-                
+
                 Email:
-                <input type="email" class="inputs" id="input_email" placeholder="Email" required>
+                <input type="email" class="inputs" id="inputEmail" placeholder="Email">
             </div><br>
             <div class="form_grupo">
 
                 Senha:
-                <input type="password" class="inputs" id="input_senha" placeholder="*********" required>
+                <input type="password" class="inputs" id="inputSenha" placeholder="*********" required>
+            </div><br>
+            <div class="form_grupo">
+
+
+                Repita a senha:
+                <input type="password" class="inputs" id="inputSenha2" placeholder="*********" required>
                 <div id="erro_senha"></div>
             </div><br>
-            <button id="botao-cadastrar">CADASTRAR</button><br>
+
+            <button id="botao-cadastrar" onclick="concluir()">CADASTRAR</button><br>
             <div id="entrarCom">
-            <p style="text-align: center;">Entrar com:</p> 
-            <a href=""><img class="entrarCom" src="images/google.png" alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
-            <a href=""><img class="entrarCom"src="images/facebook (1).png" alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-            <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-        </div>
+                <p style="text-align: center;">Entrar com:</p>
+                <a href=""><img class="entrarCom" src="images/google.png" alt=""
+                        style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
+                <a href=""><img class="entrarCom" src="images/facebook (1).png" alt=""
+                        style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+                <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt=""
+                        style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+            </div>
 
         </form>
 
@@ -154,33 +168,63 @@
 
 <script>
 
-function concluir() {
-        const nome = input_nomeProdutor.value
-        const dataNasc = input_dataNasc.value
-        const cpf = Number(input_cpf.value)
-        const telefone = Number(input_tel.value)
-        const email = input_email.value
-        const email2 = input_email2.value
-        const senha = input_senha.value
-        const senha2 = input_senha2.value
-        // validacao variaveis
-        
-        
-        
-        for(let numero = 0; numero<= 9; numero ++ ){
-            
-            if (senha.indexOf('@') ===-1 || senha.indexOf('#') ===-1 || senha.indexOf(numero)===-1 || senha.length<=8) {
-                erro_senha.innerHTML = `A senha deve conter:<br>no mínimo 8 caracteres<br>pelo menos um caractere especial como @ ou #<br>pelo menos um número.`
-            }
+    function concluir() {
+        const nome = inputNomeProdutor.value
+        const dataNasc = inputDataNasc.value
+        const numberDocumento = (inputDocumento.value)
+        const documento = selectDocumento.value
+        const contato = (inputContato.value)
+        const tipoTelefone = tipoContato.value
+        const email = inputEmail.value
+        const senha = inputSenha.value
+        const validacaoSenha = inputSenha2.value
+        let numeroSenha = false
+
+
+        // Validação dos documentos
+        if (documento == "rg" && numberDocumento.length != 10) {
+            alert("RG inválido")
+        } else if (documento == "rne" && numberDocumento.length != 7) {
+            alert("RNE inválido")
+        } else if (documento == "cpf" && numberDocumento.length != 11) {
+            alert("CPF inválido")
         }
-        if (email.indexOf('@') ===-1 || email.indexOf('.') ===-1) {
-            
-     alert('Email inválido')
-    } 
-    else {
-        alert('Cadastrado com sucesso')
-        window.location.href = "pagina-inicial.html"
-    }
-}
+
+        // Validação dos contatos
+        if (tipoTelefone == "celular" && contato.length != 11) {
+            alert("Número de celular inválido, verifique se coloucou o DDD")
+        } else if (tipoTelefone == "fixo" && contato.length != 10) {
+            alert("Número de telefone inválido, verifique se colocou o DDD")
+        }
+
+        // Validação de email
+        if (email.indexOf("@") <= 0 || email.indexOf(".") <= 0) {
+            alert("Email inválido")
+        }
+        // Validação de senha
+        if (senha.indexOf('@') ===-1 && senha.indexOf('#') === -1 || senha.length  < 8) {
+            alert(`Senha iválida, verifique se tem um caractere especial
+            como, @ ou #, e se tem no mínimo 8 digitos`)
+        }
+            // erro_senha.innerHTML = `A senha deve conter:<br>no mínimo 8 caracteres<br>pelo menos um caractere especial como @ ou #<br>pelo menos um número.`
+            else{for (let numero = 0; numero <= 9; numero++) {
+                if (senha.indexOf(numero.toString()) > 0) {
+                    numeroSenha = true;
+                    break;
+                    }
+                }
+            }
+            if (numeroSenha == false) {
+                alert("A senha deve conter pelomenos um número")
+            }
+
+            if(senha != validacaoSenha){
+                alert("verifique se as senha estão iguais")
+            }
+            else {
+                alert('Cadastrado com sucesso')
+                window.location.href = "loginv2.html"
+            }
+        }    
 
 </script>
