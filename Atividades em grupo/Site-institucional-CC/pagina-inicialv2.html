@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style-inicio.css">
+  <title>Página Inicial</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="pagina-inicialv2.html">
+          <img src="images/logo_novo.png" alt="gfg_logo">
+        </a>
+      </div>
+
+      <div class="nav-menu hide">
+        <a href="pagina-inicialv2.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre-nos.html">Sobre Nós</a>
+
+      </div>
+      <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
+      <!-- Button to open the modal login form -->
+
+      <!-- The Modal -->
+      <div id="div_login" class="modal">
+
+
+        <!-- Modal Content -->
+        <form class="modal-content animate">
+          <div class="imgcontainer">
+            <img src="images/logo_galinha.png" alt="Avatar" class="avatar">
+          </div>
+
+          <div class="container">
+            Email:
+            <input type="text" placeholder="Email" required id="email"><br>
+
+            Senha:
+            <input type="password" placeholder="Senha" required id="senha"><br>
+
+            <button id="logar" onclick="">Entrar</button><br>
+
+            <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
+            <br>
+            <a href="cadastrov2.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
+              Não tem uma conta? Cadastre-se aqui!
+            </a>
+            </label>
+          </div>
+
+          <div class="container" style="background-color:#F8F5F0">
+
+            <button id="botao-cancelar" type="button"
+              onclick="document.getElementById('div_login').style.display='none'"
+              class="botao-cancelar">Cancelar</button>
+
+            <span class="senha"><a href="#">Esqueceu a senha?</a></span>
+
+          </div>
+        </form>
+      </div>
+
+
+
+
+
+    </nav>
+  </header>
+  <!-- mostrar slides container -->
+  <div class="slideshow-container">
+
+
+    <div class="mySlides fade">
+
+      <div class="textoInicial">
+        <div class="imagem-inicio">
+          <img src="images/fundo-inicio.jpg">
+
+          <p id="textojust" class="textos"><span><span class="verde"> <b>Economize até 50%</b> </span> do <span
+                class="laranja">lote de galinhas </span> de corte. Veja como podemos ajudar através de nosso simulador!
+              <br><button id="simulador" onclick="simulador()">Simulador</button></p></span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="mySlides fade">
+
+      <img src="images/fundo-galinhas.jpg" style="width:100%">
+
+    </div>
+
+    <div class="mySlides fade">
+
+      <img src="images/fundo-galo.jpg" style="width:100%">
+
+    </div>
+
+    <!-- setas de ir e voltar -->
+    <a class="prev" onclick="passarSlides(-1)">&#10094;</a>
+    <a class="next" onclick="passarSlides(1)">&#10095;</a>
+  </div>
+
+
+
+
+
+</body>
+<footer>
+  <div id="div_direitos">
+    <img src="images/facebook.png" alt="" width="35vw">
+    <img src="images/instagram.png" alt="" width="30vw" style="color: white;">
+
+    <br>
+    Info * Suporte <br><br>
+    Política de privacidade * Termos de uso <br><br>
+    <span style="color: #EBB894;"> © 2023 by CheckChicken </span>
+
+  </div>
+</footer>
+
+</html>
+<script>
+
+  // controles para trocar de paginas
+  function simulador() {
+    window.location.href = "calculadora.html"
+  }
+  function inicio() {
+    window.location.href = "pagina-inicialv2.html";
+  }
+  function servicos() {
+    window.location.href = "pagina-inicialv2.html";
+  }
+  function sobre() {
+    window.location.href = "sobre-nos.html";
+  }
+  function login() {
+    window.location.href = "loginv2.html";
+  }
+
+
+
+  let paginaSlide = 1;
+
+  showSlides(paginaSlide);
+
+  // controles para passar slides 
+  function passarSlides(numeroSlide) {
+    mostrarSlides(paginaSlide += numeroSlide);
+  }
+
+
+  function mostrarSlides(numeroSlide) {
+    let contagem;
+    let slides = document.getElementsByClassName("mySlides");
+
+
+    if (numeroSlide > slides.length) {
+      paginaSlide = 1
+    }
+    if (numeroSlide < 1) {
+      paginaSlide = slides.length
+    }
+    for (let contagem = 0; contagem < slides.length; contagem++) {
+      slides[contagem].style.display = "none";
+    }
+
+    slides[paginaSlide - 1].style.display = "block";
+
+  }
+
+
+
+</script>
