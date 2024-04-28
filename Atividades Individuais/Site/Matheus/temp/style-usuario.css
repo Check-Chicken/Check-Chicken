@@ -22,9 +22,9 @@ body {
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    margin: 10px;
-    height: 40vh;
-    width: 10vw;
+    margin: 50px;
+    height: 60%;
+    width: 11%;
     list-style: none;
     background-color: #f4f4f4;
 }
@@ -33,7 +33,12 @@ body {
     display: flex;
     justify-content: center;
     margin: 5px;
-    height: 35%;
+    height: 30%;
+}
+
+.imagem_perfil {
+    border-radius: 180px;
+    height: max(100%, 100%);
 }
 
 .text {
@@ -56,11 +61,6 @@ body {
 
 .bottom {
     margin: 10%;
-}
-
-.imagem_perfil {
-    border-radius: 360px;
-    height: min(100%, 100%);
 }
 
 .nav {
