@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="maine1">
+            <div class="parte1">
+            <span>Dados do Aviario 33</span>
+        </div>
+        </div>
+        
+
+        <div class="maine2">
+            <div class="parte2">
+                <span>TEMPERATURA ATUAL</span>
+            </div>
+
+            <div class="parte3">
+                <span>TEMPERATURA MEDIA <br> MENSAL</span>
+            </div>
+
+            <div class="parte4">
+                <span>UMIDADE MEDIA <br> MENSAL</span>
+            </div>
+
+            <div class="parte5">
+                <span>SITUAÇÃO</span>
+            </div>
+        </div>
+
+        <div class="maine3">
+            <div class="table1">
+                <canvas id="tabela1"></canvas>
+            </div>
+            <div class="parte6">
+                <span>Aviario 33 Dados Sensor de Temperatura</span>
+                <div class="parte61">
+                    <span>Sensor Temperatura</span>
+                    <div class="cor">
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="maine4">
+            <div class="table2">
+                <canvas id="tabela2"></canvas>
+            </div>
+            <div class="parte7">
+                <span>Aviario 33 Dados Sensor de Umidade</span>
+                <div class="parte71">
+                    <span>Sensor Umidade</span>
+                    <div class="cor2">
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    const linha = document.getElementById('tabela1');
+    const coluna = document.getElementById('tabela2');
+  
+    new Chart(linha, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 0, 0)',
+          borderColor: 'rgb(255, 0, 100)',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 2
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 100, 255)',
+          borderColor: 'rgb(0, 100, 255)',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 2
+        }
+    ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 20,
+          }
+        }
+      }
+    });
+
+    new Chart(coluna, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura Media',
+                backgroundColor: 'rgb(255, 0, 100)',
+                borderColor: 'rgb(255, 0, 0)',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1
+            },{
+                label: 'Umidade Media',
+                backgroundColor: 'rgb(0, 100, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+    });
+</script>
