@@ -38,7 +38,7 @@ body {
 
 .imagem_perfil {
     border-radius: 180px;
-    height: max(100%, 100%);
+    height: min(100%, 100%);
 }
 
 .text {
@@ -70,6 +70,7 @@ body {
     height: 100%;
     width: 13%;
     background-color: white;
+    transition: 2s;
 }
 
 .logo {
@@ -92,7 +93,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: start;
     list-style: none;
     width: 80%;
     height: 30%;
@@ -112,6 +113,18 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     color: #ffb886;
+    transition: 2s;
+    cursor: pointer;
+}
+
+.nav_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 .infos {

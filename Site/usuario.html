@@ -10,26 +10,30 @@
 
 <body>
     <div class="box">
-        <div class="nav">
-            <div>
+        <div id="div_nav" class="nav">
+            <div id="navImg">
                 <img class="logo" src="images/Logo.png">
             </div>
             <div class="options">
+                <div class="navConjunto" onclick="retrair()">
+                    <span class="nav_menu navText">☰</span>
+                    <span id="menuText" class="navText">Menu</span>
+                </div>
                 <div class="navConjunto">
                     <img class="navIcon" src="images/Dash.png">
-                    <span class="navText">Dashboard</span>
+                    <span id="menuDash" class="navText">Dashboard</span>
                 </div>
                 <div class="navConjunto">
                     <img class="navIcon" src="images/Notification.png">
-                    <span class="navText">Notificações</span>
+                    <span id="menuNot" class="navText">Notificações</span>
                 </div>
                 <div class="navConjunto">
                     <img class="navIcon" src="images/Config.png">
-                    <span class="navText">Definições</span>
+                    <span id="menuDef" class="navText">Definições</span>
                 </div>
             </div>
         </div>
-        <div  id="div_menu" class="menu">
+        <div id="div_menu" class="menu">
             <div onclick="expandir()" class="button">
                 <img class="imagem_perfil"
                     src="https://i.pinimg.com/564x/03/ac/c0/03acc030c6700dfd274d1ef20e70609b.jpg">
@@ -74,6 +78,26 @@
 
 <script>
     function expandir() {
-        div_menu.style.display = "block";
+        div_menu.style.display = "flex";
+    }
+
+    function retrair() {
+        let retratil = div_nav.style.width;
+
+        if (retratil != "3%") {
+            div_nav.style.width = "3%"
+            navImg.style.display = "none"
+            menuText.style.display = "none"
+            menuDash.style.display = "none"
+            menuNot.style.display = "none"
+            menuDef.style.display = "none"
+        } else {
+            div_nav.style.width = "13%"
+            navImg.style.display = "block"
+            menuText.style.display = "block"
+            menuDash.style.display = "block"
+            menuNot.style.display = "block"
+            menuDef.style.display = "block"
+        }
     }
 </script>
