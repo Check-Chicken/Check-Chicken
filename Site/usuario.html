@@ -9,7 +9,9 @@
 </head>
 
 <body>
+    <!-- Div geral -->
     <div class="box">
+        <!-- Div navbar lateral -->
         <div id="div_nav" class="nav">
             <div id="navImg">
                 <img class="logo" src="images/Logo.png">
@@ -33,11 +35,28 @@
                 </div>
             </div>
         </div>
+
+       
+        <div class="menuPai">
+            
+        <div class="imagem">
+            <img class="imagem_perfil"
+                src="https://i.pinimg.com/564x/03/ac/c0/03acc030c6700dfd274d1ef20e70609b.jpg">
+        </div>
+        
+        <div class="button" onclick="expandir()">
+            <label class="botao">
+                <input type="checkbox" id="input_checkBox">
+                  <svg class="chevron-right" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
+                  <svg class="chevron-down" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+              </label>
+
+        </div>
+
+        <!-- Menu do usuario -->
         <div id="div_menu" class="menu">
-            <div onclick="expandir()" class="button">
-                <img class="imagem_perfil"
-                    src="https://i.pinimg.com/564x/03/ac/c0/03acc030c6700dfd274d1ef20e70609b.jpg">
-            </div>
+            <br>
+            <br>
             <h4 class="text">Configurações pessoais</h4>
             <div class="config text">
                 <li>Editar empresa</li>
@@ -49,6 +68,7 @@
                 <li class="logout">Sair</li>
                 <li>email@email.com</li>
             </div>
+        </div>
         </div>
     </div>
 
@@ -78,7 +98,13 @@
 
 <script>
     function expandir() {
+        const butao = input_checkBox
+       
+        if(butao.checked){
         div_menu.style.display = "flex";
+        }else{
+            div_menu.style.display = "none";
+        }
     }
 
     function retrair() {
