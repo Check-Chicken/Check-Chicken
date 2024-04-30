@@ -42,7 +42,7 @@ body {
     justify-content: center;
     margin: 5px;
     height: 30%;
-    transform: translate( -40%, 120%);
+    transform: translate( -36%, 132%);
 }
 
 /*------ Settings ------*/
@@ -59,23 +59,23 @@ body {
     fill: var(--color);
   }
   
-  .botao .chevron-right {
+  .botao .direita {
     position: absolute;
-    animation: keyframes-return .5s;
+    animation: botao_direita .5s;
   }
   
-  .botao .chevron-down {
+  .botao .baixo {
     position: absolute;
     display: none;
-    animation: keyframes-fill .5s;
+    animation: botao_baixo .5s;
   }
   
   /* Check botão */
-  .botao input:checked ~ .chevron-right {
+  .botao input:checked ~ .direita{
     display: none;
   }
   
-  .botao input:checked ~ .chevron-down {
+  .botao input:checked ~ .baixo {
     display: block;
   }
   
@@ -89,7 +89,7 @@ body {
   }
   
  /* Animação do botão */
-  @keyframes keyframes-fill {
+  @keyframes botao_baixo {
     0% {
       transform: rotate(-90deg) scale(0);
       opacity: 0;
@@ -100,7 +100,7 @@ body {
     }
   }
   
-  @keyframes keyframes-return {
+  @keyframes botao_direita {
     0% {
       transform: rotate(90deg) scale(0);
       opacity: 0;
@@ -115,7 +115,7 @@ body {
 .imagem{
     display: block;
     height: min(13%, 100%);
-    transform: translate(55%, 443%);
+    transform: translate(25%, 443%);
 }
 .imagem_perfil {
     border-radius: 180px;
