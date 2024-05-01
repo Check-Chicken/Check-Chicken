@@ -5,7 +5,9 @@ CREATE TABLE empresa (
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45),
 	cnpj CHAR(14),
-	telefone VARCHAR(20)
+	DDD CHAR(2),
+    prefixo CHAR(5),
+    sufixo CHAR(4)
 );
 
 CREATE TABLE endereco (
@@ -20,21 +22,24 @@ CREATE TABLE endereco (
 
 CREATE TABLE parametro (
 	idParametro INT PRIMARY KEY AUTO_INCREMENT,
-	idade VARCHAR(20),
+	idade VARCHAR(3),
 	tempMax INT,
 	tempMin INT,
 	umidadeMax INT,
 	umidadeMin INT
 );
 
-CREATE TABLE aviario (
-	idAviario INT AUTO_INCREMENT,
+CREATE TABLE lote (
+	idLote INT AUTO_INCREMENT,
 	tipo VARCHAR(20),
-	idade VARCHAR(10),
-	fkEmpresa INT,
-		CONSTRAINT PkAviarioEmpresa PRIMARY KEY (idAviario, fkEmpresa),
-		CONSTRAINT FkAviarioEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
-	fkParametro INT, CONSTRAINT FkAviarioParametros FOREIGN KEY (fkParametro) REFERENCES parametro(idParametro)
+	dtLote DATE,
+	fkEndereco INT,
+    fkEmpresa INT,
+		CONSTRAINT PkLoteEndereco PRIMARY KEY (idLote, fkEndereco, fkEmpresa),
+		CONSTRAINT FkLoteEmpresaEndereco FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
+        CONSTRAINT fkLoteEndereco FOREIGN KEY (fkEndereco) REFERENCES endereco(idEndereco),
+	fkParametro INT,
+		CONSTRAINT FkAviarioParametros FOREIGN KEY (fkParametro) REFERENCES parametro(idParametro)
 );
 
 CREATE TABLE sensor (
