@@ -16,6 +16,7 @@ p {
   color: black;
   font-size: 25px;
   font-weight: 300;
+ 
 }
 
 .verde {
@@ -264,8 +265,8 @@ footer {
 /* botao login */
 
 /* Full-width input fields */
-#email,
-#senha {
+#input_email,
+#input_senha {
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -299,7 +300,9 @@ button {
   font-size: 20px;
   position: relative;
   cursor: pointer;
+ 
 }
+
 
 button:hover {
   opacity: 0.8;

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  
+
   <header id="id_header">
     <nav class="navbar">
       <div class="logo">
@@ -42,19 +42,24 @@
         <!-- Modal Content -->
         <form class="modal-content animate">
           <div class="imgcontainer">
-            <img src="images/logo_galinha.png" alt="Avatar" class="avatar">
+            <img src="images/logo_galinha.png" alt="Logo" class="avatar">
           </div>
 
           <div class="container">
             Email:
-            <input type="text" placeholder="Email" required id="email"><br>
+            <input type="text" placeholder="Email" id="input_email"><br>
 
             Senha:
-            <input type="password" placeholder="Senha" required id="senha"><br>
+            <input type="password" placeholder="Senha" id="input_senha"><br>
+            <div id="div_resultadoLogin"></div>
 
-            <button id="logar" onclick="">Entrar</button><br>
 
-            <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
+            <button id="logar" type="button" onclick="telaUsuario()">Entrar</button> <br>
+
+
+
+
+            <input type="checkbox" checked="checked"> Lembre-se de mim
             <br>
             <a href="cadastro-empresa.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
               Não tem uma conta? Cadastre sua empresa aqui!
@@ -112,9 +117,10 @@
   </div>
 
   <!-- servicos -->
-  <h1 id="servicos" style="text-align: center; color: #FFA05D; font-size: 42px; background-color: #F5F4F9; padding-top: 20px;">Serviços
+  <h1 id="servicos"
+    style="text-align: center; color: #FFA05D; font-size: 42px; background-color: #F5F4F9; padding-top: 20px;">Serviços
   </h1>
-  <div  class="servicos">
+  <div class="servicos">
     <div id="servico1" class="servicos">
       <img src="images/icone-servicos1.png">
       <p style="color: white; font-weight: bold;">Gerenciamento de Informações</p><br>
@@ -134,25 +140,33 @@
   <!-- Sobre Nós -->
   <h2 id="sobre-nos" style="text-align: center; color: #FFA05D; font-size: 42px; padding-top: 20px;">Sobre Nós</h2>
   <div id="div_sobre-nos">
-  <img id="galinha_sobre-nos" src="images\galinha_sobrenos2.png">
-  
-  <p style="font-size: 24px;"><span style="font-weight: bold; font-size: 36px; color: #5db868;">Check</span> <span style="font-weight: bold; font-size: 36px; color: #4a7a50;">Chicken</span> <br><br>
+    <img id="galinha_sobre-nos" src="images\galinha_sobrenos2.png">
 
-    Somos uma empresa de prestação de serviços focados em<span style="color: #FFA05D; font-weight: 400;">  monitoramento e análise de dados</span> , a fim de promover o desenvolvimento dos negócios da empresa e da empresa em si. <br> <br>
-  Prestamos serviços para os aviários convencionais de <span style="color: #FFA05D; font-weight: 400;">todo 
-    o Brasil</span> focando naquelas que criam as galinhas para corte. <br> <br>
-    A <span style="color: #FFA05D; font-weight: 400;">Avicultura</span> é a criação de aves visando a produção de alimentos principalmente carne e ovos, sendo o frango a principal espécie criada.</p>
+    <p style="font-size: 24px;"><span style="font-weight: bold; font-size: 36px; color: #5db868;">Check</span> <span
+        style="font-weight: bold; font-size: 36px; color: #4a7a50;">Chicken</span> <br><br>
+
+      Somos uma empresa de prestação de serviços focados em<span style="color: #FFA05D; font-weight: 400;">
+        monitoramento e análise de dados</span> , a fim de promover o desenvolvimento dos negócios da empresa e da
+      empresa em si. <br> <br>
+      Prestamos serviços para os aviários convencionais de <span style="color: #FFA05D; font-weight: 400;">todo
+        o Brasil</span> focando naquelas que criam as galinhas para corte. <br> <br>
+      A <span style="color: #FFA05D; font-weight: 400;">Avicultura</span> é a criação de aves visando a produção de
+      alimentos principalmente carne e ovos, sendo o frango a principal espécie criada.</p>
 
 
   </div>
   <!-- formulario -->
-  <h2 id="contato" style="text-align: center; color: #FFA05D; font-size: 42px; padding-top: 20px; margin-bottom: 5vh;">Contato</h2>
+  <h2 id="contato" style="text-align: center; color: #FFA05D; font-size: 42px; padding-top: 20px; margin-bottom: 5vh;">
+    Contato</h2>
   <div id="form_mapa" class="form_mapa_container">
     <div>
-      <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2881607958625!2d-46.66425002467007!3d-23.55809197880215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2a5270055%3A0x3c7ea4f4c7d51fb6!2sRua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!5e0!3m2!1spt-BR!2sbr!4v1714527720482!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe id="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2881607958625!2d-46.66425002467007!3d-23.55809197880215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2a5270055%3A0x3c7ea4f4c7d51fb6!2sRua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!5e0!3m2!1spt-BR!2sbr!4v1714527720482!5m2!1spt-BR!2sbr"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div id="id_form" class="formulario">
-      <p><span style="color: #0B6013; font-size: 44px; font-weight: 600;">Fale </span><span style="color: #5db868;  font-size: 44px; font-weight: 600;">Conosco</span></p>
+      <p><span style="color: #0B6013; font-size: 44px; font-weight: 600;">Fale </span><span
+          style="color: #5db868;  font-size: 44px; font-weight: 600;">Conosco</span></p>
       <br><br>
       <form>
         <div class="form_grupo">
@@ -168,12 +182,12 @@
         <button id="form_button" onclick="enviarMensagem()">Enviar</button>
       </form>
     </div>
-  
-   
-    
+
+
+
   </div>
-  
-  
+
+
 </body>
 <!-- Footer -->
 <footer>
@@ -181,40 +195,40 @@
     <div class="infos footerText">
       <img src="images/facebook.png" style="width: 2vw;">
       <img src="images/instagram.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 2vw;">
-      <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: white;" >|</p>
-        <div class="endereco">
-            <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
-        </div>
-       
-          <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: white;">|</p>
-        
-        <div class="contato">
-          
-            <a href="usuario.html" style="font-size: 24px; color: white;">www.checkchicken.com.br</a>
-            <p style="font-size: 20px; color: white;">(11) 2536-6498</p>
-            <p style="font-size: 16px; color:#d0ad00;">© 2024 by CheckChicken</p>
-            
-        </div>
+      <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: white;">|</p>
+      <div class="endereco">
+        <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+      </div>
 
-        <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter; color: white;">|</p>
-        <div class="pages">
-          
-            <li>Política e privacidade</li> |
-            
-            <li>Termos de uso</li> |
-            <li>Info</li> |
-            <li>Suporte</li>
-        </div>
+      <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: white;">|</p>
+
+      <div class="contato">
+
+        <a href="usuario.html" style="font-size: 24px; color: white;">www.checkchicken.com.br</a>
+        <p style="font-size: 20px; color: white;">(11) 2536-6498</p>
+        <p style="font-size: 16px; color:#d0ad00;">© 2024 by CheckChicken</p>
+
+      </div>
+
+      <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter; color: white;">|</p>
+      <div class="pages">
+
+        <li>Política e privacidade</li> |
+
+        <li>Termos de uso</li> |
+        <li>Info</li> |
+        <li>Suporte</li>
+      </div>
     </div>
     <div class="infos2">
 
     </div>
-</div>
+  </div>
 </footer>
 
 <!-- Botao voltar ao topo -->
 <a href="#id_header">
-<button id="botao_topo" title="Voltar ao topo">&#8679;</button>
+  <button id="botao_topo" title="Voltar ao topo">&#8679;</button>
 </a>
 
 </html>
@@ -228,13 +242,38 @@
   function simulador() {
     window.location.href = "simulador_financeiro.html"
   }
-  
+// Validação de login
+  function telaUsuario() {
+    const email = input_email.value;
+    const senha = input_senha.value;
 
+    let emailArroba = email.indexOf("@")
+    let emailPonto = email.indexOf(".")
+
+    let senhaArroba = senha.indexOf("@")
+    let senhaTag = senha.indexOf("#")
+
+
+    if (email == "" || senha == "") {
+      div_resultadoLogin.innerHTML = `<p style="color: red; font-size: 20px;">Preencha todos os campos</p>`
+    } else {
+      if (emailArroba <= 0 || emailPonto <= 0) {
+        div_resultadoLogin.innerHTML = `<p style="color: red; font-size: 20px;">O email deve conter @ e .</p>`
+      } else if(senhaArroba <=0 && senhaTag <=0 || senha.length<8){
+        div_resultadoLogin.innerHTML = `<p style="color: red; font-size: 20px;">A senha deve conter @ ou # e ter pelo menos 8 caracteres</p>`
+      }
+     else {
+        window.location.href = "usuario.html"
+
+      }
+    }
+
+  }
 
 
   let paginaSlide = 1;
 
-  showSlides(paginaSlide);
+  mostrarSlides(paginaSlide);
 
   // controles para passar slides 
   function passarSlides(numeroSlide) {
