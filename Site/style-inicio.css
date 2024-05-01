@@ -179,7 +179,8 @@ footer {
   align-items: center;
   height: 20vh;
   width: 100%;
-  background-color: #719f7d;
+  background-color: #305139;
+  color: white;
 }
 .text {
   
@@ -193,6 +194,7 @@ footer {
   align-items: center;
   height: 60%;
   width: 100%;
+  color: white;
 }
 
 .contato {
@@ -201,19 +203,19 @@ footer {
   align-items: center;
   margin-left: 10vw;
   margin-right: 10vw;
+  
 }
 
 .pages {
   list-style: none;
   display: flex;
   gap: 10px;
+  
 }
 
 
 
-#div_direitos {
-  position: absolute;
-}
+
 
 .imagem-inicio {
   position: relative;
