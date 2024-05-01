@@ -11,18 +11,68 @@
     <title>Sobre Nós</title>
 </head>
 <body>
-    <div class="conteiner">
-        <header>
-            <div class="header">
-                <img class="logo" src="images\logo_novo.png">
-                <div class="botoes">
-                    <button id="inicio" onclick="inicio()">Início</button>
-                    <button id="servicos" onclick="servicos()">Serviços</button>
-                    <button id="sobre" onclick="sobre()">Sobre nós</button>
-                    <button id="login" onclick="login()">Login</button>
-                </div>
-            </div>
-        </header>
+    <header>
+        <nav class="navbar">
+          <div class="logo">
+            <a href="inicio.html">
+              <img src="images/logo_novo.png" alt="gfg_logo">
+            </a>
+          </div>
+    
+          <div class="nav-menu hide">
+            <a href="inicio.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="sobre-nos.html">Sobre Nós</a>
+    
+          </div>
+          <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
+          <!-- Button to open the modal login form -->
+    
+          <!-- The Modal -->
+          <div id="div_login" class="modal">
+    
+    
+            <!-- Modal Content -->
+            <form class="modal-content animate">
+              <div class="imgcontainer">
+                <img src="images/logo_galinha.png" alt="Avatar" class="avatar">
+              </div>
+    
+              <div class="container">
+                Email:
+                <input type="text" placeholder="Email" required id="email"><br>
+    
+                Senha:
+                <input type="password" placeholder="Senha" required id="senha"><br>
+    
+                <button id="logar" onclick="">Entrar</button><br>
+    
+                <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
+                <br>
+                <a href="cadastro-empresa.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
+                  Não tem uma conta? Cadastre sua empresa aqui!
+                </a>
+                </label>
+              </div>
+    
+              <div class="container" style="background-color:#F8F5F0">
+    
+                <button id="botao-cancelar" type="button"
+                  onclick="document.getElementById('div_login').style.display='none'"
+                  class="botao-cancelar">Cancelar</button>
+    
+                <span class="senha"><a href="#">Esqueceu a senha?</a></span>
+    
+              </div>
+            </form>
+          </div>
+    
+    
+    
+    
+    
+        </nav>
+      </header>
     <div id="div_galinha">
         <img class="imagemGalinha" src="images\galinha_sobrenos.png">
         <div class="texto">
@@ -41,10 +91,10 @@
 </html>
 <script>
     function inicio() {
-    window.location.href = "pagina-inicial.html";
+    window.location.href = "inicio.html";
     }
     function servicos() {
-    window.location.href = "pagina-inicial.html";
+    window.location.href = "servicos.html";
     }
     function sobre() {
     window.location.href = "sobre-nos.html";

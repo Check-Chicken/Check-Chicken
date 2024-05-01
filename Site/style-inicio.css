@@ -10,8 +10,7 @@ body {
   background-color: white;
 }
 
-a,
-p {
+a, p {
   text-decoration: none;
   color: black;
   font-size: 25px;
@@ -25,8 +24,8 @@ p {
 .laranja {
   color: #FC8939;
 }
-#entrar {
 
+#entrar {
   border: 0px;
   border-radius: 15px;
   background-color: #FFA05D;
@@ -37,10 +36,10 @@ p {
   position: relative;
   cursor: pointer;
 }
+
 #entrar:hover {
   background-color: rgb(252, 190, 147);
 }
-
 
 /* navbar styling */
 .navbar {
@@ -49,9 +48,7 @@ p {
   justify-content: space-around;
   align-items: center;
   background: #F5F4F9;
-
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.07);
-
 }
 
 /* logo style */
@@ -108,7 +105,6 @@ p {
   }
 }
 
-
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
@@ -156,7 +152,6 @@ p {
 .next:hover {
   background-color: rgb(255, 214, 184);
   border-radius: 50px;
-
 }
 
 /* animação dos slides (fade) */
@@ -169,7 +164,6 @@ p {
   from {
     opacity: 0.4;
   }
-
   to {
     opacity: 1;
   }
@@ -191,10 +185,9 @@ footer {
   display: flex;
 }
 
-#div_direitos{
+#div_direitos {
   position: absolute;
 }
-
 
 .imagem-inicio {
   position: relative;
@@ -211,7 +204,6 @@ footer {
   text-align: center;
   color: #000;
   /* ajuste a cor do texto conforme necessário */
-
 }
 
 #textojust {
@@ -221,14 +213,9 @@ footer {
   margin-left: 500px;
   position: fixed;
   font-size: 30px;
-
 }
 
-
-
-
 #simulador {
-
   border: none;
   border-radius: 15px;
   background-color: #FFA05D;
@@ -246,9 +233,7 @@ footer {
   background-color: rgb(252, 190, 147);
 }
 
-
 /* botao login */
-
 
 /* Full-width input fields */
 #email, #senha {
@@ -261,10 +246,7 @@ footer {
   border-radius: 5px;
   justify-content: center;
   align-items: center;
-  
-  
 }
-
 
 /* Set a style for all buttons */
 button {
@@ -276,13 +258,12 @@ button {
   cursor: pointer;
   width: 40%;
   border-radius: 10px;
-  
 }
 
 #logar {
   border: 0px;
   border-radius: 15px;
-  background-color:#04AA6D;
+  background-color: #04AA6D;
   color: white;
   width: 8vw;
   height: 45px;
@@ -290,6 +271,7 @@ button {
   position: relative;
   cursor: pointer;
 }
+
 button:hover {
   opacity: 0.8;
 }
@@ -321,7 +303,6 @@ img.avatar {
 
 span.senha {
   float: right;
-
 }
 
 /* The Modal (background) */
@@ -333,13 +314,12 @@ span.senha {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   padding-top: 60px;
   text-align: center;
   align-items: center;
   justify-content: center;
-  
 }
 
 /* Modal Content/Box */
@@ -350,7 +330,6 @@ span.senha {
   width: 50%; /* Could be more or less, depending on screen size */
 }
 
-
 .close:hover,
 .close:focus {
   color: red;
@@ -360,16 +339,149 @@ span.senha {
 /* Add Zoom Animation */
 .animate {
   -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+  animation: animatezoom 0.6s;
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
-  
+
 @keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
+
+/* Serviços */
+.servicos {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #f5f4f9;
+}
+
+#servico1 {
+  padding: 15px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background-color: #719f7d;
+  width: 30vw;
+  height: 50vh;
+  justify-content: center;
+  margin-bottom: 15vh;
+  border-radius: 20px;
+  margin-left: 10vw;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 10vh;
+}
+
+#servico2 {
+  padding: 15px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  background-color: #719f7d;
+  width: 30vw;
+  height: 50vh;
+  justify-content: center;
+  margin-bottom: 15vh;
+  border-radius: 20px;
+  margin-right: 10vw;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-top: 10vh;
+}
+
+/* Formulario */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f4f9;
+  width: 30vw; /* Reduzindo um pouco a largura para acomodar melhor o conteúdo */
+  height: 70vh;
+  padding: 20px;
+ margin-right: 10vw;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+ 
+}
+
+.form_grupo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3vh;
+}
+
+#form_telefone,
+#form_nome {
+  width: 13vw;
+}
+
+.inputs_form {
+  padding: 10px;
+  width: 100%;
+}
+
+#form_mensagem {
+  height: 20vh; 
+  padding-top: 10px; 
+}
+
+#form_mensagem input {
+  width: 100%;
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+#form_button {
+  display: flex;
+  background-color: #fc8939;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  margin-top: 7vh;
+  margin-left: 35%;
+  font-size: 20px;
+}
+
+/* Mapa */
+#mapa {
+  width: 30vw;
+  height: 70vh;
+  margin-top: 10vh;
+  margin-left: 19vw;
+  margin-right: 1vw;
+ 
+  
+}
+
+
+#form_mapa {
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  border: 0;
+
+  
+}/* Contêiner para o formulário e o mapa */
+.form_mapa_container {
+  display: flex; /* Para os elementos ficarem lado a lado */
+}
+
+#id_form {
+  justify-content: center;
+  width: 25%; /* Define a largura do formulário */
+}
+
 

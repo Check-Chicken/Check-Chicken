@@ -1,194 +1,308 @@
-/* style-sobrenos */
-body {
-    margin: 0px;
-    font-family: "Big Shoulders Display", sans-serif;
-    font-weight: bold;
-    font-style: normal;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+  }
+  
+  body {
+    font-family: poppins;
+    background-color: white;
+  }
+  
+  a,
+  p {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-weight: 300;
+  }
+  
+  .verde {
+    color: #15CE28;
+  }
+  
+  .laranja {
+    color: #FC8939;
+  }
+  #entrar {
+  
+    border: 0px;
+    border-radius: 15px;
+    background-color: #FFA05D;
+    color: white;
+    width: 8vw;
+    height: 45px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  #entrar:hover {
+    background-color: rgb(252, 190, 147);
+  }
+  
+  
+  /* navbar styling */
+  .navbar {
     display: flex;
-    font-size: 24px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #49794F;
-    background: linear-gradient(#49794F,#5CB767 );
-}
-.logo {
-    width: 10vw;
-    height: 10vh;
-    padding: 25px;
-    display: block;
-    
-}
-.header{
-    display: flex;
-    justify-content: flex-start;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background: #F5F4F9;
+  
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.07);
+  
+  }
+  
+  /* logo style */
+  .logo img {
+    width: 155px;
+    height: 75px;
+    margin-right: 40vw;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    width: 94%;
+    left: 18px;
     background-color: #F8F5F0;
-    width: 100vw;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-footer{
+  }
+  
+  .nav-menu a {
+    display: block;
+    text-align: center;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #FFA05D;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  /* Desktop view */
+  @media screen and (min-width: 600px) {
+    .navbar {
+      display: flex;
+      justify-content: space-around;
+    }
+  
+    .nav-menu {
+      display: block;
+      position: static;
+      width: auto;
+      margin-right: 20px;
+      background: none;
+    }
+  
+    .nav-menu a {
+      display: inline-block;
+      padding: 15px 20px;
+    }
+  
+    .nav-menu a:hover {
+      background-color: #ffddc5;
+      border-radius: 10px;
+    }
+  }
+
+/* Conteúdo do body */
+#div_galinha{
+    display: flex;
     width: 100%;
-    height: 15vh;
+    height: 100%;
+    background-color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  footer {
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
     background-color: #4A7A57;
     align-items: center;
-    display: flex;
     text-align: center;
     justify-content: center;
-    font-weight: lighter;
-    
-}
-#div_direitos{
-    font-size: 24px;
-    color: white;
-    font-family: Montserrat;
-    align-items: center;
+    font-weight: 300;
+    font-size: 15px;
+    color: #b7c9b5;
     display: flex;
+  }
+  
+  #div_direitos{
+    position: absolute;
+  }
+  
+  
+  .imagem-inicio {
+    position: relative;
+    transform: translate(0%, 0%);
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .textos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-}
-#inicio {
-    width: 10vw;
-    padding: 20px;
-    margin-top: 35px;
-    background-color: #49794F;
-    border-radius: 30px;
-    color: white;
-    font-family: "Big Shoulders Display", sans-serif;
-    border: none;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    font-family: Montserrat;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: center;
-    cursor: pointer;
-
-}
-
-#servicos {
-    width: 10vw;
-    margin-left: 50px;
-    padding: 20px;
-    margin-top: 35px;
-    background-color: #49794F;
-    border-radius: 30px;
-    color: white;
-    font-family: "Big Shoulders Display", sans-serif;
-    border: none;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    font-family: Montserrat;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: center;
-    cursor: pointer;
-
-}
-
-#sobre {
-    width: 10vw;
-    margin-left: 50px;
-    padding: 20px;
-    margin-top: 1vh;
-    background-color: #49794F;
-    border-radius: 30px;
-    color: white;
-    font-family: "Big Shoulders Display", sans-serif;
-    border: none;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    font-family: Montserrat;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: center;
-    cursor: pointer;
-
-}
-
-#login {
-    width: 10vw;
-    margin-left: 750px;
-    padding: 20px;
-    margin-top: 35px;
-    background-color: #49794F;
-    border-radius: 30px;
-    color: white;
-    font-family: "Big Shoulders Display", sans-serif;
-    border: none;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    font-family: Montserrat;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: center;
-    cursor: pointer;
-}
-
-
-#div_galinha {
-    display: flex;
-    font-family: Montserrat;
+    color: #000;
+    /* ajuste a cor do texto conforme necessário */
+  
+  }
+  
+  #textojust {
     font-size: 40px;
-    font-weight: 700;
-    line-height: 100px;
-    text-align: left;
-    justify-content: flex-start;
+    width: 500px;
+    height: 400px;
+    margin-left: 500px;
+    position: fixed;
+    font-size: 30px;
+  
+  }
+/* botao login */
+
+
+/* Full-width input fields */
+#email, #senha {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    justify-content: center;
     align-items: center;
     
-}
-
-.imagemGalinha {
-    width: 652px;
-    height: 736px; 
-    border-radius: 0px 50px 50px 0px;
-    margin-top: 25px;
-    margin-right: 20px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     
-
-}
-
-.titulo {
-    font-family: Montserrat;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 100px;
-    text-align: left;
-    color: #FC8939;
-    background-color: #49794F;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    width: 530px;
-    text-shadow: #c46b2c 0 -1px;
-    padding: 10px;
-    
-}
-
-.textoGalinha {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 40px;
-    text-align: left;
-    width: 700px;
-    padding: 20px;
+  }
+  
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
     color: white;
-    text-shadow: #49794F 0 -1px;
-    background-color: #49794F;
-    border-radius: 20px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    border-radius: 10px;
     
-}
-#inicio:hover{
-    background-color: #5CB767;
-}
-#servicos:hover{
-    background-color: #5CB767;
-}
-#sobre:hover{
-    background-color: #5CB767;
-}
-#login:hover{
-    background-color: #5CB767;
-}
-b{
-    color:#FC8939;
-}
+  }
+  
+  #logar {
+    border: 0px;
+    border-radius: 15px;
+    background-color:#04AA6D;
+    color: white;
+    width: 8vw;
+    height: 45px;
+    font-size: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .botao-cancelar {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+    transform: translateX(-300%);
+    border-radius: 10px;
+  }
+  
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.senha {
+    float: right;
+  
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #F8F5F0;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+    

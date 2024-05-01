@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style-inicio.css">
+  <title>Página Inicial</title>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="pagina-inicialv2.html">
+          <img src="images/logo_novo.png" alt="gfg_logo">
+        </a>
+      </div>
+
+      <div class="nav-menu hide">
+        <a href="pagina-inicialv2.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre-nos.html">Sobre Nós</a>
+
+      </div>
+      <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
+      <!-- Button to open the modal login form -->
+
+      <!-- The Modal -->
+      <div id="div_login" class="modal">
+
+
+        <!-- Modal Content -->
+        <form class="modal-content animate">
+          <div class="imgcontainer">
+            <img src="images/logo_galinha.png" alt="Avatar" class="avatar">
+          </div>
+
+          <div class="container">
+            Email:
+            <input type="text" placeholder="Email" required id="email"><br>
+
+            Senha:
+            <input type="password" placeholder="Senha" required id="senha"><br>
+
+            <button id="logar" onclick="">Entrar</button><br>
+
+            <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
+            <br>
+            <a href="cadastro-empresa.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
+              Não tem uma conta? Cadastre sua empresa aqui!
+            </a>
+            </label>
+          </div>
+
+          <div class="container" style="background-color:#F8F5F0">
+
+            <button id="botao-cancelar" type="button"
+              onclick="document.getElementById('div_login').style.display='none'"
+              class="botao-cancelar">Cancelar</button>
+
+            <span class="senha"><a href="#">Esqueceu a senha?</a></span>
+
+          </div>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <!-- mostrar slides container -->
+  <div class="slideshow-container">
+
+
+    <div class="mySlides fade">
+
+      <div class="textoInicial">
+        <div class="imagem-inicio">
+          <img src="images/fundo-inicio.jpg">
+
+          <p id="textojust" class="textos"><span><span class="verde"> <b>Economize até 50%</b> </span> do <span
+                class="laranja">lote de galinhas </span> de corte. Veja como podemos ajudar através de nosso simulador!
+              <br><button id="simulador" onclick="simulador()">Simulador</button></p></span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="mySlides fade">
+
+      <img src="images/velho.png" style="width:100%">
+
+    </div>
+
+    <div class="mySlides fade">
+
+      <img src="images/fundo-galo.jpg" style="width:100%">
+
+    </div>
+
+    <!-- setas de ir e voltar -->
+    <a class="prev" onclick="passarSlides(-1)">&#10094;</a>
+    <a class="next" onclick="passarSlides(1)">&#10095;</a>
+  </div>
+
+  <!-- servicos -->
+  <h1 style="text-align: center; color: #FFA05D; font-size: 42px; background-color: #F5F4F9; padding: 20px;">Serviços
+  </h1>
+  <div class="servicos">
+    <div id="servico1" class="servicos">
+      <img src="images/icone-servicos1.png">
+      <p style="color: white; font-weight: bold;">Gerenciamento de Informações</p><br>
+      <span style="color: white; font-size: 20px;">Os dados serão <span
+          style="color: #FFA05D; font-weight: 600;">capturados pelos sensores</span>, e através disso damos inicio ao
+        gerencianmento e ao controle de dados dos lotes.</span>
+    </div>
+
+    <div id="servico2" class="servicos">
+      <img src="images/icone-servicos2.png" alt="">
+      <p style="color: white; font-weight: bold;">Monitoramento dos Aviários</p><br>
+      <span style="color: white; font-size: 20px;">Controlamos os <span style="color: #FFA05D; font-weight: 600;">níveis
+          de temperatura e umidade</span> de cada lote existente, prezando sempre em manter a<span
+          style="color: #FFA05D; font-weight: 600;"> qualidade das aves.</span></span>
+    </div>
+  </div>
+  <!-- formulario -->
+  <div class="form_mapa_container">
+    <div>
+      <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.2881607958625!2d-46.66425002467007!3d-23.55809197880215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59d2a5270055%3A0x3c7ea4f4c7d51fb6!2sRua%20Haddock%20Lobo%2C%20595%20-%20Cerqueira%20C%C3%A9sar%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001414-001!5e0!3m2!1spt-BR!2sbr!4v1714527720482!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div id="id_form" class="formulario">
+      <span style="color: #0B6013; font-size: 44px; font-weight: 600;">Fale Conosco</span>
+      <br><br>
+      <form>
+        <div class="form_grupo">
+          <input type="text" id="form_nome" class="inputs_form" placeholder="Nome" required>
+          <input type="tel" id="form_telefone" class="inputs_form" placeholder="Telefone" required>
+        </div>
+        <div class="form_grupo">
+          <input type="email" id="form_email" class="inputs_form" placeholder="Digite seu email" required>
+        </div>
+        <div class="form_grupo">
+          <input type="text" id="form_mensagem" class="inputs_form" placeholder="Digite sua mensagem" required>
+        </div>
+        <button id="form_button" onclick="enviarMensagem()">Enviar</button>
+      </form>
+    </div>
+  
+   
+    
+  </div>
+  
+  
+</body>
+<footer>
+  <div id="div_direitos">
+    <img src="images/facebook.png" alt="" width="35vw">
+    <img src="images/instagram.png" alt="" width="30vw" style="color: white;">
+
+    <br>
+    Info * Suporte <br><br>
+    Política de privacidade * Termos de uso <br><br>
+    <span style="color: #EBB894;"> © 2023 by CheckChicken </span>
+
+  </div>
+</footer>
+
+</html>
+<script>
+
+  function enviarMensagem() {
+    id_form.innerHTML = `<h1 style="color: #0B6013; font-size: 44px; font-weight: 600;">Mensagem enviada com sucesso!</h1> <button id="form_button" onclick="location.reload()">Voltar</button>`
+  }
+
+  // controles para trocar de paginas
+  function simulador() {
+    window.location.href = "simulador_financeiro.html"
+  }
+  function inicio() {
+    window.location.href = "pagina-inicialv2.html";
+  }
+  function servicos() {
+    window.location.href = "servicos.html";
+  }
+  function sobre() {
+    window.location.href = "sobre-nos.html";
+  }
+  function login() {
+    window.location.href = "loginv2.html";
+  }
+
+
+
+  let paginaSlide = 1;
+
+  showSlides(paginaSlide);
+
+  // controles para passar slides 
+  function passarSlides(numeroSlide) {
+    mostrarSlides(paginaSlide += numeroSlide);
+  }
+
+
+  function mostrarSlides(numeroSlide) {
+    let contagem;
+    let slides = document.getElementsByClassName("mySlides");
+
+
+    if (numeroSlide > slides.length) {
+      paginaSlide = 1
+    }
+    if (numeroSlide < 1) {
+      paginaSlide = slides.length
+    }
+    for (let contagem = 0; contagem < slides.length; contagem++) {
+      slides[contagem].style.display = "none";
+    }
+
+    slides[paginaSlide - 1].style.display = "block";
+
+  }
+
+
+
+</script>
