@@ -10,7 +10,8 @@ body {
   background-color: white;
 }
 
-a, p {
+a,
+p {
   text-decoration: none;
   color: black;
   font-size: 25px;
@@ -121,7 +122,8 @@ a, p {
 .mySlides img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* cobrir todo o espaço disponível */
+  object-fit: cover;
+  /* cobrir todo o espaço disponível */
 }
 
 /* setas de ir e voltar */
@@ -164,26 +166,49 @@ a, p {
   from {
     opacity: 0.4;
   }
+
   to {
     opacity: 1;
   }
 }
-
+/* Footer */
 footer {
-  padding: 5px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  height: 20vh;
-  background-color: #4A7A57;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  font-weight: 300;
-  font-size: 15px;
-  color: #b7c9b5;
   display: flex;
+  font-family: poppins;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  background-color: #719f7d;
 }
+.text {
+  margin: 10%;
+  color: #0B6013;
+}
+.infos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60%;
+  width: 100%;
+}
+
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.pages {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+
 
 #div_direitos {
   position: absolute;
@@ -236,7 +261,8 @@ footer {
 /* botao login */
 
 /* Full-width input fields */
-#email, #senha {
+#email,
+#senha {
   width: 40%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -307,15 +333,22 @@ span.senha {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
   padding-top: 60px;
   text-align: center;
   align-items: center;
@@ -325,9 +358,11 @@ span.senha {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto;
+  /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #F8F5F0;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 50%;
+  /* Could be more or less, depending on screen size */
 }
 
 .close:hover,
@@ -346,6 +381,7 @@ span.senha {
   from {
     -webkit-transform: scale(0);
   }
+
   to {
     -webkit-transform: scale(1);
   }
@@ -355,6 +391,7 @@ span.senha {
   from {
     transform: scale(0);
   }
+
   to {
     transform: scale(1);
   }
@@ -407,13 +444,13 @@ span.senha {
   display: flex;
   flex-direction: column;
   background-color: #f5f4f9;
-  width: 30vw; /* Reduzindo um pouco a largura para acomodar melhor o conteúdo */
+  width: 30vw;
   height: 70vh;
   padding: 20px;
- margin-right: 10vw;
+  margin-right: 10vw;
   margin-bottom: 10vh;
-  margin-top: 10vh;
  
+
 }
 
 .form_grupo {
@@ -422,9 +459,14 @@ span.senha {
   margin-bottom: 3vh;
 }
 
-#form_telefone,
+#form_telefone {
+  width: 13vw;
+ 
+}
+
 #form_nome {
   width: 13vw;
+ margin-right: 1vw;
 }
 
 .inputs_form {
@@ -433,14 +475,14 @@ span.senha {
 }
 
 #form_mensagem {
-  height: 20vh; 
-  padding-top: 10px; 
+  height: 20vh;
+  padding-top: 10px;
 }
 
 #form_mensagem input {
   width: 100%;
-  padding: 10px; 
-  box-sizing: border-box; 
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 #form_button {
@@ -459,11 +501,11 @@ span.senha {
 #mapa {
   width: 30vw;
   height: 70vh;
-  margin-top: 10vh;
-  margin-left: 19vw;
-  margin-right: 1vw;
  
-  
+  margin-left: 6vw;
+  margin-right: 1vw;
+
+
 }
 
 
@@ -473,15 +515,61 @@ span.senha {
   display: flex;
   border: 0;
 
-  
-}/* Contêiner para o formulário e o mapa */
+
+}
+
+/* Contêiner para o formulário e o mapa */
 .form_mapa_container {
-  display: flex; /* Para os elementos ficarem lado a lado */
+  display: flex;
 }
 
 #id_form {
   justify-content: center;
-  width: 25%; /* Define a largura do formulário */
+  width: 25%;
 }
 
 
+/* Sobre nós */
+
+#div_sobre-nos {
+  display: flex;
+  width: 75%;
+  height: 70vh;
+  margin-top: 5vh;
+  background-color: #f5f4f9;
+  margin-left: 12.5vw;
+  padding: 40px;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.07);
+}
+
+#galinha_sobre-nos {
+  width: 35vw;
+  height: 100%;
+  margin-right: 2vw;
+  border-radius: 20px 50px 50px 20px;
+
+}
+/* Botao de voltar ao topo */
+
+#botao_topo {
+ 
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+width: 3vw;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #FFA05D;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 100%;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.07);
+}
+
+#botao_topo:hover {
+  background-color: rgb(252, 190, 147);
+}

@@ -27,6 +27,7 @@
                 <b style="color: orange">(ração, água, energia, galpão, veterinário, vacinas e etc).</b>
                 <input id="input_custo_producao"><br>
                 <button class="simular" onclick="CalcularKgPerdido()">SIMULAR</button>
+                <button class="botao-voltar" onclick="inicio()">Voltar</button>
             </div>
             <div class="conteiner-resultado">
                 <div class="box box2" id="div_resultado"></div>
@@ -41,6 +42,10 @@
 </html>
 
 <script>
+
+function inicio() {
+    window.location.href = "inicio.html"
+  }
     function CalcularKgPerdido() {
         // Coleta de dados do input
         let qtd_aves = Number(input_qtd_aves.value)
