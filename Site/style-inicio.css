@@ -182,13 +182,14 @@ footer {
   background-color: #719f7d;
 }
 .text {
-  margin: 10%;
+  
   color: #0B6013;
 }
 .infos {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  text-align: center;
   align-items: center;
   height: 60%;
   width: 100%;
@@ -205,7 +206,7 @@ footer {
 .pages {
   list-style: none;
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 
