@@ -263,11 +263,10 @@ span.senha {
     margin-top: 100px;
     background-color: #f4f4f4;
     width: 30vw;
-    padding: 20px;
+    padding: 15px;
     justify-content: center;
     display: flex;
     border-radius: 10px;
-   align-items: center;
     margin-bottom: 100px;
     font-family: poppins;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -326,6 +325,7 @@ span.senha {
     background-color: #FFA05D;
 
 }
+
 /* Footer */
 footer {
     display: flex;
@@ -368,6 +368,7 @@ footer {
     
   }
   
+
 #entrarCom{
     text-align: center;
 }
