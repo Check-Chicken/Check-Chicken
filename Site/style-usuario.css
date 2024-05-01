@@ -24,9 +24,11 @@ body {
     width: 14%;
 } */
 
-.lotes {
-  height: 100%;
-  width: 88%;
+.header {
+  display: flex;
+  align-items: center;
+  height: 10%;
+  width: 100%;
   background-color: #719F7D;
 }
 
@@ -67,7 +69,7 @@ body {
 }
 
 /*------ Settings ------*/
-.botao {
+/* .botao {
     --color: #256a46;
     --size: 30px;
     display: flex;
@@ -89,28 +91,28 @@ body {
     position: absolute;
     display: none;
     animation: botao_baixo .5s;
-  }
+  } */
   
   /* Check botão */
-  .botao input:checked ~ .direita{
+  /* .botao input:checked ~ .direita{
     display: none;
   }
   
   .botao input:checked ~ .baixo {
     display: block;
   }
-  
+   */
   /* Botão de seta */
-  .botao input {
+  /* .botao input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+  } */
   
  /* Animação do botão */
-  @keyframes botao_baixo {
+  /* @keyframes botao_baixo {
     0% {
       transform: rotate(-90deg) scale(0);
       opacity: 0;
@@ -130,7 +132,7 @@ body {
     50% {
       transform: rotate(0deg) scale(1.2);
     }
-  }
+  } */
 
 
 /* .imagem{
@@ -221,9 +223,8 @@ body {
 
 .navText {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     color: #ffb886;
-    transition: 2s;
     cursor: pointer;
 }
 
@@ -231,10 +232,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
-    font-size: 25px;
+    font-size: 40px;
     font-weight: bolder;
+    margin: 20px;
 }
 
 .infos {
