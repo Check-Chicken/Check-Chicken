@@ -16,25 +16,47 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-.menuPai{
+/* .menuPai{
     display: flax;
     flex-direction: column;
     justify-content: center;
     height: 60%;
     width: 14%;
-    transform: translate(-37%, -50%);
+} */
+
+.lotes {
+  height: 100%;
+  width: 88%;
+  background-color: #719F7D;
 }
 
-.menu {
-    display: none;
+.user {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 10px;
-    margin: 50px;
-    height: 100%;
+    height: 57%;
     width: 100%;
     list-style: none;
-    background-color: #f4f4f4;
+    background-color: #FFFFFF;
+}
+
+.perfil {
+    height: 70%;
+    margin: 0px 20px 0px 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #c9f8dd;
+}
+
+.menuPerfil {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 30%;
 }
 
 .button {
@@ -42,7 +64,6 @@ body {
     justify-content: center;
     margin: 5px;
     height: 30%;
-    transform: translate( -36%, 132%);
 }
 
 /*------ Settings ------*/
@@ -112,17 +133,25 @@ body {
   }
 
 
-.imagem{
+/* .imagem{
     display: block;
     height: min(13%, 100%);
     transform: translate(25%, 443%);
-}
+} */
+
 .imagem_perfil {
     border-radius: 180px;
-    height: min(180%, 180%);
+    height: 110px;
+    width: 110px;
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .text {
-    margin: 10%;
     color: #0B6013;
 }
 
@@ -130,7 +159,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 25%;
+    margin-top: 15px;
+    height: 80%;
 }
 
 .logout {
@@ -144,19 +174,19 @@ body {
 }
 
 .nav {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     height: 100%;
     width: 13%;
     background-color: white;
-    transition: 0.30s;
 }
 
 .logo {
     display: flex;
-    width: 241px;
-    height: 130px;
+    /* width: 241px;
+    height: 130px; */
+    height: min(23%, 100%)
 }
 
 .folder {
@@ -176,7 +206,7 @@ body {
     align-items: start;
     list-style: none;
     width: 80%;
-    height: 30%;
+    height: 20%;
 }
 
 .navConjunto {
@@ -197,7 +227,7 @@ body {
     cursor: pointer;
 }
 
-.nav_menu {
+.nav_abrirMenu {
     display: flex;
     justify-content: center;
     align-items: center;
