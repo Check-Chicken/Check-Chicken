@@ -20,15 +20,16 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="pagina-inicialv2.html">
+                <a href="inicio.html">
                     <img src="images/logo_novo.png" alt="gfg_logo">
                 </a>
             </div>
 
             <div class="nav-menu hide">
-                <a href="pagina-inicialv2.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
-                <a href="servicos.html">Serviços</a>
-                <a href="sobre-nos.html">Sobre Nós</a>
+                <a href="inicio.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
+                <a href="inicio.html">Serviços</a>
+                <a href="inicio.html">Sobre Nós</a>
+                <a href="inicio.html">Contato</a>
 
             </div>
             <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
@@ -55,8 +56,8 @@
 
                         <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
                         <br>
-                        <a href="cadastrov2.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
-                            Não tem uma conta? Cadastre-se aqui!
+                        <a href="cadastro-empresa.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
+                            Não tem uma conta? Cadastre sua empresa aqui!
                         </a>
                         </label>
                     </div>
@@ -76,67 +77,75 @@
     </header>
 
     <div class="formulario">
-        <form class="cadastrar" action="#">
-
+        <form class="cadastrar" action="cadastro-usuario.html">
+            <h2 style="margin-bottom: 5vh; color: darkslategray; font-size: 30px;">Cadastrar Empresa</h2>
             <div class="form_grupo">
                 CNPJ:
-                <input type="text" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" required>
+                <input type="text" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" >
             </div><br>
             <div class="form_grupo">
                 Nome da empresa:
-                <input type="text" class="inputs" placeholder="Empresa ficticia" required>
+                <input type="text" class="inputs" placeholder="Empresa ficticia" >
             </div><br>
-            <div class="form_grupo">
-                Nome fantasia:
-                <input type="text" class="inputs" placeholder="Empresa ficticia" required>
-            </div><br>
+            
             <div class="form_grupo">
                 CEP:
-                <input type="number" class="inputs" placeholder="012345-123" required>
+                <input type="number" class="inputs" placeholder="012345-123" >
             </div><br>
             <div class="form_grupo">
                 Logradouro:
-                <input type="text" class="inputs" placeholder="Rua ficticia" required>
+                <input type="text" class="inputs" placeholder="Rua ficticia" >
             </div><br>
             <div class="form_grupo">
                 Número:
-                <input type="text" class="inputs" placeholder="123" required>
+                <input type="text" class="inputs" placeholder="123" >
             </div><br>
-            <div class="form_grupo">
-                Estado:
-                <input type="text" class="inputs" placeholder="São Paulo" required>
-            </div><br>
-            <div class="form_grupo">
-                Cidade:
-                <input type="text" class="inputs" placeholder="São Paulo" required>
-            </div><br>
+           
             
             
+          <button id="botao-cadastrar">CADASTRAR</button>
             
-            <button id="botao-cadastrar">CADASTRAR</button><br>
-            <div id="entrarCom">
-            <p style="text-align: center;">Entrar com:</p> 
-            <a href=""><img class="entrarCom" src="images/google.png" alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
-            <a href=""><img class="entrarCom"src="images/facebook (1).png" alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-            <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-        </div>
 
         </form>
 
     </div>
 
 </body>
+<!-- Footer -->
 <footer>
-    <div id="div_direitos">
-        <img src="images/facebook.png" alt="" width="35vw">
-        <img src="images/instagram.png" alt="" width="30vw" style="color: white;">
-
-        <br>
-        Info * Suporte <br><br>
-        Política de privacidade * Termos de uso <br><br>
-        <span style="color: #EBB894;"> © 2023 by CheckChicken </span>
-
-    </div>
-</footer>
+    <div class="footer">
+      <div class="infos footerText">
+        <img src="images/facebook.png" style="width: 2vw;">
+        <img src="images/instagram.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 2vw;">
+        <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: white;" >|</p>
+          <div class="endereco">
+              <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+          </div>
+         
+            <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: white;">|</p>
+          
+          <div class="contato">
+            
+              <a href="usuario.html" style="font-size: 24px; color: white;">www.checkchicken.com.br</a>
+              <p style="font-size: 20px; color: white;">(11) 2536-6498</p>
+              <p style="font-size: 16px; color:#d0ad00;">© 2024 by CheckChicken</p>
+              
+          </div>
+  
+          <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter; color: white;">|</p>
+          <div class="pages">
+            
+              <li>Política e privacidade</li> |
+              
+              <li>Termos de uso</li> |
+              <li>Info</li> |
+              <li>Suporte</li>
+          </div>
+      </div>
+      <div class="infos2">
+  
+      </div>
+  </div>
+  </footer>
 
 </html>

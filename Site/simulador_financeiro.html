@@ -27,6 +27,7 @@
                 <b style="color: orange">(ração, água, energia, galpão, veterinário, vacinas e etc).</b>
                 <input id="input_custo_producao"><br>
                 <button class="simular" onclick="CalcularKgPerdido()">SIMULAR</button>
+                <button class="botao-voltar" onclick="inicio()">Voltar</button>
             </div>
             <div class="conteiner-resultado">
                 <div class="box box2" id="div_resultado"></div>
@@ -41,15 +42,24 @@
 </html>
 
 <script>
+
+function inicio() {
+    window.location.href = "inicio.html"
+  }
     function CalcularKgPerdido() {
         // Coleta de dados do input
         let qtd_aves = Number(input_qtd_aves.value)
         let qtd_ave_perdida = Number(input_qtd_perdida.value)
+        let custo_producao = Number(input_custo_producao.value)
 
         // Calculo do KG perdido
         let peso_galinha = 2.1 // Peso medio para o abate de frangos no Brasil (IBGE 2022)
         let kg_perdido = qtd_ave_perdida * peso_galinha
 
+
+        if( qtd_aves == "" ||qtd_ave_perdida == "" || peso_galinha == "" || kg_perdido=="" || custo_producao=="" ){
+            alert(`Preencha todos os campos`)
+        }else{
         // Exibição do resultado
         div_resultado.innerHTML = `${kg_perdido.toFixed(2)} KG <br><span>EM AVES PERDIDAS</span>`
 
@@ -63,6 +73,7 @@
         div_informacao.innerHTML = `<div>Calculamos a quantidade de quilos perdidos baseados no peso médio do abate de frangos no Brasil. Que de acordo o AveSite, que fez seus cálculos baseados nos dados do IBGE, está em torno de 2.1 kg em 2022.
             <br><a style="color: orange;" href="https://www.avisite.com.br/com-correcao-dos-parametros-peso-medio-do-frango-abatido-pelo-ibge-sofre-retracao-de-mais-de-10/#gsc.tab=0">Fonte</a> </div>`
     }
+}
     function CalcularPrejuizo() {
         // Coleta de dados dos inputs
         let qtd_ave_perdida = Number(input_qtd_perdida.value)
