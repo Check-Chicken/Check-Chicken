@@ -9,9 +9,9 @@ body {
     font-family: poppins;
     background-image: url(images/fundo-teste.png);
     background-repeat: no-repeat;
-    background-size: 110vw;
-    
-    
+    background-size: 114vw;
+
+
 }
 
 a,
@@ -267,7 +267,7 @@ span.senha {
     justify-content: center;
     display: flex;
     border-radius: 10px;
-   align-items: center;
+    align-items: center;
     margin-bottom: 100px;
     font-family: poppins;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -326,6 +326,7 @@ span.senha {
     background-color: #FFA05D;
 
 }
+
 /* Footer */
 footer {
     display: flex;
@@ -336,12 +337,14 @@ footer {
     width: 100%;
     background-color: #4A7A57;
     color: white;
-  }
-  .text {
-    
+}
+
+.text {
+
     color: #0B6013;
-  }
-  .infos {
+}
+
+.infos {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -350,24 +353,24 @@ footer {
     height: 60%;
     width: 100%;
     color: white;
-  }
-  
-  .contato {
+}
+
+.contato {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 10vw;
     margin-right: 10vw;
-    
-  }
-  
-  .pages {
+
+}
+
+.pages {
     list-style: none;
     display: flex;
     gap: 10px;
-    
-  }
-  
-#entrarCom{
+
+}
+
+#entrarCom {
     text-align: center;
 }

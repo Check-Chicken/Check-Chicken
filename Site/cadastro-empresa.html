@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
+        rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -29,15 +30,13 @@
                 <a href="inicio.html" style="text-decoration: underline; color: #FF8B38;">Home</a>
                 <a href="inicio.html">Serviços</a>
                 <a href="inicio.html">Sobre Nós</a>
-
             </div>
+
             <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
-            <!-- Button to open the modal login form -->
 
-            <!-- The Modal -->
+            <!-- Modal de Login -->
             <div id="div_login" class="modal">
-
-
+                <!-- Conteúdo do modal -->
                 <!-- Modal Content -->
                 <form class="modal-content animate">
                     <div class="imgcontainer">
@@ -55,7 +54,8 @@
 
                         <input type="checkbox" checked="checked" name="remember"> Lembre-se de mim
                         <br>
-                        <a href="cadastro-empresa.html" style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
+                        <a href="cadastro-empresa.html"
+                            style="font-size: 14px; color: #FF8B38; text-decoration: underline; ">
                             Não tem uma conta? Cadastre sua empresa aqui!
                         </a>
                         </label>
@@ -99,97 +99,121 @@
                 <input type="number" class="inputs" placeholder="123" id="inputNumero" required>
             </div><br>
             <div class="form_grupo">
-            Email:
-            <input type="email" class="inputs" placeholder="exepmplo@gmail.com" id="inputEmail">
-        </div><br>
-        <div class="form_grupo">
-            Senha:
-            <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha" required>
-        </div><br>
-        <div class="form_grupo">
-            Confirme sua senha:
-            <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha2" required>
-        </div><br>
-        <div class="form_grupo">
+                Email:
+                <input type="email" class="inputs" placeholder="exepmplo@gmail.com" id="inputEmail">
+            </div><br>
+            <div class="form_grupo">
+                Senha:
+                <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha" required>
+            </div><br>
+            <div class="form_grupo">
+                Confirme sua senha:
+                <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha2" required>
+            </div><br>
+            <div class="form_grupo">
 
-        <button id="botao-cadastrar" onclick="cadastrar()">CADASTRAR</button><br>
-            <div id="entrarCom">
-            <p style="text-align: center;">Entrar com:</p> 
-            <a href=""><img class="entrarCom" src="images/google.png" alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
-            <a href=""><img class="entrarCom"src="images/facebook (1).png" alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-            <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt="" style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-        </div>
+                <button id="botao-cadastrar" onclick="cadastrar()">CADASTRAR</button><br>
+                <div id="entrarCom">
+                    <p style="text-align: center;">Entrar com:</p>
+                    <a href=""><img class="entrarCom" src="images/google.png" alt=""
+                            style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
+                    <a href=""><img class="entrarCom" src="images/facebook (1).png" alt=""
+                            style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+                    <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt=""
+                            style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+                </div>
+
+            </div>
 
         </form>
-
     </div>
 
-</body>
-<footer>
-    <div id="div_direitos">
-        <img src="images/facebook.png" alt="" width="35vw">
-        <img src="images/instagram.png" alt="" width="30vw" style="color: white;">
+    <footer>
+        <div class="footer">
+            <div class="infos footerText">
+                <img src="images/facebook.png" style="width: 2vw;">
+                <img src="images/instagram.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 2vw;">
+                <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: white;">|</p>
+                <div class="endereco">
+                    <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+                </div>
 
-        <br>
-        Info * Suporte <br><br>
-        Política de privacidade * Termos de uso <br><br>
-        <span style="color: #EBB894;"> © 2023 by CheckChicken </span>
+                <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: white;">|</p>
 
-    </div>
-</footer>
-</html>
+                <div class="contato">
+                    <a href="usuario.html" style="font-size: 24px; color: white;">www.checkchicken.com.br</a>
+                    <p style="font-size: 20px; color: white;">(11) 2536-6498</p>
+                    <p style="font-size: 16px; color:#d0ad00;">© 2024 by CheckChicken</p>
+                </div>
+
+                <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter; color: white;">|</p>
+                <div class="pages">
+                    <li>Política e privacidade</li> |
+                    <li>Termos de uso</li> |
+                    <li>Info</li> |
+                    <li>Suporte</li>
+                </div>
+            </div>
+            <div class="infos2">
+
+            </div>
+        </div>
+    </footer>
 
     <script>
-    function cadastrar() {
-    const cnpj = inputCnpj.value
-    const NomeEmpresa = inputNomeEmpresa.value
-    const cep = inputCep.value
-    const logradouro = inputLogradouro.value
-    const numero = inputNumero.value
-    const email = inputEmail.value
-    const senha = inputSenha.value
-    const senha2 = inputSenha2.value
-    let trueFalse = true 
-    let numeroTrue = false
-   
-    if(cnpj.length != 14){
-        alert("CNPJ inválido")
-        trueFalse = false
-    }else if(cep.length != 8){
-        alert("cep inválido")
-        trueFalse = false 
-    }else if(email.indexOf("@") < 0 || email.indexOf(".") < 0 ){
-        alert("email inválido")
-        trueFalse = false
-    }
-    for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha++) {
-    if (senha.indexOf(numeroSenha.toString()) !== -1) {
-        numeroTrue = true
-        break;
-    }
-}
-if (numeroTrue == false) {
-    alert("Senha inválida. A senha deve conter pelo menos um número");
-    trueFalse = false;
-}else if (
-        senha.length < 8 ||
-        senha.indexOf("@") == -1 &&
-        senha.indexOf("#") == -1
-    ) {
-        alert(`Senha inválida. A senha deve conter:
-        - Pelo menos 8 caracteres
-        - Pelo menos um caractere especial como @ ou #
-        - Pelo menos um número`);
-        trueFalse = false;
-    }
-    
-    if(senha2 != senha){
-        alert("As senhas estão diferentes")
-        trueFalse = false
-    }else if(trueFalse == true){
-        alert("cadastrado com sucesso")
-        window.location.href = "inicio.html"
-    }
-}
-    
+        function cadastrar() {
+            const cnpj = inputCnpj.value
+            const NomeEmpresa = inputNomeEmpresa.value
+            const cep = inputCep.value
+            const logradouro = inputLogradouro.value
+            const numero = inputNumero.value
+            const email = inputEmail.value
+            const senha = inputSenha.value
+            const senha2 = inputSenha2.value
+            let trueFalse = true
+            let numeroTrue = false
+
+            if (cnpj.length != 14) {
+                alert("CNPJ inválido")
+                trueFalse = false
+            } else if (cep.length != 8) {
+                alert("cep inválido")
+                trueFalse = false
+            } else if (email.indexOf("@") < 0 || email.indexOf(".") < 0) {
+                alert("email inválido")
+                trueFalse = false
+            }
+            for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha++) {
+                if (senha.indexOf(numeroSenha.toString()) !== -1) {
+                    numeroTrue = true
+                    break;
+                }
+            }
+            if (numeroTrue == false) {
+                alert("Senha inválida. A senha deve conter pelo menos um número");
+                trueFalse = false;
+            } else if (
+                senha.length < 8 ||
+                senha.indexOf("@") == -1 &&
+                senha.indexOf("#") == -1
+            ) {
+                alert(`Senha inválida. A senha deve conter:
+            - Pelo menos 8 caracteres
+            - Pelo menos um caractere especial como @ ou #
+            - Pelo menos um número`);
+                trueFalse = false;
+            }
+
+            if (senha2 != senha) {
+                alert("As senhas estão diferentes")
+                trueFalse = false
+            } else if (trueFalse == true) {
+                alert("cadastrado com sucesso")
+                window.location.href = "inicio.html"
+            }
+        }
     </script>
+
+</body>
+
+</html>
