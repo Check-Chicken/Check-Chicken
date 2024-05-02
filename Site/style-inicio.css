@@ -483,6 +483,8 @@ span.senha {
 #form_mensagem {
   height: 20vh;
   padding-top: 10px;
+  resize: none;
+  font-family: poppins;
 }
 
 #form_mensagem input {
@@ -493,7 +495,7 @@ span.senha {
 
 #form_button {
   display: flex;
-  background-color: #fc8939;
+  background-color: #FFA05D;
   text-align: center;
   align-items: center;
   justify-content: center;
