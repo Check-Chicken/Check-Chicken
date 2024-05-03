@@ -1,136 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CheckChicken|Home</title>
     <link rel="stylesheet" href="style-dashboard.css">
     <link rel="shortcut icon" href="images/logo_galinha.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <div class="main">
-        <div class="maine1">
-            <div class="parte1">
-            <span>Dados do Aviario 33</span>
+    <!-- Div geral -->
+    <div class="box">
+        <!-- Div navbar lateral -->
+        <div id="div_nav" class="nav">
+
+            <img class="logo" src="images/Logo.png">
+
+            <div class="options">
+                <!-- <div class="navConjunto" onclick="retrair()">
+                    <span class="nav_menu navText">☰</span>
+                    <span id="menuText" class="navText">Menu</span>
+                </div> -->
+                <div class="navConjunto">
+                    <img class="navIcon" src="images/Dash.png">
+                    <span id="menuDash" class="navText">Dashboard</span>
+                </div>
+                <div class="navConjunto">
+                    <img class="navIcon" src="images/Notification.png">
+                    <span id="menuNot" class="navText">Notificações</span>
+                </div>
+                <div class="navConjunto">
+                    <img class="navIcon" src="images/Config.png">
+                    <span id="menuDef" class="navText">Definições</span>
+                </div>
+            </div>
+
+            <div id="div_menu" class="user">
+                <div class="perfil">
+                    <div class="menuPerfil">
+                        <div class="column">
+                            <div class="imagem">
+                                <img class="imagem_perfil"
+                                    src="https://i.pinimg.com/564x/03/ac/c0/03acc030c6700dfd274d1ef20e70609b.jpg">
+                            </div>
+                        </div>
+                        <div class="config texto">
+                            <center>
+                                <br>
+                                <li>Perfil</li><br>
+                            </center>
+                            <li>Editar empresa</li>
+                            <li>Editar perfil</li>
+                            <li>Notificações</li>
+                            <li>Meus dispositivos</li>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="inicio.html">
+                            <button class="Btn">
+
+                                <div class="sign">
+                                    <svg viewBox="0 0 512 512">
+                                        <path
+                                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                        </path>
+                                    </svg>
+                                </div>
+
+                                <div class="text">Logout</div>
+                            </button>
+
+
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+
+        <!-- <div class="menuPai">
+            
+        <div class="imagem">
+            <img class="imagem_perfil"
+                src="https://i.pinimg.com/564x/03/ac/c0/03acc030c6700dfd274d1ef20e70609b.jpg">
         </div>
         
+        <div class="button" onclick="expandir()">
+            <label class="botao">
+                <input type="checkbox" id="input_checkBox">
+                <svg class="baixo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+                <svg class="direita" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg>
+              </label>
 
-        <div class="maine2">
-            <div class="parte2">
-                <span>TEMPERATURA ATUAL</span>
+        </div> -->
+        <div class="corpo">
+            <div class="header">
+                <span onclick="retrair()" class="nav_abrirMenu navText">☰</span>
             </div>
-
-            <div class="parte3">
-                <span>TEMPERATURA MEDIA <br> MENSAL</span>
-            </div>
-
-            <div class="parte4">
-                <span>UMIDADE MEDIA <br> MENSAL</span>
-            </div>
-
-            <div class="parte5">
-                <span>SITUAÇÃO</span>
-            </div>
-        </div>
-
-        <div class="maine3">
-            <div class="table1">
-                <canvas id="tabela1"></canvas>
-            </div>
-            <div class="parte6">
-                <span>Aviario 33 Dados Sensor de Temperatura</span>
-                <div class="parte61">
-                    <span>Sensor Temperatura</span>
-                    <div class="cor">
-                        
-                    </div>
+            <div class="main">
+                <div class="baralho">
+                    <div class="card"></div>
                 </div>
-            </div>
-            
-        </div>
-
-        <div class="maine4">
-            <div class="table2">
-                <canvas id="tabela2"></canvas>
-            </div>
-            <div class="parte7">
-                <span>Aviario 33 Dados Sensor de Umidade</span>
-                <div class="parte71">
-                    <span>Sensor Umidade</span>
-                    <div class="cor2">
-                        
-                    </div>
+                <div style="display: flex; justify-content: space-evenly; gap: 10px; margin-top: 10px; margin-bottom: 20px;">
+                <div class="grafico" style="position: relative; height:45vh; width:40vw; background-color: white; border-style: solid; border-color: #2F643E; border-radius: 20px; margin-left: 20px;">
+                    <canvas id="tabela1"></canvas>
                 </div>
+                <div class="grafico2" style="position: relative; height:45vh; width:40vw; background-color: white; border-style: solid; border-color: #2F643E; border-radius: 20px; margin-right: 20px;">
+                    <canvas id="tabela2"></canvas>
+                </div>
+                </div>
+                
             </div>
-            
         </div>
+        <!-- Menu do usuario -->
+    </div>
     </div>
 
+    <div class="folder">
+        <div class="infos folderText">
+            <div class="endereco">
+                <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+            </div>
+            <div class="contato">
+                <a href="usuario.html">www.checkchicken.com.br</a>
+                <p>(11) 2536-6498</p>
+            </div>
+            <div class="pages">
+                <li>Política e privacidade</li>
+                <li>Termos de uso</li>
+                <li>Info</li>
+                <li>Suporte</li>
+            </div>
+        </div>
+        <div class="infos2">
 
+        </div>
+    </div>
 </body>
 
 </html>
 
 <script>
+    function expandir() {
+        const butao = input_checkBox
+
+        if (butao.checked) {
+            div_menu.style.display = "flex";
+        } else {
+            div_menu.style.display = "none";
+        }
+    }
+
+    function retrair() {
+        let retratil = div_nav.style.display;
+
+        // if (retratil != "flex") {
+        //     div_nav.style.display = "flex"
+        //     navImg.style.display = "none"
+        //     menuText.style.display = "none"
+        //     menuDash.style.display = "none"
+        //     menuNot.style.display = "none"
+        //     menuDef.style.display = "none"
+        // } else {
+        //     div_nav.style.display = "none"
+        //     navImg.style.display = "block"
+        //     menuText.style.display = "block"
+        //     menuDash.style.display = "block"
+        //     menuNot.style.display = "block"
+        //     menuDef.style.display = "block"
+        // }
+        if (retratil != "flex") {
+            div_nav.style.display = "flex"
+        } else {
+            div_nav.style.display = "none"
+        }
+    }
+
     const linha = document.getElementById('tabela1');
     const coluna = document.getElementById('tabela2');
   
     new Chart(linha, {
       type: 'line',
       data: {
-        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        labels: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
         datasets: [{
-          label: 'Temperatura',
+          label: 'Temperatura Aviário 01',
           backgroundColor: 'rgb(255, 0, 0)',
           borderColor: 'rgb(255, 0, 100)',
-          data: [30, 29, 28, 25, 22, 23],
+          data: [21, 22, 22, 23, 21, 22, 23, 23, 24, 25, 26, 27, 29, 28, 26, 25, 24, 23, 22, 22, 21, 21, 22, 21],
           borderWidth: 2
         },
-        {
-          label: 'Umidade',
-          backgroundColor: 'rgb(0, 100, 255)',
-          borderColor: 'rgb(0, 100, 255)',
-          data: [80, 82, 80, 85, 80, 83],
-          borderWidth: 2
-        }
     ]
       },
       options: {
         scales: {
           y: {
             beginAtZero: false,
-            min: 20,
+            min: 10,
+            max: 60
           }
         }
       }
     });
 
     new Chart(coluna, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            labels: ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
             datasets: [{
-                label: 'Temperatura Media',
-                backgroundColor: 'rgb(255, 0, 100)',
-                borderColor: 'rgb(255, 0, 0)',
-                data: [22, 24, 27, 23, 20, 18],
-                borderWidth: 1
-            },{
-                label: 'Umidade Media',
+                label: 'Umidade Aviário 01',
                 backgroundColor: 'rgb(0, 100, 255)',
                 borderColor: 'rgb(0, 0, 255)',
-                data: [90, 89, 93, 87, 88, 82],
-                borderWidth: 1
+                data: [83, 81, 82, 81, 80, 79, 78, 78, 75, 77, 76, 75, 72, 73, 74, 76, 78, 77, 78, 80, 79, 81, 82, 83],
+                borderWidth: 2
             }]
         },
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true
+                        label: 50,
+                        beginAtZero: false,
+                        min: 30,
+                        max:100
                     }
                 }
             }
