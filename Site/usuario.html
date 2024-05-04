@@ -1,139 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CheckChicken|Home</title>
-    <link rel="stylesheet" href="style-usuario.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style-usuarioV2.css">
     <link rel="shortcut icon" href="images/logo_galinha.png">
-</head>
-
-<body>
-    <!-- Div geral -->
-    <div class="box">
-        <!-- Div navbar lateral -->
-        <div id="div_nav" class="nav">
-
-            <img class="logo" src="images/Logo.png">
-
-            <div class="options">
-               
-                <div class="navConjunto">
-                    <img class="navIcon" src="images/Dash.png">
-                    <span id="menuDash" class="navText">Dashboard</span>
-                </div>
-                <div class="navConjunto">
-                    <img class="navIcon" src="images/Notification.png">
-                    <span id="menuNot" class="navText">Notificações</span>
-                </div>
-                <div class="navConjunto">
-                    <img class="navIcon" src="images/Config.png">
-                    <span id="menuDef" class="navText">Definições</span>
-                </div>
-            </div>
-
-            <div id="div_menu" class="user">
-                <div class="perfil">
-                    <div class="menuPerfil">
-                        <div class="column">
-                            <div class="imagem">
-                                <img class="imagem_perfil"
-                                    src="https://i.pinimg.com/564x/03/ac/c0/03acc030c6700dfd274d1ef20e70609b.jpg">
-                            </div>
-                        </div>
-                        <div class="lista texto">
-                            <center>
-                                <br>
-                                <li>Perfil</li><br>
-                            </center>
-                            <a href="" class="lista texto">
-                                <li>Editar empresa</li>
-                            </a>
-                            <a href="" class="lista texto">
-                                <li>Editar perfil</li>
-                            </a>
-                            <a href="" class="lista texto">
-                                <li>Notificações</li>
-                            </a>
-                            <a href="" class="lista texto">
-                                <li>Meus dispositivos</li>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <a href="inicio.html">
-                            <button class="Btn">
-
-                                <div class="sign">
-                                    <svg viewBox="0 0 512 512">
-                                        <path
-                                            d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-                                        </path>
-                                    </svg>
-                                </div>
-
-                                <div class="text">Sair</div>
-                            </button>
-
-
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="corpo">
-            <div class="header">
-                <span onclick="retrair()" class="nav_abrirMenu navText">☰</span>
-            </div>
-            <div class="main">
-                <div class="baralho">
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-
-                </div>
-                <div class="grafico"></div>
-            </div>
-        </div>
-        <!-- Menu do usuario -->
-    </div>
-    </div>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     
-</body>
+</head>
+<body>
+        <nav>
+          <div class="navbar">
+            <div class="container nav-container">
+              <input class="checkbox" type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                      <span class="line line1"></span>
+                      <span class="line line2"></span>
+                      <span class="line line3"></span>
+                    </div>  
+                    <div class="menu-items">
+                  <div class="logo">
+                    <img src="images/logo_novo.png" >
+                  </div>
+                  <div class="foto-usuario">
+                    <img src="images/mulher.png">
+                    <p style="margin-left: 2vw;">Olá, Fernanda!</p>
+                    <div class="dropdown">
+                      <span onclick="myFunction()" class="dropbtn"> &#129123;</span>
+                      <div id="myDropdown" class="dropdown-content fade">
+                        <a href="#">Editar Empresa</a>
+                        <a href="#">Editar Perfil</a>
+                        <a href="#">Cadastrar Funcionário</a>
+                        <div>
+                          <a href="inicio.html">
+                            <button class="Btn">
+                              
+                                    <div class="sign">
+                                      <svg viewBox="0 0 512 512">
+                                        <path
+                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                      </path>
+                                    </svg>
+                                    </div>
+        
+                                    <div class="text">Sair</div>
+                                </button>
+                                
+        
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                    
+                      </div>
+                      <li><img class="navIcon" src="images/Dash.png"><a href="#">Dashboard</a></li>
+                      <li> <img class="navIcon" src="images/Notification.png"><a href="#">Notificações</a></li>
+                      <li><img class="navIcon" src="images/Config.png"><a href="#">Definições</a></li>
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+              </nav>
+      <!-- corpo da pagina -->
+      <div class="corpo">
+        <div class="caixa-legenda">
+        <div class="legenda">Legenda:
+        <div class="conteudo-legenda">
+          <div class="bolinha verde"></div><p>Estável</p>
+          <div class="bolinha amarela"></div><p>Atenção</p>
+          <div class="bolinha vermelha"></div><p>Acima</p>
+          <div class="bolinha azul"></div><p>Abaixo</p>
+        </div>
+        </div>
+        <div class="add-lote">
+        <button id="botao-addlote">+</button><p style="font-size: 25px;">Adicionar Lote</p>
+      </div>
+      </div>
+        <div class="corpo-kpi">
+          <div class="informacoes">
+            <div class="KPI">Temperatura Atual<div class="kpi-info">35º</div></div>  
+            <div class="KPI">Umidade Atual <div class="kpi-info2">30</div></div>  
+            <div class="KPI">Status do Lote <div class="kpi-info3">Temperatura acima do desejado</div></div>  
+          </div>
+          <div class="visualizador">
+            <div style="color: white; margin-left: 6.3vw; margin-bottom: 3vh;">Visualizador</div>
+            <div class="lotes">
+              <div class="lote lote1"><p style="font-weight: 600;">Lote 1</p>
+                <div class="conteudo-lote">Temperatura Atual<div class="lote-info-temp">35º</div></div> 
+                <div class="conteudo-lote">Umidade Atual<div class="lote-info-umi">35</div></div> 
+                
+              </div>
+              <div class="lote lote2"><p style="font-weight: 600;">Lote 2</p>
+                <div class="conteudo-lote">Temperatura Atual<div class="lote2-info-temp">24º</div></div> 
+                <div class="conteudo-lote">Umidade Atual<div class="lote2-info-umi">45</div></div> 
+              </div>
+              
+        </div>
+      </div>
+          
+          
+        </div>
+      </div>
+      </body>
+      <!-- footer -->
 <footer>
     <div class="footer">
       <div class="infos footerText">
-        <a href="inicio.html"><img src="images/logo_galinha.png" style="width: 4vw; margin-right: 2vw;"></a>
+        <a href="inicio.html"><img src="images/logo_galinha.png" style="width: 3vw; margin-right: 1vw;"></a>
         <img src="images/facebook-verde.png" style="width: 2vw;">
-        <img src="images/instagram-verde.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 2vw;">
+        <img src="images/instagram-verde.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 1vw;">
         <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: #0B6013;">|</p>
         <div class="endereco">
           <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
         </div>
   
-        <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: #0B6013;">|</p>
+        <p style="font-size: 50px; margin-left: 1vw; font-weight: lighter; color: #0B6013;">|</p>
   
         <div class="contato">
   
-          <a href="usuario.html" style="font-size: 24px; color: #0B6013;">www.checkchicken.com.br</a>
+          <a href="usuario.html" style="font-size: 18px; color: #0B6013;">www.checkchicken.com.br</a>
           <p style="font-size: 20px; color: #0B6013;">(11) 2536-6498</p>
           <p style="font-size: 16px; color:#d0ad00;">© 2024 by CheckChicken</p>
   
         </div>
   
-        <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter; color: #0B6013;">|</p>
+        <p style="font-size: 50px; margin-right: 1vw; font-weight: lighter; color: #0B6013;">|</p>
         <div class="pages">
   
           <li>Política e privacidade</li> |
@@ -143,32 +136,18 @@
           <li>Suporte</li>
         </div>
       </div>
-      <div class="infos2">
-  
-      </div>
+      
     </div>
   </footer>
 </html>
 
 <script>
-    function expandir() {
-        const butao = input_checkBox
 
-        if (butao.checked) {
-            div_menu.style.display = "flex";
-        } else {
-            div_menu.style.display = "none";
-        }
-    }
+    // funcao para o dropdown
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
-    function retrair() {
-        let retratil = div_nav.style.display;
 
-    
-        if (retratil != "flex") {
-            div_nav.style.display = "flex"
-        } else {
-            div_nav.style.display = "none"
-        }
-    }
+
 </script>
