@@ -1,6 +1,18 @@
 CREATE DATABASE CheckChicken;
 USE CheckChicken;
 
+CREATE TABLE parametros (
+	idParametros INT PRIMARY KEY AUTO_INCREMENT,
+    diaMin INT,
+    diaMax INT,
+    tempMin INT,
+    tempMax INT,
+    umidadeMin INT,
+    umidadeMax INT,
+    avisoTemperatura DECIMAL (4,2),
+    avisoUmidade DECIMAL (4,2)
+);
+
 CREATE TABLE empresa (
 	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(45),
@@ -20,15 +32,6 @@ CREATE TABLE endereco (
 	CONSTRAINT FkEndEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
 );
 
-CREATE TABLE parametro (
-	idParametro INT PRIMARY KEY AUTO_INCREMENT,
-	idade VARCHAR(3),
-	tempMax INT,
-	tempMin INT,
-	umidadeMax INT,
-	umidadeMin INT
-);
-
 CREATE TABLE lote (
 	idLote INT AUTO_INCREMENT,
 	tipo VARCHAR(20),
@@ -46,15 +49,14 @@ CREATE TABLE sensor (
 	idSensor INT AUTO_INCREMENT,
     tempAtual DECIMAL(5, 2),
     umidadeAtual INT,
-    data DATETIME,
-    tempMaxDia DECIMAL(5, 2),
-    tempMinDia DECIMAL(5, 2),
-    umidadeMaxDia INT,
-    umidadeMinDia INT,
-    fkAviario INT, CONSTRAINT FkSensorAviario FOREIGN KEY (fkAviario) REFERENCES aviario(idAviario),
-    fkEmpresaAviario INT,
-		CONSTRAINT PkSensorEmpresa PRIMARY KEY (idSensor, fkEmpresaAviario),
-		CONSTRAINT FkSensorEmpresa FOREIGN KEY (fkEmpresaAviario) REFERENCES empresa(idEmpresa)
+    dtMedicao DATETIME,
+    fkEndereco INT,
+    fkLote INT,
+    fkEmpresa INT,
+		CONSTRAINT pkSensorEmpresa PRIMARY KEY (idSensor, fkEndereco, fkEmpresa),
+        CONSTRAINT fkSensorEndereco FOREIGN KEY (fkEndereco) REFERENCES endereco(idEndereco),
+        CONSTRAINT FkSensorLote FOREIGN KEY (fkLote) REFERENCES lote(idLote),
+		CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresaLote) REFERENCES empresa(idEmpresa)
 );
 
 CREATE TABLE usuario (
@@ -67,4 +69,3 @@ CREATE TABLE usuario (
 		CONSTRAINT PkUsuarioEmpresa PRIMARY KEY (idUsuario, fkEmpresa),
         CONSTRAINT FkUsuarioEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
 );
-
