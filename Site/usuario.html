@@ -18,7 +18,14 @@
                     <span class="line line1"></span>
                     <span class="line line2"></span>
                     <span class="line line3"></span>
-                </div>  
+                </div> 
+                <div class="area_icone_tema">
+                    <div class="icone_tema">
+                        
+                            <button id="trocaCor" onclick="changeColor()"><img src="images/dia-e-noite.png" alt=""></button>
+                          
+                </div>
+                </div> 
                 <div class="menu-items">
                     <div class="logo">
                         <img src="images/logo_novo.png" >
@@ -57,7 +64,7 @@
     </nav>
 
     <!-- Corpo da página -->
-    <div class="corpo">
+    <div class="corpo" id="corpo">
         <!-- corpo que envolve as kpis e os graficos -->
         <div class="corpo-principal">
             <!-- KPIs -->
@@ -216,6 +223,19 @@
 </html>
 
 <script>
+
+    //funcao para trocar cor do fundo
+    const colorDiv = document.getElementById('corpo');
+    const colorButton = document.getElementById('trocaCor');
+
+function changeColor() {
+  const hasSecondColor = colorDiv.classList.contains('second');
+  if (hasSecondColor) {
+    colorDiv.classList.remove('second')
+  } else {
+    colorDiv.classList.add('second')
+  }
+}
 
     // funcao para o dropdown
 function myFunction() {
