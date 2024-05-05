@@ -27,6 +27,9 @@ input::placeholder{
 .corpo.second {
 background-color: #719F7D;
 }
+#titulo_kpi.second2{
+  color: #F5F4F9;
+}
 #trocaCor{
   border: none;
   background-color: #305139;
@@ -350,7 +353,7 @@ background-color: #719F7D;
 
 /* Corpo */
 .corpo {
-  padding: 20px;
+  padding: 10px;
   width: 100vw;
   height: 87vh;
   background-color: #F5F4F9;
@@ -363,6 +366,7 @@ background-color: #719F7D;
   display: flex;
   text-align: center;
   flex-direction: column;
+  
 }
 .legenda img{
   width: 14vw;
@@ -371,16 +375,19 @@ background-color: #719F7D;
 
 /* KPIs */
 .corpo-kpi{
-  width: 70vw;
-  height: 20vh;
+  width: 55vw;
+  height: 28vh;
   display: flex;
   flex-direction: row;
   font-family: "poppins";
   gap: 2vw;
-  justify-content: flex-end;
-  padding-right: 4vw;
-  padding-top: 7vh;
-  
+  justify-content: space-around;
+  padding-right: 5vw;
+  padding-top: 3vh;  
+  margin-left: 10vw;
+  border: none;
+  padding: 20px;
+  align-items: center;  
 }
 .kpi{
   width: 17vw;
@@ -581,12 +588,12 @@ background-color: #719F7D;
   width:70vw;
  
   height: 50vh;
-  margin-top: 10vh;
+  margin-top: 3vh;
   display: flex;
   flex-direction: row;
-  gap: 2vw;
+  gap: 5vw;
   justify-content: center;
-  margin-left: 3vw;
+  
 
 }
 .grafico{
@@ -601,18 +608,20 @@ width: 30vw;
 /* grafico1 */
 .maine3 {
   display: flex;
-  flex-direction: row;
-  height: 38vh;
+  flex-direction: column;
+  height: 43vh;
   margin-left: 15px;
   margin-right: 15px;
-  border-style: solid;
-  border-color: black;
-  background-color: #e6d8d8;
+  border: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #F5F4F9;
   font-size: 10px;
   padding: 20px;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  width: 33vw;
 }
 
 .table1 {
@@ -620,22 +629,12 @@ width: 30vw;
   text-align: center;
   justify-content: center;
   display: flex;
- 
-  height:38vh; 
+  flex-direction: column;
+  height:32vh; 
   width:40vw;
 }
 
-.parte6 {
-  display: flex;
-  flex-direction: column;
-}
-.parte61 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height:30vh;
-}
+
 .cor {
   margin-left: 3px;
   background-color: red;
@@ -646,18 +645,20 @@ width: 30vw;
 /* grafico 2 */
 .maine4 {
   display: flex;
-  flex-direction: row;
-  height: 38vh;
+  flex-direction: column;
+  height: 43vh;
   margin-left: 15px;
   margin-right: 15px;
-  border-style: solid;
-  border-color: black;
-  background-color: #e6d8d8;
+  border: none;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #F5F4F9;
   font-size: 10px;
   padding: 20px;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  width: 33vw;
 }
 
 .table2 {
@@ -665,22 +666,13 @@ width: 30vw;
   text-align: center;
   justify-content: center;
   display: flex;
+  flex-direction: column;
  
-  height:38vh; 
+  height:32vh; 
   width:40vw;
 }
 
-.parte7 {
-  display: flex;
-  flex-direction: column;
-}
-.parte71 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height:30vh;
-}
+
 .cor2 {
   margin-left: 3px;
   background-color: blue;
