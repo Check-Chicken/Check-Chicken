@@ -9,7 +9,9 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
-
+input::placeholder{
+    font-family: "poppins";
+  }
 button {
     font-family: "Big Shoulders Display", sans-serif;
     font-optical-sizing: auto;
@@ -178,7 +180,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     color: white;
     font-size: 70px;
@@ -207,6 +209,7 @@ input {
     bottom: 30px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    
 }
 
 .botao-ajuda:hover {
@@ -224,6 +227,18 @@ input {
     cursor: pointer;
     margin-top: 2vh;
 }
+.botao-voltar2{
+    border: 0px;
+    border-radius: 30px;
+    background-color: #FA8939;
+    color: white;
+    width: 20%;
+    height: 7vh;
+    font-size: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+   
+}
 .voltar-inicio{
     margin-top: 20px;
     border: 0px;
@@ -239,6 +254,9 @@ input {
     cursor: pointer;
 }
 .botao-voltar:hover {
+    background-color: #dd772d;
+}
+.botao-voltar2:hover {
     background-color: #dd772d;
 }
 .voltar-inicio:hover {

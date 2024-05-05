@@ -9,6 +9,9 @@ body {
   font-family: poppins;
   background-color: white;
 }
+input::placeholder{
+  font-family: "poppins";
+}
 
 a,
 p {
@@ -466,7 +469,8 @@ span.senha {
 }
 
 #form_telefone {
-  width: 13vw;
+  width: 8.5vw;
+  height: auto;
  
 }
 
@@ -474,13 +478,16 @@ span.senha {
   width: 13vw;
  margin-right: 1vw;
 }
-
+#form_email{
+  width: 22.7vw;
+}
 .inputs_form {
   padding: 10px;
   width: 100%;
 }
 
 #form_mensagem {
+  width: 22.7vw;
   height: 20vh;
   padding-top: 10px;
   resize: none;

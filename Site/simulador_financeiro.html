@@ -47,6 +47,9 @@
 function inicio() {
     window.location.href = "inicio.html"
   }
+  function cadastro() {
+    window.location.href = "cadastro-empresa.html"
+  }
     function CalcularKgPerdido() {
         // Coleta de dados do input
         let qtd_aves = Number(input_qtd_aves.value)
@@ -59,7 +62,7 @@ function inicio() {
 
 
         if( qtd_aves == "" ||qtd_ave_perdida == "" || peso_galinha == "" || kg_perdido=="" || custo_producao=="" ){
-            alert(`Preencha todos os campos`)
+            div_resultado.innerHTML  = `<p style="color: rgb(255, 86, 86);">Preencha todos os campos</p>`
         }else{
         // Exibição do resultado
         div_resultado.innerHTML = `${kg_perdido.toFixed(2)} KG <br><span>EM AVES PERDIDAS</span>`
@@ -121,7 +124,7 @@ function inicio() {
             </div>`
 
         // Exibição da explicação do calculo realizado
-        div_informacao.innerHTML = `<div class="informacao">O cálculo feito é baseado no custo médio da produção de galinhas informado : .</div>`
+        div_informacao.innerHTML = `<div class="informacao">O cálculo feito é baseado no custo médio da produção de galinhas informado.</div>`
     }
     function CalcularPrejuizoTotal() {
         // Coleta de dados dos inputs
@@ -152,6 +155,7 @@ function inicio() {
         div_conteiner.innerHTML = `${prejuizoTotalFixed.toLocaleString('pt-Br', { style: 'currency', currency: 'BRL'})} REAIS <span>ANUAIS</span>`
 
         // Inserção do botão
-        div_dash.innerHTML += `<button onclick="cadastro()" class="botao-ajuda">VER COMO A CHECK<br>CHICKEN PODE ME AJUDAR</button>`
+        div_dash.innerHTML += `<button onclick="cadastro()" class="botao-ajuda">VER COMO A CHECK<br>CHICKEN PODE ME AJUDAR</button>
+        <button onclick="location.reload()" class="botao-voltar2">VOLTAR</button>`
     }
 </script>
