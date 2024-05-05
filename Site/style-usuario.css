@@ -10,16 +10,51 @@ body {
   font-family: "Poppins";
   overflow: hidden;
 }
+input::placeholder{
+  font-family: "poppins";
+}
 
 /* Navbar */
 /* Define a largura da classe container como 100% da largura da tela */
 .container {
   width: 100vw;
+  display: flex;
+}
+
+
+
+
+.corpo.second {
+background-color: #719F7D;
+}
+#trocaCor{
+  border: none;
+  background-color: #305139;
+  cursor: pointer;
+}
+#trocaCor:hover{
+  background-color: #527c5d;
+}
+
+
+.area_icone_tema{
+  margin-left: 90vw;
+  border: none;
+  
+
+  
+}
+.icone_tema img{
+  width: 2vw;
+  background-color: #305139;
+
+  
 }
 
 /* Define a largura da classe navbar como 100% */
 .navbar {
   width: 100%;
+  border-top: 2px solid #FFA05D ;  
 }
 
 /* Define a largura e margem direita do ícone de navegação */
@@ -253,14 +288,18 @@ body {
   color: black;
   font-weight: bolder;
   cursor: pointer;
+  
 }
+
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
+  display: flex;
   position: relative;
   display: inline-block;
   margin-left: 9vw;
   transform: translateY(-70%);
+  
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -268,7 +307,7 @@ body {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-
+  
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 20px

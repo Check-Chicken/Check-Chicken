@@ -10,13 +10,17 @@ body {
   background-color: white;
 }
 
+input::placeholder {
+  font-family: "poppins";
+}
+
 a,
 p {
   text-decoration: none;
   color: black;
   font-size: 25px;
   font-weight: 300;
- 
+
 }
 
 .verde {
@@ -172,6 +176,7 @@ p {
     opacity: 1;
   }
 }
+
 /* Footer */
 footer {
   display: flex;
@@ -183,10 +188,12 @@ footer {
   background-color: #4A7A57;
   color: white;
 }
+
 .text {
-  
+
   color: #0B6013;
 }
+
 .infos {
   display: flex;
   flex-direction: row;
@@ -204,14 +211,14 @@ footer {
   align-items: center;
   margin-left: 10vw;
   margin-right: 10vw;
-  
+
 }
 
 .pages {
   list-style: none;
   display: flex;
   gap: 10px;
-  
+
 }
 
 
@@ -300,7 +307,7 @@ button {
   font-size: 20px;
   position: relative;
   cursor: pointer;
- 
+
 }
 
 
@@ -455,7 +462,7 @@ span.senha {
   padding: 20px;
   margin-right: 10vw;
   margin-bottom: 10vh;
- 
+
 
 }
 
@@ -466,13 +473,18 @@ span.senha {
 }
 
 #form_telefone {
-  width: 13vw;
- 
+  width: 8.5vw;
+  height: auto;
+
 }
 
 #form_nome {
   width: 13vw;
- margin-right: 1vw;
+  margin-right: 1vw;
+}
+
+#form_email {
+  width: 22.7vw;
 }
 
 .inputs_form {
@@ -481,10 +493,23 @@ span.senha {
 }
 
 #form_mensagem {
+  width: 22.7vw;
   height: 20vh;
   padding-top: 10px;
   resize: none;
   font-family: poppins;
+}
+
+.campos_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulos_form {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 13px;
 }
 
 #form_mensagem input {
@@ -509,7 +534,7 @@ span.senha {
 #mapa {
   width: 30vw;
   height: 70vh;
- 
+
   margin-left: 6vw;
   margin-right: 1vw;
 
@@ -559,14 +584,15 @@ span.senha {
   border-radius: 20px 50px 50px 20px;
 
 }
+
 /* Botao de voltar ao topo */
 
 #botao_topo {
- 
+
   position: fixed;
   bottom: 20px;
   right: 20px;
-width: 3vw;
+  width: 3vw;
   font-size: 20px;
   border: none;
   outline: none;

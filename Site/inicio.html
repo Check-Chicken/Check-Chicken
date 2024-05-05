@@ -103,12 +103,14 @@
     <div class="mySlides fade">
 
       <img src="images/velho.png" style="width:100%">
+      <!-- Através do monitoramento de temperatura e umidade conseguimos ajudar você, produtor, a tomar decisões melhores. -->
 
     </div>
 
     <div class="mySlides fade">
 
       <img src="images/fundo-galinha3.png" style="width:100%">
+      <!-- Além de ajudar os produtores a aumentar a lucratividade da sua produção, através da otimização do uso de recursos, da redução de custos.  -->
 
     </div>
 
@@ -167,20 +169,36 @@
     </div>
     <div id="id_form" class="formulario">
      
-      <p style="display: flex;"><img src="images/logo_galinha.png" style="width: 15%;display: flex; margin-right: 1.6vw;"><span style="color: #0B6013; font-size: 44px; font-weight: 600;">Fale </span><span
-          style="color: #5db868;  font-size: 44px; font-weight: 600;">Conosco</span></p>
+      <p style="display: flex;"><img src="images/logo_galinha.png" style="width: 15%;display: flex; margin-right: 1.6vw;"><span style="color: #5db868; font-size: 44px; font-weight: 600;">Fale </span><span  
+          style="color: #0B6013;  font-size: 44px; font-weight: 600;">Conosco</span></p> 
       <br><br>
       <form>
         <div class="form_grupo">
-          <input type="text" id="form_nome" class="inputs_form" placeholder="Nome" >
-          <input type="tel" id="form_telefone" class="inputs_form" placeholder="Telefone" >
+          <div class="campos_form" >
+            <div  class="titulos_form">Nome: </div>
+          <input type="text" id="form_nome" class="inputs_form" placeholder="Insira seu nome aqui" >
+         </div>
+         <div class="campos_form" >
+            <div class="titulos_form">Telefone: </div>
+            <input type="tel" id="form_telefone" class="inputs_form" placeholder="11 912345678" >
+         </div>
+          
         </div>
         <div class="form_grupo">
-          <input type="email" id="form_email" class="inputs_form" placeholder="Digite seu email" >
+          <div class="campos_form" >
+            <div  class="titulos_form">Email: </div>
+            <input type="email" id="form_email" class="inputs_form" placeholder="exemplo@gmail.com" >
+         </div>
+          
         </div>
         <div class="form_grupo">
-          <textarea id="form_mensagem" class="inputs_form" placeholder="Digite sua mensagem" ></textarea>
+          <div class="campos_form">
+            <div class="titulos_form">Mensagem: </div>
+            <textarea id="form_mensagem" class="inputs_form" placeholder="Digite sua mensagem aqui" ></textarea>
+         </div>
+          
         </div>
+        
         <button id="form_button" onclick="enviarMensagem()">Enviar</button>
       </form>
     </div>
