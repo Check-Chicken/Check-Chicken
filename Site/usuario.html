@@ -70,6 +70,7 @@
             <!-- KPIs -->
 
         <div class="legenda"><img src="images/legenda.png" alt=""></div>
+        <p id="titulo_kpi" style="font-size: 30px; font-weight: 600; color: #f77d26;">Indicadores de performance dos últimos 30 dias</p>
         <div class="corpo-kpi">
             <div class="kpi">Lotes que apresentaram problema
                 <div class="info-kpi1">50%</div>
@@ -83,37 +84,23 @@
         </div>
         <!-- Área de Gráficos -->
         <div class="area-graficos">
+
             <div class="grafico grafico1">
                 <div class="maine3">
+                    <p style="font-size: 18px;">Dados dos sensores: Lote 1</p>
                     <div class="table1">
                         <canvas id="tabela1"></canvas>
                     </div>
-                    <div class="parte6">
-                        <span>Aviario 33 Dados Sensor de Temperatura</span>
-                        <div class="parte61">
-                            <span>Sensor Temperatura</span>
-                            <div class="cor">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
             <div class="grafico grafico2">
                 <div class="maine4">
+                    <p style="font-size: 18px;">Histórico de Registro</p>
+                    <p style="font-size: 18px;">Dia 05/04/2024 - Lote 1</p>
                     <div class="table2">
                         <canvas id="tabela2"></canvas>
                     </div>
-                    <div class="parte7">
-                        <span>Aviario 33 Dados Sensor de Umidade</span>
-                        <div class="parte71">
-                            <span>Sensor Umidade</span>
-                            <div class="cor2">
-                                
-                            </div>
-                        </div>
-                    </div>
+                   
                     
                 </div>
             </div>
@@ -226,14 +213,19 @@
 
     //funcao para trocar cor do fundo
     const colorDiv = document.getElementById('corpo');
+    const colorP = document.getElementById('titulo_kpi');
     const colorButton = document.getElementById('trocaCor');
 
 function changeColor() {
   const hasSecondColor = colorDiv.classList.contains('second');
-  if (hasSecondColor) {
+  const hasSecondColor2 = colorP.classList.contains('second2');
+
+  if (hasSecondColor && hasSecondColor2) {
     colorDiv.classList.remove('second')
+    colorP.classList.remove('second2')
   } else {
     colorDiv.classList.add('second')
+    colorP.classList.add('second2')
   }
 }
 
@@ -249,19 +241,19 @@ function myFunction() {
     new Chart(linha, {
       type: 'line',
       data: {
-        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        labels: ['12:00', '12:05', '12:10', '12:15', '12:20', '12:25', '12:30'],
         datasets: [{
           label: 'Temperatura',
           backgroundColor: 'rgb(255, 0, 0)',
           borderColor: 'rgb(255, 0, 100)',
-          data: [30, 29, 28, 25, 22, 23],
+          data: [30, 29, 28, 25, 22, 23, 25],
           borderWidth: 2
         },
         {
           label: 'Umidade',
           backgroundColor: 'rgb(0, 100, 255)',
           borderColor: 'rgb(0, 100, 255)',
-          data: [80, 82, 80, 85, 80, 83],
+          data: [80, 82, 80, 85, 80, 83, 80],
           borderWidth: 2
         }
     ]
@@ -277,9 +269,9 @@ function myFunction() {
     });
 
     new Chart(coluna, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
             datasets: [{
                 label: 'Temperatura Media',
                 backgroundColor: 'rgb(255, 0, 100)',
