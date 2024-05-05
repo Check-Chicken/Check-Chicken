@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style-usuario.css">
     <link rel="shortcut icon" href="images/logo_galinha.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <nav>
@@ -58,7 +58,10 @@
 
     <!-- Corpo da página -->
     <div class="corpo">
-        <!-- KPIs -->
+        <!-- corpo que envolve as kpis e os graficos -->
+        <div class="corpo-principal">
+            <!-- KPIs -->
+
         <div class="legenda"><img src="images/legenda.png" alt=""></div>
         <div class="corpo-kpi">
             <div class="kpi">Lotes que apresentaram problema
@@ -71,10 +74,44 @@
                 <div class="info-kpi3">0</div>
             </div>
         </div>
-  <!-- Área de Gráficos -->
-  <div class="area-graficos">
-    <!-- Conteúdo dos gráficos -->
-</div>
+        <!-- Área de Gráficos -->
+        <div class="area-graficos">
+            <div class="grafico grafico1">
+                <div class="maine3">
+                    <div class="table1">
+                        <canvas id="tabela1"></canvas>
+                    </div>
+                    <div class="parte6">
+                        <span>Aviario 33 Dados Sensor de Temperatura</span>
+                        <div class="parte61">
+                            <span>Sensor Temperatura</span>
+                            <div class="cor">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="grafico grafico2">
+                <div class="maine4">
+                    <div class="table2">
+                        <canvas id="tabela2"></canvas>
+                    </div>
+                    <div class="parte7">
+                        <span>Aviario 33 Dados Sensor de Umidade</span>
+                        <div class="parte71">
+                            <span>Sensor Umidade</span>
+                            <div class="cor2">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+      </div>
+    </div>
         <!-- Lotes -->
         <div class="corpo-lotes">
             <!-- Lote 1 -->
@@ -128,9 +165,11 @@
                     <option value="">10/04/2024</option>
                 </select>
             </div>
+            <div class="botao-area">
+            <button class="botao-lote">+</button> Adicionar Lote
+        </div>
         </div>
 
-      
     </div>
 
     
@@ -183,6 +222,65 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+ // graficos
+ const linha = document.getElementById('tabela1');
+    const coluna = document.getElementById('tabela2');
+  
+    new Chart(linha, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 0, 0)',
+          borderColor: 'rgb(255, 0, 100)',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 2
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 100, 255)',
+          borderColor: 'rgb(0, 100, 255)',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 2
+        }
+    ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 20,
+          }
+        }
+      }
+    });
 
+    new Chart(coluna, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura Media',
+                backgroundColor: 'rgb(255, 0, 100)',
+                borderColor: 'rgb(255, 0, 0)',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1
+            },{
+                label: 'Umidade Media',
+                backgroundColor: 'rgb(0, 100, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+    });
 
 </script>
