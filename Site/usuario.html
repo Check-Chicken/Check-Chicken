@@ -70,7 +70,7 @@
             <!-- KPIs -->
 
         <div class="legenda"><img src="images/legenda.png" alt=""></div>
-        <p id="titulo_kpi" style="font-size: 30px; font-weight: 600; color: #f77d26;">Indicadores de performance dos últimos 30 dias</p>
+        <p id="titulo_kpi" class="titulo_kpi" >Indicadores de performance dos últimos 30 dias</p>
         <div class="corpo-kpi">
             <div class="kpi">Lotes que apresentaram problema
                 <div class="info-kpi1">50%</div>
@@ -160,7 +160,7 @@
                 </select>
             </div>
             <div class="botao-area">
-            <button class="botao-lote">+</button> Adicionar Lote
+            <button id="botao_lote" class="botao_lote">+</button> <p id="texto_botaoLote" class="texto_botaoLote" >Adicionar Lote</p>
         </div>
         </div>
 
@@ -214,18 +214,22 @@
     //funcao para trocar cor do fundo
     const colorDiv = document.getElementById('corpo');
     const colorP = document.getElementById('titulo_kpi');
+    const colorBotao = document.getElementById('texto_botaoLote');
     const colorButton = document.getElementById('trocaCor');
 
 function changeColor() {
   const hasSecondColor = colorDiv.classList.contains('second');
   const hasSecondColor2 = colorP.classList.contains('second2');
+  const hasSecondColor3 = colorBotao.classList.contains('second3');
 
-  if (hasSecondColor && hasSecondColor2) {
+  if (hasSecondColor && hasSecondColor2 && hasSecondColor2) {
     colorDiv.classList.remove('second')
     colorP.classList.remove('second2')
+    colorBotao.classList.remove('second3')
   } else {
     colorDiv.classList.add('second')
     colorP.classList.add('second2')
+    colorBotao.classList.add('second3')
   }
 }
 
