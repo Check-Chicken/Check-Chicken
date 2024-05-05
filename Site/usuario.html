@@ -7,126 +7,200 @@
     <link rel="stylesheet" href="style-usuario.css">
     <link rel="shortcut icon" href="images/logo_galinha.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-        <nav>
-          <div class="navbar">
+    <nav>
+        <div class="navbar">
             <div class="container nav-container">
-              <input class="checkbox" type="checkbox" name="" id="" />
-              <div class="hamburger-lines">
-                      <span class="line line1"></span>
-                      <span class="line line2"></span>
-                      <span class="line line3"></span>
-                    </div>  
-                    <div class="menu-items">
-                  <div class="logo">
-                    <img src="images/logo_novo.png" >
-                  </div>
-                  <div class="foto-usuario">
-                    <img src="images/mulher.png">
-                    <p style="margin-left: 2vw;">Olá, Fernanda!</p>
-                    <div class="dropdown">
-                      <span onclick="myFunction()" class="dropbtn"> &#129123;</span>
-                      <div id="myDropdown" class="dropdown-content fade">
-                        <a href="#">Editar Empresa</a>
-                        <a href="#">Editar Perfil</a>
-                        <a href="#">Cadastrar Funcionário</a>
-                        <div>
-                          <a href="inicio.html">
-                            <button class="Btn">
-                              
-                                    <div class="sign">
-                                      <svg viewBox="0 0 512 512">
-                                        <path
-                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
-                                      </path>
-                                    </svg>
-                                    </div>
-        
-                                    <div class="text">Sair</div>
-                                </button>
-                                
-        
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                    
-                      </div>
-                      <li><img class="navIcon" src="images/Dash.png"><a href="#">Dashboard</a></li>
-                      <li> <img class="navIcon" src="images/Notification.png"><a href="#">Notificações</a></li>
-                      <li><img class="navIcon" src="images/Config.png"><a href="#">Definições</a></li>
-                      
-                      
+                <input class="checkbox" type="checkbox" name="" id="" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>  
+                <div class="menu-items">
+                    <div class="logo">
+                        <img src="images/logo_novo.png" >
                     </div>
-                  </div>
+                    <div class="foto-usuario">
+                        <img src="images/mulher.png">
+                        <p style="margin-left: 2vw;">Olá, Fernanda!</p>
+                        <div class="dropdown">
+                            <span onclick="myFunction()" class="dropbtn"> &#129123;</span>
+                            <div id="myDropdown" class="dropdown-content fade">
+                                <a href="#">Editar Empresa</a>
+                                <a href="#">Editar Perfil</a>
+                                <a href="#">Cadastrar Funcionário</a>
+                                <div>
+                                    <a href="inicio.html">
+                                        <button class="Btn">
+                                            <div class="sign">
+                                                <svg viewBox="0 0 512 512">
+                                                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                            <div class="text">Sair</div>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <li><img class="navIcon" src="images/Dash.png"><a href="#">Dashboard</a></li>
+                    <li><img class="navIcon" src="images/Notification.png"><a href="#">Notificações</a></li>
+                    <li><img class="navIcon" src="images/Config.png"><a href="#">Definições</a></li>
                 </div>
-              </nav>
-      <!-- corpo da pagina -->
-      <div class="corpo">
-        <div class="caixa-legenda">
-        <div class="legenda">Legenda:
-        <div class="conteudo-legenda">
-          <div class="bolinha verde"></div><p>Estável</p>
-          <div class="bolinha amarela"></div><p>Atenção</p>
-          <div class="bolinha vermelha"></div><p>Acima</p>
-          <div class="bolinha azul"></div><p>Abaixo</p>
+            </div>
         </div>
-        </div>
-        <div class="add-lote">
-        <button id="botao-addlote">+</button><p style="font-size: 25px;">Adicionar Lote</p>
-      </div>
-      </div>
+    </nav>
+
+    <!-- Corpo da página -->
+    <div class="corpo">
+        <!-- corpo que envolve as kpis e os graficos -->
+        <div class="corpo-principal">
+            <!-- KPIs -->
+
+        <div class="legenda"><img src="images/legenda.png" alt=""></div>
         <div class="corpo-kpi">
-          <div class="informacoes">
-            <div class="KPI">Temperatura Atual<div class="kpi-info">35º</div></div>  
-            <div class="KPI">Umidade Atual <div class="kpi-info2">30</div></div>  
-            <div class="KPI">Status do Lote <div class="kpi-info3">Temperatura acima do desejado</div></div>  
-          </div>
-          <div class="visualizador">
-            <div style="color: white; margin-left: 6.3vw; margin-bottom: 3vh;">Visualizador</div>
-            <div class="lotes">
-              <div class="lote lote1"><p style="font-weight: 600;">Lote 1</p>
-                <div class="conteudo-lote">Temperatura Atual<div class="lote-info-temp">35º</div></div> 
-                <div class="conteudo-lote">Umidade Atual<div class="lote-info-umi">35</div></div> 
-                
-              </div>
-              <div class="lote lote2"><p style="font-weight: 600;">Lote 2</p>
-                <div class="conteudo-lote">Temperatura Atual<div class="lote2-info-temp">24º</div></div> 
-                <div class="conteudo-lote">Umidade Atual<div class="lote2-info-umi">45</div></div> 
-              </div>
-              
+            <div class="kpi">Lotes que apresentaram problema
+                <div class="info-kpi1">50%</div>
+            </div>
+            <div class="kpi">Lotes que apresentaram temperatura fora do padrão 
+                <div class="info-kpi2">1</div>
+            </div>
+            <div class="kpi">Lotes que apresentaram umidade fora do padrão
+                <div class="info-kpi3">0</div>
+            </div>
         </div>
+        <!-- Área de Gráficos -->
+        <div class="area-graficos">
+            <div class="grafico grafico1">
+                <div class="maine3">
+                    <div class="table1">
+                        <canvas id="tabela1"></canvas>
+                    </div>
+                    <div class="parte6">
+                        <span>Aviario 33 Dados Sensor de Temperatura</span>
+                        <div class="parte61">
+                            <span>Sensor Temperatura</span>
+                            <div class="cor">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="grafico grafico2">
+                <div class="maine4">
+                    <div class="table2">
+                        <canvas id="tabela2"></canvas>
+                    </div>
+                    <div class="parte7">
+                        <span>Aviario 33 Dados Sensor de Umidade</span>
+                        <div class="parte71">
+                            <span>Sensor Umidade</span>
+                            <div class="cor2">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
       </div>
-          
-          
+    </div>
+        <!-- Lotes -->
+        <div class="corpo-lotes">
+            <!-- Lote 1 -->
+            <div class="lote" id="lote1">
+                <div class="titulo-lote">Lote 1</div>
+                <div class="corpo-lote">
+                    <div class="caixa-lote">
+                        <div class="conteudo-lote1">Temp. Atual
+                            <div class="caixa-temp">35º</div>
+                        </div>  
+                    </div>
+                    <div class="caixa2-lote">
+                        <div class="conteudo-lote1">Umid. Atual
+                            <div class="caixa-umid">30</div>
+                        </div>  
+                    </div>
+                </div>
+                <select name="historico" id="historico">
+                    <option value="#" disabled selected>Histórico de Registro</option>
+                    <option value="">05/04/2024</option>
+                    <option value="">06/04/2024</option>
+                    <option value="">07/04/2024</option>
+                    <option value="">08/04/2024</option>
+                    <option value="">09/04/2024</option>
+                    <option value="">10/04/2024</option>
+                </select>
+            </div>
+
+            <!-- Lote 2 -->
+            <div class="lote" id="lote2">
+                <div class="titulo-lote">Lote 2</div>
+                <div class="corpo-lote">
+                    <div class="caixa-lote">
+                        <div class="conteudo-lote2">Temp. Atual
+                            <div class="caixa-temp2">24º</div>
+                        </div>  
+                    </div>
+                    <div class="caixa2-lote">
+                        <div class="conteudo-lote2">Umid. Atual
+                            <div class="caixa-umid2">80</div>
+                        </div>  
+                    </div>
+                </div>
+                <select name="historico" id="historico">
+                    <option value="#" disabled selected>Histórico de Registro</option>
+                    <option value="">05/04/2024</option>
+                    <option value="">06/04/2024</option>
+                    <option value="">07/04/2024</option>
+                    <option value="">08/04/2024</option>
+                    <option value="">09/04/2024</option>
+                    <option value="">10/04/2024</option>
+                </select>
+            </div>
+            <div class="botao-area">
+            <button class="botao-lote">+</button> Adicionar Lote
         </div>
-      </div>
+        </div>
+
+    </div>
+
+    
+
+ 
+
+
       </body>
       <!-- footer -->
 <footer>
     <div class="footer">
       <div class="infos footerText">
-        <a href="inicio.html"><img src="images/logo_galinha.png" style="width: 3vw; margin-right: 1vw;"></a>
-        <img src="images/facebook-verde.png" style="width: 2vw;">
-        <img src="images/instagram-verde.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 1vw;">
-        <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: #0B6013;">|</p>
+        <a href="inicio.html"><img src="images/logo_galinha.png" style="width: 2.5vw; margin-right: 2vw;"></a>
+        <img src="images/facebook.png" style="width: 2vw;">
+        <img src="images/instagram.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 1vw;">
+        <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: #F5F4F9;">|</p>
         <div class="endereco">
           <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
         </div>
   
-        <p style="font-size: 50px; margin-left: 1vw; font-weight: lighter; color: #0B6013;">|</p>
+        <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: #F5F4F9;">|</p>
   
         <div class="contato">
   
-          <a href="usuario.html" style="font-size: 18px; color: #0B6013;">www.checkchicken.com.br</a>
-          <p style="font-size: 20px; color: #0B6013;">(11) 2536-6498</p>
-          <p style="font-size: 16px; color:#d0ad00;">© 2024 by CheckChicken</p>
+          <a href="usuario.html" style="font-size: 16px; color: #F5F4F9;">www.checkchicken.com.br</a>
+          <p style="font-size: 16px; color: #F5F4F9;">(11) 2536-6498</p>
+          <p style="font-size: 12px; color:#d0ad00;">© 2024 by CheckChicken</p>
   
         </div>
   
-        <p style="font-size: 50px; margin-right: 1vw; font-weight: lighter; color: #0B6013;">|</p>
+        <p style="font-size: 50px; margin-right: 1vw; font-weight: lighter; color: #F5F4F9;">|</p>
         <div class="pages">
   
           <li>Política e privacidade</li> |
@@ -148,6 +222,65 @@ function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
+ // graficos
+ const linha = document.getElementById('tabela1');
+    const coluna = document.getElementById('tabela2');
+  
+    new Chart(linha, {
+      type: 'line',
+      data: {
+        labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        datasets: [{
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 0, 0)',
+          borderColor: 'rgb(255, 0, 100)',
+          data: [30, 29, 28, 25, 22, 23],
+          borderWidth: 2
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 100, 255)',
+          borderColor: 'rgb(0, 100, 255)',
+          data: [80, 82, 80, 85, 80, 83],
+          borderWidth: 2
+        }
+    ]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            min: 20,
+          }
+        }
+      }
+    });
 
+    new Chart(coluna, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [{
+                label: 'Temperatura Media',
+                backgroundColor: 'rgb(255, 0, 100)',
+                borderColor: 'rgb(255, 0, 0)',
+                data: [22, 24, 27, 23, 20, 18],
+                borderWidth: 1
+            },{
+                label: 'Umidade Media',
+                backgroundColor: 'rgb(0, 100, 255)',
+                borderColor: 'rgb(0, 0, 255)',
+                data: [90, 89, 93, 87, 88, 82],
+                borderWidth: 1
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+    });
 
 </script>

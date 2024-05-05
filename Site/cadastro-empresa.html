@@ -12,9 +12,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="...css\style-cadastro-empresa.css">
+    <link rel="stylesheet" href="style-cadastro-empresa.css">
     <link rel="shortcut icon" href="images\logo_galinha.png">
     <title>Cadastro de empresa</title>
+
+
 </head>
 
 <body>
@@ -75,71 +77,58 @@
             </div>
         </nav>
     </header>
+    <div class="corpo">
+        <div class="formulario">
+            <form class="cadastrar" action="#">
 
-    <div class="formulario">
-        <form class="cadastrar" action="#">
+                <div class="form_grupo">
+                    CNPJ:
+                    <input type="text" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" id="inputCnpj" maxlength="14"
+                        minlength="14">
+                    <div id="form_resultadoCNPJ" class="resultados"></div>
+                </div><br>
+                <div class="form_grupo">
+                    Nome da empresa:
+                    <input type="text" class="inputs" placeholder="Empresa ficticia" id="inputNomeEmpresa">
 
-            <div class="form_grupo">
-                CNPJ:
-                <input type="text" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" id="inputCnpj" required>
-            </div><br>
-            <div class="form_grupo">
-                Nome da empresa:
-                <input type="text" class="inputs" placeholder="Empresa ficticia" id="inputNomeEmpresa" required>
-            </div><br>
-            <div class="form_grupo">
-                CEP:
-                <input type="number" class="inputs" placeholder="012345-123" id="inputCep" required>
-            </div><br>
-            <div class="form_grupo">
-                Logradouro:
-                <select id="selectLogradouro" class="inputs">
-                    <option value="#">selecione o Logradouro</option>
-                    <option value="sitio">Sítio</option>
-                    <option value="estrada">Estrada</option>
-                    <option value="fazenda">Fazenda</option>
-                </select>
-            </div><br>
-            <div class="form_grupo">
-                <input type="text" class="inputs" placeholder="Nome Logradouro" id="inputLogradouro" required>
-            </div><br>
-            <div class="form_grupo">
-
-                
-
-                Número:
-                <input type="number" class="inputs" placeholder="123" id="inputNumero" required>
-            </div><br>
-            <div class="form_grupo">
-                Email:
-                <input type="email" class="inputs" placeholder="exepmplo@gmail.com" id="inputEmail">
-            </div><br>
-            <div class="form_grupo">
-                Senha:
-                <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha" required>
-            </div><br>
-            <div class="form_grupo">
-                Confirme sua senha:
-                <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha2" required>
-            </div><br>
-            <div class="form_grupo">
-
-                <button id="botao-cadastrar" onclick="cadastrar()">CADASTRAR</button><br>
-                <div id="entrarCom">
-                    <p style="text-align: center;">Entrar com:</p>
-                    <a href=""><img class="entrarCom" src="images/google.png" alt=""
-                            style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px;"></a>
-                    <a href=""><img class="entrarCom" src="images/facebook (1).png" alt=""
-                            style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
-                    <a href=""><img class="entrarCom" src="images/logotipo-da-apple.png " alt=""
-                            style="width: 3vw; height: 3vw; border: 1px solid #ccc; padding: 5px; border-radius: 5px; margin-left: 30px;"></a>
+                </div><br>
+                <div class="form_grupo">
+                    CEP:
+                    <input type="text" class="inputs" placeholder="012345-123" id="inputCep" maxlength="8"
+                        minlength="8">
+                    <div id="form_resultadoCEP" class="resultados"></div>
+                </div><br>
+                <div class="form_grupo">
+                    Número:
+                    <input type="number" class="inputs" placeholder="123" id="inputNumero">
+                </div><br>
+                <div class="form-grupo">
+                    Complemento:
+                    <input type="text" class="inputs" placeholder="Bloco 1" id="inputComplemento">
+                </div><br>
+                <div class="form_grupo">
+                    Email:
+                    <input type="text" class="inputs" placeholder="exemplo@gmail.com" id="inputEmail">
+                    <div id="form_resultadoEMAIL" class="resultados"></div>
+                </div><br>
+                <div class="form_grupo">
+                    Senha:
+                    <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha">
+                    <div id="form_resultadoSENHA" class="resultados"></div>
+                </div><br>
+                <div class="form_grupo">
+                    Confirme sua senha:
+                    <input type="text" class="inputs" placeholder="ex3mpl@1" id="inputSenha2">
+                    <div id="form_resultadoSENHA2" class="resultados"></div>
+                </div><br>
+                <div class="form_grupo">
+                    <button type="button" id="botao-cadastrar" onclick="cadastrar()">CADASTRAR</button><br>
                 </div>
 
-            </div>
-
-        </form>
+            </form>
+        </div>
+        <div id="div_requisitos" style="display: none;"></div>
     </div>
-
     <footer>
         <div class="footer">
             <div class="infos footerText">
@@ -166,117 +155,98 @@
                     <li>Suporte</li>
                 </div>
             </div>
-            <div class="infos2">
 
-            </div>
         </div>
     </footer>
 </body>
+
 </html>
 
-    <script>
+<script>
     function cadastrar() {
-    const cnpj = inputCnpj.value
-    const NomeEmpresa = inputNomeEmpresa.value
-    const cep = inputCep.value
-    const numero = inputNumero.value
-    const email = inputEmail.value
-    const senha = inputSenha.value
-    const senha2 = inputSenha2.value
-    const logradouro = selectLogradouro.value
-    const nomeLogradouro = inputLogradouro.value
-    let trueFalse = true 
-    let numeroTrue = false
-   
-    if(cnpj.length != 14){
-        alert("CNPJ inválido")
-        trueFalse = false
-    }else if(cep.length != 8){
-        alert("cep inválido")
-        trueFalse = false 
-    }else if(email.indexOf("@") < 0 || email.indexOf(".") < 0 ){
-        alert("email inválido")
-        trueFalse = false
-    }
-    for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha++) {
-    if (senha.indexOf(numeroSenha.toString()) !== -1) {
-        numeroTrue = true
-        break;
-    }
-}
-if (numeroTrue == false) {
-    alert("Senha inválida. A senha deve conter pelo menos um número")
-    trueFalse = false
-}else if (
-        senha.length < 8 ||
-        senha.indexOf("@") == -1 &&
-        senha.indexOf("#") == -1
-    ) {
-        alert(`Senha inválida. A senha deve conter:
-        - Pelo menos 8 caracteres
-        - Pelo menos um caractere especial como @ ou #
-        - Pelo menos um número`)
-        trueFalse = false
+        const cnpj = inputCnpj.value
+        const NomeEmpresa = inputNomeEmpresa.value
+        const cep = inputCep.value
+        const numero = inputNumero.value
+        const email = inputEmail.value
+        const senha = inputSenha.value
+        const senha2 = inputSenha2.value
+        const complemento = inputComplemento.value
+
+        form_resultadoCNPJ.innerHTML = ""
+        form_resultadoCEP.innerHTML = ""
+        form_resultadoEMAIL.innerHTML = ""
+        form_resultadoSENHA.innerHTML = ""
+        form_resultadoSENHA2.innerHTML = ""
+
+        let senhaArroba = senha.indexOf("@")
+        let senhaTag = senha.indexOf("#")
+
+
+        div_requisitos.innerHTML = ""
+        const texto = `➤ O CNPJ precisa ter <b>14</b> dígitos <br> <br>
+        ➤ O CEP precisa ter <b>9</b> dígitos <br> <br>
+        ➤ A senha precisa conter pelo menos <b>1</b> número e <b>@ ou #</b> e também deve conter mais de <b>8</b> caracteres
+                        `
+
+
+
+        if (cnpj.length != 14 || cnpj == "") {
+            form_resultadoCNPJ.innerHTML = `CNPJ inválido`
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = 'block'
+            return
+
+        } else if (cep.length != 8 || cep == "") {
+            form_resultadoCEP.innerHTML = `CEP inválido`
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = 'block'
+            return
+
+
+        } else if (email.indexOf("@") <= 0 || email.indexOf(".") <= 0 || email == "") {
+            form_resultadoEMAIL.innerHTML = `Email inválido`
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = 'block'
+            return
+        }
+        if (senha == "") {
+            form_resultadoSENHA.innerHTML = `Senha inválida`;
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = 'block';
+            return;
+        } else  {
+            let contemNumero = 0
+
+            for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha += 1) {
+                if (senha.indexOf(numeroSenha.toString()) !== -1) {
+                    contemNumero = 1;
+                    break;
+                }
+            }
+
+            if (contemNumero == 0 || senha.length <= 8 || senhaTag <= 0 && senhaArroba <= 0) {
+                form_resultadoSENHA.innerHTML = `Senha inválida`;
+                div_requisitos.innerHTML = texto;
+                div_requisitos.style.display = 'block';
+                return
+            }
+            if (senha2 != senha) {
+                form_resultadoSENHA2.innerHTML = `Senhas não coincidem`;
+                div_requisitos.innerHTML = texto;
+                div_requisitos.style.display = 'block';
+                return
+            } 
+        }
+
+        alert(`CADASTRADO COM SUCESSO`);
+        setTimeout(() => {
+            window.location.href = "inicio.html";
+        }, 200);
+    
+    
+    
+    
     }
     
-    if(senha2 != senha){
-        alert("As senhas estão diferentes")
-        trueFalse = false
-    }else if(trueFalse == true){
-        alert("cadastrado com sucesso")
-        window.location.href = "inicio.html"
-    }
-}
-    
-        // function cadastrar() {
-        //     const cnpj = inputCnpj.value
-        //     const NomeEmpresa = inputNomeEmpresa.value
-        //     const cep = inputCep.value
-        //     const logradouro = inputLogradouro.value
-        //     const numero = inputNumero.value
-        //     const email = inputEmail.value
-        //     const senha = inputSenha.value
-        //     const senha2 = inputSenha2.value
-        //     let trueFalse = true
-        //     let numeroTrue = false
-
-        //     if (cnpj.length != 14) {
-        //         alert("CNPJ inválido")
-        //         trueFalse = false
-        //     } else if (cep.length != 8) {
-        //         alert("cep inválido")
-        //         trueFalse = false
-        //     } else if (email.indexOf("@") < 0 || email.indexOf(".") < 0) {
-        //         alert("email inválido")
-        //         trueFalse = false
-        //     }
-        //     for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha++) {
-        //         if (senha.indexOf(numeroSenha.toString()) !== -1) {
-        //             numeroTrue = true
-        //             break;
-        //         }
-        //     }
-        //     if (numeroTrue == false) {
-        //         alert("Senha inválida. A senha deve conter pelo menos um número");
-        //         trueFalse = false;
-        //     } else if (
-        //         senha.length < 8 ||
-        //         senha.indexOf("@") == -1 &&
-        //         senha.indexOf("#") == -1
-        //     ) {
-        //         alert(`Senha inválida. A senha deve conter:
-        //     - Pelo menos 8 caracteres
-        //     - Pelo menos um caractere especial como @ ou #
-        //     - Pelo menos um número`);
-        //         trueFalse = false;
-        //     }
-
-        //     if (senha2 != senha) {
-        //         alert("As senhas estão diferentes")
-        //         trueFalse = false
-        //     } else if (trueFalse == true) {
-        //         alert("cadastrado com sucesso")
-        //         window.location.href = "inicio.html"
-        //     }
-        // }
     </script>
