@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="style-usuario.css">
     <link rel="shortcut icon" href="images/logo_galinha.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
     <nav>
         <div class="navbar">
@@ -18,17 +21,17 @@
                     <span class="line line1"></span>
                     <span class="line line2"></span>
                     <span class="line line3"></span>
-                </div> 
+                </div>
                 <div class="area_icone_tema">
                     <div class="icone_tema">
-                        
-                            <button id="trocaCor" onclick="changeColor()"><img src="images/dia-e-noite.png" alt=""></button>
-                          
+
+                        <button id="trocaCor" onclick="changeColor()"><img src="images/dia-e-noite.png" alt=""></button>
+
+                    </div>
                 </div>
-                </div> 
                 <div class="menu-items">
                     <div class="logo">
-                        <img src="images/logo_novo.png" >
+                        <img src="images/logo_novo.png">
                     </div>
                     <div class="foto-usuario">
                         <img src="images/mulher.png">
@@ -44,7 +47,8 @@
                                         <button class="Btn">
                                             <div class="sign">
                                                 <svg viewBox="0 0 512 512">
-                                                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+                                                    <path
+                                                        d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
                                                     </path>
                                                 </svg>
                                             </div>
@@ -69,43 +73,44 @@
         <div class="corpo-principal">
             <!-- KPIs -->
 
-        <div class="legenda"><img src="images/legenda.png" alt=""></div>
-        <p id="titulo_kpi" class="titulo_kpi" >Indicadores de performance dos últimos 30 dias</p>
-        <div class="corpo-kpi">
-            <div class="kpi">Lotes que apresentaram problema
-                <div class="info-kpi1">50%</div>
+            <div class="legenda"><img src="images/legenda.png" alt=""></div>
+            <p id="titulo_kpi" class="titulo_kpi">Indicadores de performance dos últimos 30 dias</p>
+            <div class="corpo-kpi">
+                <div class="kpi">Lotes que apresentaram problema
+                    <div class="info-kpi1">50%</div>
+                </div>
+                <div class="kpi">Lotes que apresentaram temperatura fora do padrão
+                    <div class="info-kpi2">1</div>
+                </div>
+                <div class="kpi">Lotes que apresentaram umidade fora do padrão
+                    <div class="info-kpi3">0</div>
+                </div>
             </div>
-            <div class="kpi">Lotes que apresentaram temperatura fora do padrão 
-                <div class="info-kpi2">1</div>
-            </div>
-            <div class="kpi">Lotes que apresentaram umidade fora do padrão
-                <div class="info-kpi3">0</div>
+            <!-- Área de Gráficos -->
+            <div class="area-graficos">
+
+                <div class="grafico grafico1">
+                    <div class="maine3">
+                        <p style="font-size: 18px;">Dados de temperatura: Lote 1</p>
+                        <div class="table1">
+                            <section style="width: 70%; height: 50vh;">
+                                <canvas id="lm35Temperatura"></canvas>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="grafico grafico2">
+                    <div class="maine4">
+                        <p style="font-size: 18px;">Dados de umidade: Lote 1</p>
+                        <div class="table2">
+                            <section style="width: 70%; height: 50vh;">
+                                <canvas id="dht11Umidade"></canvas>
+                            </section>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Área de Gráficos -->
-        <div class="area-graficos">
-
-            <div class="grafico grafico1">
-                <div class="maine3">
-                    <p style="font-size: 18px;">Dados dos sensores: Lote 1</p>
-                    <div class="table1">
-                        <canvas id="tabela1"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="grafico grafico2">
-                <div class="maine4">
-                    <p style="font-size: 18px;">Histórico de Registro</p>
-                    <p style="font-size: 18px;">Dia 05/04/2024 - Lote 1</p>
-                    <div class="table2">
-                        <canvas id="tabela2"></canvas>
-                    </div>
-                   
-                    
-                </div>
-            </div>
-      </div>
-    </div>
         <!-- Lotes -->
         <div class="corpo-lotes">
             <!-- Lote 1 -->
@@ -115,12 +120,12 @@
                     <div class="caixa-lote">
                         <div class="conteudo-lote1">Temp. Atual
                             <div class="caixa-temp">35º</div>
-                        </div>  
+                        </div>
                     </div>
                     <div class="caixa2-lote">
                         <div class="conteudo-lote1">Umid. Atual
-                            <div class="caixa-umid">30</div>
-                        </div>  
+                            <div class="caixa-umid">0%</div>
+                        </div>
                     </div>
                 </div>
                 <select name="historico" id="historico">
@@ -141,12 +146,12 @@
                     <div class="caixa-lote">
                         <div class="conteudo-lote2">Temp. Atual
                             <div class="caixa-temp2">24º</div>
-                        </div>  
+                        </div>
                     </div>
                     <div class="caixa2-lote">
                         <div class="conteudo-lote2">Umid. Atual
                             <div class="caixa-umid2">80</div>
-                        </div>  
+                        </div>
                     </div>
                 </div>
                 <select name="historico" id="historico">
@@ -160,53 +165,55 @@
                 </select>
             </div>
             <div class="botao-area">
-            <button id="botao_lote" class="botao_lote">+</button> <p id="texto_botaoLote" class="texto_botaoLote" >Adicionar Lote</p>
-        </div>
+                <button id="botao_lote" class="botao_lote">+</button>
+                <p id="texto_botaoLote" class="texto_botaoLote">Adicionar Lote</p>
+            </div>
         </div>
 
     </div>
 
-    
-
- 
 
 
-      </body>
-      <!-- footer -->
+
+
+
+</body>
+<!-- footer -->
 <footer>
     <div class="footer">
-      <div class="infos footerText">
-        <a href="inicio.html"><img src="images/logo_galinha.png" style="width: 2.5vw; margin-right: 2vw;"></a>
-        <img src="images/facebook.png" style="width: 2vw;">
-        <img src="images/instagram.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 1vw;">
-        <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: #F5F4F9;">|</p>
-        <div class="endereco">
-          <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+        <div class="infos footerText">
+            <a href="inicio.html"><img src="images/logo_galinha.png" style="width: 2.5vw; margin-right: 2vw;"></a>
+            <img src="images/facebook.png" style="width: 2vw;">
+            <img src="images/instagram.png" style="width: 1.5vw; margin-left: 0.5vw; margin-right: 1vw;">
+            <p style="font-size: 50px; margin-right: 2vw; font-weight: lighter;color: #F5F4F9;">|</p>
+            <div class="endereco">
+                <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+            </div>
+
+            <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: #F5F4F9;">|</p>
+
+            <div class="contato">
+
+                <a href="usuario.html" style="font-size: 16px; color: #F5F4F9;">www.checkchicken.com.br</a>
+                <p style="font-size: 16px; color: #F5F4F9;">(11) 2536-6498</p>
+                <p style="font-size: 12px; color:#d0ad00;">© 2024 by CheckChicken</p>
+
+            </div>
+
+            <p style="font-size: 50px; margin-right: 1vw; font-weight: lighter; color: #F5F4F9;">|</p>
+            <div class="pages">
+
+                <li>Política e privacidade</li> |
+
+                <li>Termos de uso</li> |
+                <li>Info</li> |
+                <li>Suporte</li>
+            </div>
         </div>
-  
-        <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: #F5F4F9;">|</p>
-  
-        <div class="contato">
-  
-          <a href="usuario.html" style="font-size: 16px; color: #F5F4F9;">www.checkchicken.com.br</a>
-          <p style="font-size: 16px; color: #F5F4F9;">(11) 2536-6498</p>
-          <p style="font-size: 12px; color:#d0ad00;">© 2024 by CheckChicken</p>
-  
-        </div>
-  
-        <p style="font-size: 50px; margin-right: 1vw; font-weight: lighter; color: #F5F4F9;">|</p>
-        <div class="pages">
-  
-          <li>Política e privacidade</li> |
-  
-          <li>Termos de uso</li> |
-          <li>Info</li> |
-          <li>Suporte</li>
-        </div>
-      </div>
-      
+
     </div>
-  </footer>
+</footer>
+
 </html>
 
 <script>
@@ -217,86 +224,201 @@
     const colorBotao = document.getElementById('texto_botaoLote');
     const colorButton = document.getElementById('trocaCor');
 
-function changeColor() {
-  const hasSecondColor = colorDiv.classList.contains('second');
-  const hasSecondColor2 = colorP.classList.contains('second2');
-  const hasSecondColor3 = colorBotao.classList.contains('second3');
+    function changeColor() {
+        const hasSecondColor = colorDiv.classList.contains('second');
+        const hasSecondColor2 = colorP.classList.contains('second2');
+        const hasSecondColor3 = colorBotao.classList.contains('second3');
 
-  if (hasSecondColor && hasSecondColor2 && hasSecondColor2) {
-    colorDiv.classList.remove('second')
-    colorP.classList.remove('second2')
-    colorBotao.classList.remove('second3')
-  } else {
-    colorDiv.classList.add('second')
-    colorP.classList.add('second2')
-    colorBotao.classList.add('second3')
-  }
-}
+        if (hasSecondColor && hasSecondColor2 && hasSecondColor2) {
+            colorDiv.classList.remove('second')
+            colorP.classList.remove('second2')
+            colorBotao.classList.remove('second3')
+        } else {
+            colorDiv.classList.add('second')
+            colorP.classList.add('second2')
+            colorBotao.classList.add('second3')
+        }
+    }
+
 
     // funcao para o dropdown
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 
- // graficos
- const linha = document.getElementById('tabela1');
-    const coluna = document.getElementById('tabela2');
-  
-    new Chart(linha, {
-      type: 'line',
-      data: {
-        labels: ['12:00', '12:05', '12:10', '12:15', '12:20', '12:25', '12:30'],
-        datasets: [{
-          label: 'Temperatura',
-          backgroundColor: 'rgb(255, 0, 0)',
-          borderColor: 'rgb(255, 0, 100)',
-          data: [30, 29, 28, 25, 22, 23, 25],
-          borderWidth: 2
-        },
+    // graficos
+    var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+    contextoDht11Umidade.canvas.width = 500;
+    contextoDht11Umidade.canvas.height = 250;
+
+    var dht11Umidade = new Chart(
+        contextoDht11Umidade,
         {
-          label: 'Umidade',
-          backgroundColor: 'rgb(0, 100, 255)',
-          borderColor: 'rgb(0, 100, 255)',
-          data: [80, 82, 80, 85, 80, 83, 80],
-          borderWidth: 2
-        }
-    ]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: false,
-            min: 20,
-          }
-        }
-      }
-    });
-
-    new Chart(coluna, {
-        type: 'line',
-        data: {
-            labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
-            datasets: [{
-                label: 'Temperatura Media',
-                backgroundColor: 'rgb(255, 0, 100)',
-                borderColor: 'rgb(255, 0, 0)',
-                data: [22, 24, 27, 23, 20, 18],
-                borderWidth: 1
-            },{
-                label: 'Umidade Media',
-                backgroundColor: 'rgb(0, 100, 255)',
-                borderColor: 'rgb(0, 0, 255)',
-                data: [90, 89, 93, 87, 88, 82],
-                borderWidth: 1
-            }]
-        },
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Umidade',
+                    type: 'line',
+                    borderColor: ['#45b3e7'],
+                    backgroundColor: ['#89cff0']
+                }]
+            },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true,
+
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Umidade',
+                            min: 0,
+                            max: 100,
+                            stepSize: 5
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
                 }
             }
-    });
+        }
+    );
+    /* -- lm35Temperatura */
+    var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
+    contextoLm35Temperatura.canvas.width = 500;
+    contextoLm35Temperatura.canvas.height = 250;
+    var lm35Temperatura = new Chart(
+        contextoLm35Temperatura,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Temperatura',
+                    type: 'line',
+                    borderColor: ['#ffd902'],
+                    backgroundColor: ['#ffe135']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true,
+
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Temperatura'
+                        },
+                        ticks: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 50,
+                            stepSize: 5
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0.5
+                }
+            }
+        }
+    )
+    var paginacao = {};
+    var tempo = {};
+   // Função para atualizar a umidade exibida
+
+// Função para obter dados dos sensores
+function obterDados(grafico, endpoint) {
+    var http = new XMLHttpRequest();
+    http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
+    http.send(null);
+    var valores = JSON.parse(http.responseText);
+    
+    // Chamar a função para atualizar a umidade com o último valor capturado
+    var umidadeAtual = parseFloat(valores[valores.length - 1]);
+    atualizarUmidade(umidadeAtual);
+
+    if (paginacao[endpoint] == null) {
+        paginacao[endpoint] = 0;
+    }
+    if (tempo[endpoint] == null) {
+        tempo[endpoint] = 0;
+    }
+    // Exibir à partir do último elemento exibido anteriormente
+    var ultimaPaginacao = paginacao[endpoint];
+    paginacao[endpoint] = valores.length;
+    var valores = valores.slice(ultimaPaginacao);
+    valores.forEach((valor) => {
+        //Máximo de 60 itens exibidos no gráfico
+        if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+            grafico.data.labels.shift();
+            grafico.data.datasets[0].data.shift();
+        }
+
+        grafico.data.labels.push(tempo[endpoint]++);
+        grafico.data.datasets[0].data.push(parseFloat(valor));
+        grafico.update();
+    })
+}
+
+    setInterval(() => {
+        obterDados(dht11Umidade, 'dht11/umidade');
+        obterDados(lm35Temperatura, 'lm35/temperatura');
+    }, 2000);
+
+
+   // Guardar uma referência para o elemento HTML que contém o texto da umidade
+var caixaUmidade = document.querySelector('.caixa-umid');
+
+// Função para atualizar a umidade exibida
+function atualizarUmidade(umidade) {
+    caixaUmidade.textContent = 
+     umidade.toFixed(1) + '%'; // Arredonda para duas casas decimais
+}
+
+// Função para obter dados simulados para os gráficos
+function obterDadosSimulados(grafico) {
+    // Gerar um valor aleatório para umidade entre 0 e 100
+    var umidade = Math.random() * 100;
+
+    // Chamar a função para atualizar o texto da umidade
+    atualizarUmidade(umidade);
+
+    // Máximo de 20 itens exibidos no gráfico
+    if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+        grafico.data.labels.shift();
+        grafico.data.datasets[0].data.shift();
+    }
+
+    // Adicionar os valores aleatórios ao gráfico
+    grafico.data.labels.push(tempo++);
+    grafico.data.datasets[0].data.push(parseFloat(umidade.toFixed(2))); // Arredonda para duas casas decimais
+    grafico.update();
+}
+
+// Definir uma variável global para controlar o tempo
+var tempo = 0;
+
+// Intervalo para obter dados simulados a cada 200ms
+setInterval(() => {
+    // Chamar a função para obter dados simulados para ambos os gráficos
+    obterDadosSimulados(dht11Umidade);
+    obterDadosSimulados(lm35Temperatura);
+}, 2000);
+
+
+
 
 </script>
