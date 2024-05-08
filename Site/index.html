@@ -23,22 +23,12 @@
             <canvas id="dht11Umidade"></canvas>
             <canvas id="lm35Temperatura"></canvas>
         </section>
-        <!-- <h1>Sensor DHT 11 - Temperatura</h1>
-        <section style="width: 100%;">
-            <canvas id="dht11Temperatura"></canvas>
-        </section>
-        <h1>Sensor Luminosidade</h1>
-        <section style="width: 100%;">
-            <canvas id="luminosidade"></canvas>
-        </section> -->
+       
         <h1>Sensor LM 35 - Temperatura</h1>
         <section style="width: 50%;">
             <canvas id="lm35Temperatura"></canvas>
         </section>
-        <!-- <h1>Sensor Chave</h1>
-        <section style="width: 100%;">
-            <canvas id="chave"></canvas>
-        </section> -->
+        
     </div>
 
     <script>
@@ -122,126 +112,7 @@
                 }
             }
         );
-        /* -- dht11Temperatura -- */
-        // var contextoDht11Temperatura = document.getElementById('dht11Temperatura').getContext('2d');
-        // contextoDht11Temperatura.canvas.width = 1000;
-        // contextoDht11Temperatura.canvas.height = 300;
-        // var dht11Temperatura = new Chart(
-        //     contextoDht11Temperatura,
-        //     {
-        //         type: 'line',
-        //         data: {
-        //             datasets: [{
-        //                 label: "Temperatura",
-        //                 type: 'line',
-        //                 borderColor: ['#ff3232'],
-        //                 backgroundColor: ['#ff7f7f']
-        //             }]
-        //         },
-        //         options: {
-        //             scales: {
-        //                 xAxes: [{
-        //                     distribution: 'series',
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }],
-        //                 yAxes: [{
-        //                     scaleLabel: {
-        //                         display: true,
-        //                         labelString: 'Luminosidade'
-        //                     },
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }]
-        //             },
-        //             animation: {
-        //                 duration: 0
-        //             }
-        //         }
-        //     }
-        // );
-        // /* -- luminosidade -- */
-        // var contextoLuminosidade = document.getElementById('luminosidade').getContext('2d');
-        // contextoLuminosidade.canvas.width = 1000;
-        // contextoLuminosidade.canvas.height = 300;
-        // var luminosidade = new Chart(
-        //     contextoLuminosidade,
-        //     {
-        //         type: 'line',
-        //         data: {
-        //             datasets: [{
-        //                 label: 'Luminosidade',
-        //                 type: 'line',
-        //                 borderColor: ['#ffd902'],
-        //                 backgroundColor: ['#ffe135']
-        //             }]
-        //         },
-        //         options: {
-        //             scales: {
-        //                 xAxes: [{
-        //                     distribution: 'series',
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }],
-        //                 yAxes: [{
-        //                     scaleLabel: {
-        //                         display: true,
-        //                         labelString: 'Luminosidade'
-        //                     },
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }]
-        //             },
-        //             animation: {
-        //                 duration: 0
-        //             }
-        //         }
-        //     }
-        // );
-        // /* -- chave */
-        // var contextoChave = document.getElementById('chave').getContext('2d');
-        // contextoChave.canvas.width = 1000;
-        // contextoChave.canvas.height = 300;
-        // var chave = new Chart(
-        //     contextoChave,
-        //     {
-        //         type: 'line',
-        //         data: {
-        //             datasets: [{
-        //                 label: 'Chave',
-        //                 type: 'line',
-        //                 borderColor: ['#ffd902'],
-        //                 backgroundColor: ['#ffe135']
-        //             }]
-        //         },
-        //         options: {
-        //             scales: {
-        //                 xAxes: [{
-        //                     distribution: 'series',
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }],
-        //                 yAxes: [{
-        //                     scaleLabel: {
-        //                         display: true,
-        //                         labelString: 'Chave'
-        //                     },
-        //                     ticks: {
-        //                         beginAtZero: true
-        //                     }
-        //                 }]
-        //             },
-        //             animation: {
-        //                 duration: 0
-        //             }
-        //         }
-        //     }
-        // );
+       
 
         var paginacao = {};
         var tempo = {};
@@ -275,10 +146,9 @@
 
         setInterval(() => {
             obterDados(dht11Umidade, 'dht11/umidade');
-            // obterDados(dht11Temperatura, 'dht11/temperatura');
-            // obterDados(luminosidade, 'luminosidade');
+           
             obterDados(lm35Temperatura, 'lm35/temperatura');
-            // obterDados(chave, 'chave');
+           
         }, 200);
 
     </script>

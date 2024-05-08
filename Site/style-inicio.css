@@ -4,6 +4,9 @@
   padding: 0;
   transition: all 0.3s;
 }
+html{
+  scroll-behavior:smooth;
+}
 
 body {
   font-family: poppins;
@@ -231,6 +234,10 @@ footer {
   width: 100vw;
   height: 100vh;
 }
+.azul{
+  color: #38B3F9;
+}
+
 
 .textos {
   position: absolute;
@@ -240,6 +247,46 @@ footer {
   text-align: center;
   color: #000;
   /* ajuste a cor do texto conforme necessário */
+}
+#texto3{
+  position: absolute;
+  font-size: 50px;
+  top: 20%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+#texto2{
+  position: absolute;
+  font-size: 50px;
+  top: 20%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+#texto2_parte2{
+  position: absolute;
+  font-size: 50px;
+  top: 80%;
+  left: 60%;
+  transform: translate(-0%, -50%);
+  justify-content: flex-start;
+  color: white;
+  font-weight: 500;
+ 
+}
+#texto3_parte2{
+  position: absolute;
+  font-size: 50px;
+  top: 80%;
+  left: 60%;
+  transform: translate(-0%, -50%);
+  justify-content: flex-start;
+  color: white;
+ 
 }
 
 #textojust {

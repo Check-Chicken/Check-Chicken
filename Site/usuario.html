@@ -376,11 +376,11 @@ var caixaTemperatura = document.querySelector('.caixa-temp');
 // Função para atualizar a umidade exibida
 function atualizarUmidade(umidade) {
     caixaUmidade.textContent = 
-     umidade.toFixed() + '%'; // Arredonda para duas casas decimais
+     umidade.toFixed(2) + '%'; // Arredonda para duas casas decimais
 }
 function atualizarTemp(temperatura) {
     caixaTemperatura.textContent = 
-     temperatura.toFixed() + 'º'; // Arredonda para duas casas decimais
+     temperatura.toFixed(2) + 'º'; // Arredonda para duas casas decimais
 }
 
 // Função para obter dados simulados para os gráficos
@@ -407,8 +407,8 @@ function gerarDadosSimulados() {
 
 // Função para atualizar os gráficos com os dados gerados
 function atualizarGraficos(umidade, temperatura) {
-    // Máximo de 20 itens exibidos no gráfico
-    if (dht11Umidade.data.labels.length == 10 && dht11Umidade.data.datasets[0].data.length == 10) {
+    // Máximo de 10 itens exibidos no gráfico
+    if (dht11Umidade.data.labels.length == 60 && dht11Umidade.data.datasets[0].data.length == 10) {
         dht11Umidade.data.labels.shift();
         dht11Umidade.data.datasets[0].data.shift();
     }
@@ -417,7 +417,7 @@ function atualizarGraficos(umidade, temperatura) {
     dht11Umidade.data.labels.push(dht11Umidade.data.labels.length + 1);
     dht11Umidade.data.datasets[0].data.push(parseFloat(umidade.toFixed()));
 
-    // Máximo de 20 itens exibidos no gráfico
+    // Máximo de 10 itens exibidos no gráfico
     if (lm35Temperatura.data.labels.length == 10 && lm35Temperatura.data.datasets[0].data.length == 10) {
         lm35Temperatura.data.labels.shift();
         lm35Temperatura.data.datasets[0].data.shift();
@@ -433,14 +433,14 @@ function atualizarGraficos(umidade, temperatura) {
 }
 
 
-// Intervalo para gerar dados simulados a cada 2 segundos
+// Intervalo para gerar dados simulados a cada 5 segundos
 setInterval(() => {
     // Chamar a função para gerar dados simulados
     gerarDadosSimulados();
     
     // Incrementar o tempo
     tempo++;
-}, 2000);
+}, 5000);
 
 
 // funcao para alterar a cor da caixa dependendo do valor capturado
