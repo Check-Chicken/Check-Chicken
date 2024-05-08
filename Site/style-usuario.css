@@ -351,6 +351,9 @@ input::placeholder {
   animation-name: fade;
   animation-duration: 0.5s;
 }
+#umidadeLote1 {
+  font-size: 18px;
+}
 
 @keyframes fade {
   from {
