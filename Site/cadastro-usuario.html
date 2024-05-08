@@ -110,11 +110,11 @@
             </div><br>
             <div class="form_grupo">
                 Email:
-                <input type="email" class="inputs" id="input_email" placeholder="Email" required>
+                <input type="email" class="inputs" id="inputEmail" placeholder="Email" required>
             </div><br>
             <div class="form_grupo">
                 Senha:
-                <input type="password" class="inputs" id="input_senha" placeholder="*********" required>
+                <input type="password" class="inputs" id="inputSenha" placeholder="*********" required>
             </div><br>
             <button id="botao-cadastrar">CADASTRAR</button><br>
             <div id="entrarCom">
@@ -167,3 +167,51 @@
   </footer>
 
 </html>
+
+<script>
+function validacao(){
+    const email = inputEmail.value
+    const senha = inputSenha.value
+
+    form_resultadoEMAIL.innerHTML = ""
+    form_resultadoSENHA.innerHTML = ""
+
+    let senhaArroba = senha.indexOf("@")
+    let senhaTag = senha.indexOf("#")
+
+
+    }if (email.indexOf("@") <= 0 || email.indexOf(".") <= 0 || email == "") {
+            form_resultadoEMAIL.innerHTML = `Email inválido`
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = 'block'
+            return
+        }
+        if (senha == "") {
+            form_resultadoSENHA.innerHTML = `Senha inválida`;
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = 'block';
+            return;
+        } else  {
+            let contemNumero = 0
+
+            for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha += 1) {
+                if (senha.indexOf(numeroSenha.toString()) !== -1) {
+                    contemNumero = 1;
+                    break;
+                }
+            }
+
+            if (contemNumero == 0 || senha.length <= 8 || senhaTag <= 0 && senhaArroba <= 0) {
+                form_resultadoSENHA.innerHTML = `Senha inválida`;
+                div_requisitos.innerHTML = texto;
+                div_requisitos.style.display = 'block';
+                return
+            }
+
+            alert(`CADASTRADO COM SUCESSO`);
+        setTimeout(() => {
+            window.location.href = "inicio.html";
+        }, 200);
+}
+
+</script>
