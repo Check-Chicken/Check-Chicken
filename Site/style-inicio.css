@@ -486,7 +486,8 @@ span.senha {
   flex-direction: column;
   display: flex;
   align-items: center;
-  background-color: #719f7d;
+  
+  background: linear-gradient(#719f7d, #337f49 );
   width: 30vw;
   height: 50vh;
   justify-content: center;
@@ -495,6 +496,7 @@ span.senha {
   margin-left: 10vw;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   margin-top: 10vh;
+  
 }
 
 #servico2 {
@@ -502,7 +504,7 @@ span.senha {
   flex-direction: column;
   display: flex;
   align-items: center;
-  background-color: #719f7d;
+  background: linear-gradient(#719f7d, #337f49 );
   width: 30vw;
   height: 50vh;
   justify-content: center;

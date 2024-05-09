@@ -30,7 +30,7 @@
             </div>
 
             <div class="nav-menu hide">
-                <a href="inicio.html" >Home</a>
+                <a href="inicio.html">Home</a>
                 <a href="inicio.html#servicos">Serviços</a>
                 <a href="inicio.html#sobre-nos">Sobre Nós</a>
                 <a href="inicio.html#contato">Contato</a>
@@ -190,8 +190,6 @@
         ➤ A senha precisa conter pelo menos <b>1</b> número e <b>@ ou #</b> e também deve conter mais de <b>8</b> caracteres
                         `
 
-
-
         if (cnpj.length != 14 || cnpj == "") {
             form_resultadoCNPJ.innerHTML = `CNPJ inválido`
             div_requisitos.innerHTML = texto;
@@ -216,7 +214,7 @@
             div_requisitos.innerHTML = texto;
             div_requisitos.style.display = 'block';
             return;
-        } else  {
+        } else {
             let contemNumero = 0
 
             for (let numeroSenha = 0; numeroSenha <= 9; numeroSenha += 1) {
@@ -237,17 +235,13 @@
                 div_requisitos.innerHTML = texto;
                 div_requisitos.style.display = 'block';
                 return
-            } 
+            }
         }
 
         alert(`CADASTRADO COM SUCESSO`);
         setTimeout(() => {
             window.location.href = "inicio.html";
         }, 200);
-    
-    
-    
-    
     }
-    
-    </script>
+
+</script>
