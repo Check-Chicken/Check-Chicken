@@ -372,6 +372,7 @@ button:hover {
   background-color: #f44336;
   transform: translateX(-300%);
   border-radius: 10px;
+  font-size: 16px;
 }
 
 /* Center the image and position the close button */
@@ -399,6 +400,9 @@ img.avatar {
 
 span.senha {
   float: right;
+  font-size: 20px;
+  color: #FFA05D;
+  text-decoration: underline;
 }
 
 /* The Modal (background) */
