@@ -383,7 +383,7 @@ button:hover {
 .lnr-eye {
   position: relative;
   
-  right: 10px;
+  transform: translateX(-250%);
   cursor: pointer;
 }
 
