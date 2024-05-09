@@ -408,7 +408,7 @@ function gerarDadosSimulados() {
 // Função para atualizar os gráficos com os dados gerados
 function atualizarGraficos(umidade, temperatura) {
     // Máximo de 10 itens exibidos no gráfico
-    if (dht11Umidade.data.labels.length == 60 && dht11Umidade.data.datasets[0].data.length == 10) {
+    if (dht11Umidade.data.labels.length == 800 && dht11Umidade.data.datasets[0].data.length == 800) {
         dht11Umidade.data.labels.shift();
         dht11Umidade.data.datasets[0].data.shift();
     }
@@ -418,7 +418,7 @@ function atualizarGraficos(umidade, temperatura) {
     dht11Umidade.data.datasets[0].data.push(parseFloat(umidade.toFixed()));
 
     // Máximo de 10 itens exibidos no gráfico
-    if (lm35Temperatura.data.labels.length == 10 && lm35Temperatura.data.datasets[0].data.length == 10) {
+    if (lm35Temperatura.data.labels.length == 100 && lm35Temperatura.data.datasets[0].data.length == 100) {
         lm35Temperatura.data.labels.shift();
         lm35Temperatura.data.datasets[0].data.shift();
     }
