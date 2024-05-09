@@ -532,7 +532,7 @@ input::placeholder {
 }
 
 .caixa-temp {
-  width: 7vw;
+  width: 8vw;
   height: 9vh;
   background-color: #FF5151;
   display: flex;
@@ -544,7 +544,7 @@ input::placeholder {
 }
 
 .caixa-umid {
-  width: 7vw;
+  width: 8vw;
   height: 9vh;
   background-color: #4BAFE8;
   display: flex;
@@ -556,7 +556,7 @@ input::placeholder {
 }
 
 .caixa-temp2 {
-  width: 7vw;
+  width: 8vw;
   height: 9vh;
   background-color: #F5B91E;
   display: flex;
@@ -568,7 +568,7 @@ input::placeholder {
 }
 
 .caixa-umid2 {
-  width: 7vw;
+  width: 8vw;
   height: 9vh;
   background-color: #4BB262;
   display: flex;
@@ -582,14 +582,14 @@ input::placeholder {
 
 #historico {
   padding: 10px;
-  width: 16vw;
+  width: 17vw;
   border-radius: 10px;
   font-size: 20px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-left: 4vw;
+  margin-left: 3.5vw;
   margin-bottom: 2.5vh;
 
 }

@@ -446,11 +446,11 @@ setInterval(() => {
 // funcao para alterar a cor da caixa dependendo do valor capturado
 function alterarCorTemp(valor, caixa) {
     // Seleciona a caixa pela classe e define a cor com base no valor 
-    if (valor > 35) {
+    if (valor >= 35) {
         caixa.style.backgroundColor = '#FF5151';
-    } else if (valor >= 31 && valor <=35) {
+    } else if (valor >= 32.1 && valor <=33.9) {
         caixa.style.backgroundColor = '#4BB262';
-    } else if (valor == 30 || valor == 36) {
+    } else if (valor <= 32 || valor >= 34) {
         caixa.style.backgroundColor = '#F5B91E';
     }else{
         caixa.style.backgroundColor = '#4BAFE8';
@@ -462,7 +462,7 @@ function alterarCorUmid(valor, caixa) {
         caixa.style.backgroundColor = '#FF5151';
     } else if (valor >= 60 && valor <=70) {
         caixa.style.backgroundColor = '#4BB262';
-    } else if ((valor >= 55 && valor<=59) || (valor <= 75 && valor>=71)) {
+    } else if (valor >=67 && valor<=55) {
         caixa.style.backgroundColor = '#F5B91E';
     }else{
         caixa.style.backgroundColor = '#4BAFE8';
