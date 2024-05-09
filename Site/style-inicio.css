@@ -329,7 +329,7 @@ footer {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -380,6 +380,12 @@ button:hover {
   margin: 24px 0 12px 0;
   position: relative;
 }
+.lnr-eye {
+  position: relative;
+  
+  right: 10px;
+  cursor: pointer;
+}
 
 img.avatar {
   width: 20%;
@@ -387,6 +393,7 @@ img.avatar {
 }
 
 .container {
+  align-items: center;
   padding: 16px;
 }
 

@@ -13,6 +13,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style-inicio.css">
   <link rel="shortcut icon" href="images/logo_galinha.png">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <title>Página Inicial</title>
 </head>
 
@@ -27,7 +28,7 @@
       </div>
 
       <div class="nav-menu hide">
-        <a href="inicio.html" style="text-decoration: underline; color: #573a26;">Home</a>
+        <a href="inicio.html" style="text-decoration: underline; color: #FFA05D;">Home</a>
         <a href="#servicos">Serviços</a>
         <a href="#sobre-nos">Sobre Nós</a>
         <a href="#contato">Contato</a>
@@ -49,9 +50,11 @@
           <div class="container">
             Email:
             <input type="text" placeholder="Email" id="input_email"><br>
-
+            <div style="display: flex; text-align: center; justify-content: center; align-items: center; gap: 0.3vw; margin-left: 1vw;">
             Senha:
-            <input type="password" placeholder="Senha" id="input_senha"><br>
+            <input type="password" placeholder="Senha" id="input_senha" name="password"><br>
+            <span class="lnr lnr-eye"></span>
+            </div>
             <div id="div_resultadoLogin"></div>
 
 
@@ -327,6 +330,15 @@
     slides[paginaSlide - 1].style.display = "block";
 
   }
+  let btn = document.querySelector('.lnr-eye');
+btn.addEventListener('click', function() {
+    let input_senha = document.querySelector('#input_senha');
+    if(input_senha.getAttribute('type') == 'password') {
+        input_senha.setAttribute('type', 'text');
+    } else {
+        input_senha.setAttribute('type', 'password');
+    }
+});
 
 
 
