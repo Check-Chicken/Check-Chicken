@@ -39,7 +39,9 @@ CREATE TABLE empresa (
 CREATE TABLE usuario (
 	idUsuario INT AUTO_INCREMENT,
 	nome VARCHAR(45),
-	telefoneCelular VARCHAR(11),
+	ddd CHAR(2),
+    prefixo CHAR(5),
+    sufixo CHAR(4),
 	email VARCHAR(200),
 	senha VARCHAR(45),
 	fkEmpresa INT,
@@ -114,14 +116,14 @@ INSERT INTO usuario (nome, telefoneCelular, email, senha, fkEmpresa) VALUES
 
 
 -- Inserindo dados na tabela lote
-INSERT INTO lote (tipo, dtLote, fkParametro, fkEndereco, fkEmpresa) VALUES
-	('Embrapa 021', '2024-04-30', 1, 1, 1),
-	('S-54', '2024-04-23', 2, 2, 4),
-	('S-54', '2024-04-16', 3, 3, 2),
-	('Chester', '2024-04-09', 4, 4, 3),
-	('Embrapa 021', '2024-04-03', 5, 5, 5),
-    ('Chester', '2024-03-31', 3, 1, 1),
-    ('S-54', '2024-03-27', 5, 2, 4);
+INSERT INTO lote (tipo, dtLote, fkParametro, fkEndereco) VALUES
+	('Embrapa 021', '2024-04-30', 1, 1),
+	('S-54', '2024-04-23', 2, 2),
+	('S-54', '2024-04-16', 3, 3),
+	('Chester', '2024-04-09', 4, 4),
+	('Embrapa 021', '2024-04-03', 5, 5),
+    ('Chester', '2024-03-31', 3, 1),
+    ('S-54', '2024-03-27', 5, 2);
 
 -- Inserindo dados na tabela sensor
 INSERT INTO Sensor (tipo, unidadeMedida, qtdSensor, fkLote, fkEndereco) VALUES
