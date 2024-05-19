@@ -60,19 +60,18 @@ CREATE TABLE lote (
         CONSTRAINT fkLoteEndereco FOREIGN KEY (fkEndereco) REFERENCES endereco(idEndereco)
 );
 
-CREATE TABLE Sensor (
+CREATE TABLE sensor (
 	idSensor INT PRIMARY KEY AUTO_INCREMENT,
     tipo VARCHAR(45),
-    unidadeMedida VARCHAR(45), 
-    qtdSensor INT,
-    CONSTRAINT chkUnidadeMedida CHECK (unidadeMedida in ('graus Celsius', '%')), 
+    unidadeMedida VARCHAR(45),
+    CONSTRAINT chkUnidadeMedida CHECK (unidadeMedida in ('°C', '%')), 
     fkLote INT,
     fkEndereco INT,
         CONSTRAINT fkSensorLote FOREIGN KEY (fkLote) REFERENCES Lote(idLote),
         CONSTRAINT fkSensorEndereco FOREIGN KEY (fkEndereco) REFERENCES Lote(fkEndereco)
 );
 
-CREATE TABLE CapturaMedia (
+CREATE TABLE captura (
 	idCaptura INT PRIMARY KEY AUTO_INCREMENT,
 	valor DECIMAL(5,2),
 	dtMedicao DATETIME,
@@ -80,7 +79,7 @@ CREATE TABLE CapturaMedia (
 		CONSTRAINT fkCapturaSensor FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor)
 );
 
-INSERT INTO Parametro VALUES
+INSERT INTO parametro VALUES
 	(DEFAULT, 1, 7, 31, 35, 60, 70, 34.00, 32.00,   65, 57),
 	(DEFAULT, 8, 14, 29, 32, 60, 70, 31.45, 30.00,  65, 57),
 	(DEFAULT, 15, 21, 26, 29, 60, 70, 28.50, 26.70, 65, 57),
@@ -106,12 +105,12 @@ INSERT INTO empresa (nome, cnpj, DDD, prefixo, sufixo, email, senha, fkEndereco)
 	('Aves Nobres Brasileiras', '56789012345678', '55', '56789', '0123', 'aves.nobres@gmail.com', 'Nobres@ves2025', 6);
 
 -- Inserindo dados na tabela usuario
-INSERT INTO usuario (nome, telefoneCelular, email, senha, fkEmpresa) VALUES
-	('João Silva', '11987654321', 'joaosilva', 'senha@123', 1),
-	('Maria Santos', '11987654322', 'mariasantos', 'senha#124', 2),
-	('Carlos Pereira', '11987654323', 'carlospereira', 'senha@125', 3),
-	('Ana Souza', '11987654324', 'anasouza', 'senha@126', 4),
-	('Pedro Costa', '11987654325', 'pedrocosta', 'senha#127', 5);
+INSERT INTO usuario (nome, ddd, prefixo, sufixo, email, senha, fkEmpresa) VALUES
+	('João Silva', '11', '98765', '4321', 'joaosilva', 'senha@123', 1),
+	('Maria Santos', '11', '98765', '4322', 'mariasantos', 'senha#124', 2),
+	('Carlos Pereira', '11', '98765', '4323', 'carlospereira', 'senha@125', 3),
+	('Ana Souza', '11', '98765', '4324', 'anasouza', 'senha@126', 4),
+	('Pedro Costa', '11', '98765', '4325', 'pedrocosta', 'senha#127', 5);
 
 
 
@@ -126,24 +125,24 @@ INSERT INTO lote (tipo, dtLote, fkParametro, fkEndereco) VALUES
     ('S-54', '2024-03-27', 5, 2);
 
 -- Inserindo dados na tabela sensor
-INSERT INTO Sensor (tipo, unidadeMedida, qtdSensor, fkLote, fkEndereco) VALUES
-	('DHT-11', '%', 2, 1, 1),
-	('LM-35', 'graus Celsius', 2, 1, 1),
-    ('DHT-11', '%', 3, 2, 2),
-	('LM-35', 'graus Celsius', 2, 2, 2),
-    ('DHT-11', '%', 2, 3, 3),
-	('LM-35', 'graus Celsius', 3, 3, 3),
-    ('DHT-11', '%', 1, 4, 4),
-	('LM-35', 'graus Celsius', 1, 4, 4),
-    ('DHT-11', '%', 1, 5, 5),
-	('LM-35', 'graus Celsius', 2, 5, 5),
-    ('DHT-11', '%', 2, 6, 1),
-	('LM-35', 'graus Celsius', 2, 6, 1),
-    ('DHT-11', '%', 1, 7, 2),
-	('LM-35', 'graus Celsius', 1, 7, 2);
+INSERT INTO sensor (tipo, unidadeMedida, fkLote, fkEndereco) VALUES
+	('DHT-11', '%', 1, 1),
+	('LM-35', '°C', 1, 1),
+    ('DHT-11', '%', 2, 2),
+	('LM-35', '°C', 2, 2),
+    ('DHT-11', '%', 3, 3),
+	('LM-35', '°C', 3, 3),
+    ('DHT-11', '%', 4, 4),
+	('LM-35', '°C', 4, 4),
+    ('DHT-11', '%', 5, 5),
+	('LM-35', '°C', 5, 5),
+    ('DHT-11', '%', 6, 1),
+	('LM-35', '°C', 6, 1),
+    ('DHT-11', '%', 7, 2),
+	('LM-35', '°C', 7, 2);
 
 -- Inserindo dados na tabela captura
-INSERT INTO capturaMedia (valor, dtMedicao, fkSensor) VALUES
+INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES
 	(30, '2024-05-06 22:00:00', 1),
     (65, '2024-05-06 22:00:00', 2),
 	(31, '2024-05-06 22:00:00', 3),
@@ -159,14 +158,15 @@ INSERT INTO capturaMedia (valor, dtMedicao, fkSensor) VALUES
     (22.2, '2024-05-06 22:00:00', 13),
     (71, '2024-05-06 22:00:00', 14);
 
-SELECT * FROM Parametro;
-SELECT * FROM Empresa;
-SELECT * FROM Usuario;
-SELECT * FROM Endereco;
-SELECT * FROM Lote;
-SELECT * FROM Sensor;
+SELECT * FROM parametro;
+SELECT * FROM empresa;
+SELECT * FROM usuario;
+SELECT * FROM endereco;
+SELECT * FROM lote;
+SELECT * FROM sensor;
 
-SELECT l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, tempAtual, umidadeAtual FROM Lote AS l
+SELECT l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, dtMedicao FROM Lote AS l
 	JOIN Parametro ON DATEDIFF(CURRENT_DATE(), dtLote) >= diaMin
     AND DATEDIFF(CURRENT_DATE(), dtLote) <= diaMax
-    JOIN sensor ON fkLote = idLote;
+    JOIN sensor ON fkLote = idLote
+    JOIN captura ON fkSensor = idSensor;
