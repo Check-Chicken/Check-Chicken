@@ -165,7 +165,7 @@ SELECT * FROM endereco;
 SELECT * FROM lote;
 SELECT * FROM sensor;
 
-SELECT l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, dtMedicao FROM Lote AS l
+SELECT l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, unidadeMedida, dtMedicao FROM Lote AS l
 	JOIN Parametro ON DATEDIFF(CURRENT_DATE(), dtLote) >= diaMin
     AND DATEDIFF(CURRENT_DATE(), dtLote) <= diaMax
     JOIN sensor ON fkLote = idLote
