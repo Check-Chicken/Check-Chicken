@@ -53,9 +53,11 @@ CREATE TABLE lote (
 	idLote INT AUTO_INCREMENT,
 	tipo VARCHAR(20),
 	dtLote DATE,
+    fkEmpresa INT,
 	fkParametro INT,
 	fkEndereco INT,
-		CONSTRAINT PkLoteEndereco PRIMARY KEY (idLote, fkEndereco),
+		CONSTRAINT PkLoteEndereco PRIMARY KEY (idLote, fkEmpresa),
+        CONSTRAINT fkLoteEmpresa FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa),
         CONSTRAINT fkLoteParametro FOREIGN KEY (fkParametro) REFERENCES parametro(idParametro),
         CONSTRAINT fkLoteEndereco FOREIGN KEY (fkEndereco) REFERENCES endereco(idEndereco)
 );
@@ -66,9 +68,9 @@ CREATE TABLE sensor (
     unidadeMedida VARCHAR(45),
     CONSTRAINT chkUnidadeMedida CHECK (unidadeMedida in ('°C', '%')), 
     fkLote INT,
-    fkEndereco INT,
+    fkEmpresa INT,
         CONSTRAINT fkSensorLote FOREIGN KEY (fkLote) REFERENCES Lote(idLote),
-        CONSTRAINT fkSensorEndereco FOREIGN KEY (fkEndereco) REFERENCES Lote(fkEndereco)
+        CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES Lote(fkEmpresa)
 );
 
 CREATE TABLE captura (
@@ -115,29 +117,31 @@ INSERT INTO usuario (nome, ddd, prefixo, sufixo, email, senha, fkEmpresa) VALUES
 
 
 -- Inserindo dados na tabela lote
-INSERT INTO lote (tipo, dtLote, fkParametro, fkEndereco) VALUES
-	('Embrapa 021', '2024-04-30', 1, 1),
-	('S-54', '2024-04-23', 2, 2),
-	('S-54', '2024-04-16', 3, 3),
-	('Chester', '2024-04-09', 4, 4),
-	('Embrapa 021', '2024-04-03', 5, 5),
-    ('Chester', '2024-03-31', 3, 1),
-    ('S-54', '2024-03-27', 5, 2);
+INSERT INTO lote (tipo, dtLote, fkParametro, fkEndereco, fkEmpresa) VALUES
+	('Embrapa 021', '2024-04-30', 1, null, 1),
+	('S-54', '2024-04-23', 2, 7, 2),
+	('S-54', '2024-04-16', 3, 2, 4),
+	('Chester', '2024-04-09', 4, 3, 3),
+	('Embrapa 021', '2024-04-03', 5, 4, 5),
+    ('Chester', '2024-03-31', 3, 6, 5),
+    ('S-54', '2024-03-27', 5, null, 2);
+    
+select empresa.idEmpresa, empresa.nome, endereco.idEndereco, lote.tipo from empresa left join endereco on empresa.fkEndereco = idEndereco left join lote on lote.fkEndereco = idEndereco;
 
 -- Inserindo dados na tabela sensor
-INSERT INTO sensor (tipo, unidadeMedida, fkLote, fkEndereco) VALUES
+INSERT INTO sensor (tipo, unidadeMedida, fkLote, fkEmpresa) VALUES
 	('DHT-11', '%', 1, 1),
 	('LM-35', '°C', 1, 1),
     ('DHT-11', '%', 2, 2),
 	('LM-35', '°C', 2, 2),
-    ('DHT-11', '%', 3, 3),
-	('LM-35', '°C', 3, 3),
-    ('DHT-11', '%', 4, 4),
-	('LM-35', '°C', 4, 4),
+    ('DHT-11', '%', 3, 4),
+	('LM-35', '°C', 3, 4),
+    ('DHT-11', '%', 4, 3),
+	('LM-35', '°C', 4, 3),
     ('DHT-11', '%', 5, 5),
 	('LM-35', '°C', 5, 5),
-    ('DHT-11', '%', 6, 1),
-	('LM-35', '°C', 6, 1),
+    ('DHT-11', '%', 6, 5),
+	('LM-35', '°C', 6, 5),
     ('DHT-11', '%', 7, 2),
 	('LM-35', '°C', 7, 2);
 
