@@ -30,8 +30,6 @@ CREATE TABLE empresa (
 	DDD CHAR(2),
     prefixo CHAR(5),
     sufixo CHAR(4),
-    email varchar(200),
-    senha varchar(45),
     fkEndereco int,
     constraint fkEnderecoEmpresa foreign key (fkEndereco) references endereco (idEndereco)
 );
@@ -74,11 +72,12 @@ CREATE TABLE sensor (
 );
 
 CREATE TABLE captura (
-	idCaptura INT PRIMARY KEY AUTO_INCREMENT,
+	idCaptura INT AUTO_INCREMENT,
 	valor DECIMAL(5,2),
 	dtMedicao DATETIME,
 	fkSensor INT,
-		CONSTRAINT fkCapturaSensor FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor)
+    CONSTRAINT pkCapSensor PRIMARY KEY (idCaptura, fkSensor), 
+	CONSTRAINT fkCapturaSensor FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor)
 );
 
 INSERT INTO parametro VALUES
@@ -99,12 +98,12 @@ INSERT INTO endereco (cep, complemento, numero) VALUES
 	('45678-903', 'Rua Marans', '700');
 
 -- Inserindo dados na tabela empresa
-INSERT INTO empresa (nome, cnpj, DDD, prefixo, sufixo, email, senha, fkEndereco) VALUES
-	('Frango Forte Brasil', '12345678901234', '11', '12345', '6789', 'frango.forte@gmail.com', 'Megamani@3309', 1),
-	('Corte Certa Aves', '23456789012345', '22', '23456', '7890', 'corte.aves@gmail.com', 'G@linhasCorte2024', 7),
-	('Galinha Dourada Ltda', '34567890123456', '33', '34567', '8901', 'g@linha.ltda@gmail.com', 'Dourada@LTDA2024', 5),
-	('Brasil Frango Vivo', '45678901234567', '44', '45678', '9012', 'frango.vivo@gmail.com', 'VivoFrango@2024', 2),
-	('Aves Nobres Brasileiras', '56789012345678', '55', '56789', '0123', 'aves.nobres@gmail.com', 'Nobres@ves2025', 6);
+INSERT INTO empresa (nome, cnpj, DDD, prefixo, sufixo, fkEndereco) VALUES
+	('Frango Forte Brasil', '12345678901234', '11', '12345', '6789', 1),
+	('Corte Certa Aves', '23456789012345', '22', '23456', '7890', 7),
+	('Galinha Dourada Ltda', '34567890123456', '33', '34567', '8901', 5),
+	('Brasil Frango Vivo', '45678901234567', '44', '45678', '9012', 2),
+	('Aves Nobres Brasileiras', '56789012345678', '55', '56789', '0123', 6);
 
 -- Inserindo dados na tabela usuario
 INSERT INTO usuario (nome, ddd, prefixo, sufixo, email, senha, fkEmpresa) VALUES
@@ -174,3 +173,5 @@ SELECT l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMax
     AND DATEDIFF(CURRENT_DATE(), dtLote) <= diaMax
     JOIN sensor ON fkLote = idLote
     JOIN captura ON fkSensor = idSensor;
+    
+    SELECT * FROM lote join empresa on fkEmpresa = idEmpresa;
