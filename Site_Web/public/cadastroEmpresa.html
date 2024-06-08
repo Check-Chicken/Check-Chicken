@@ -45,17 +45,19 @@
                     <div class="form_grupo">
                         Nome da empresa:
                         <input type="text" class="inputs" placeholder="Granja Feliz" id="nome_input">
+                        <div id="form_resultadoNome" class="resultados"></div>
                     </div><br>
                     <div class="form_grupo">
                         CNPJ:
-                        <input type="text" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" id="cnpj_input" maxlength="14"
-                            minlength="14">
+                        <input type="number" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" id="cnpj_input"
+                            maxlength="14" minlength="14">
                         <div id="form_resultadoCNPJ" class="resultados"></div>
                     </div><br>
                     <div class="form-grupo">
                         Telefone:
-                        <input type="number" class="inputs" placeholder="11 121314556" id="telefone_input" maxlength="11"
-                            minlength="11">
+                        <input type="number" class="inputs" placeholder="11 121314556" id="telefone_input"
+                            maxlength="11" minlength="11">
+                        <div id="form_resultadoTelefone" class="resultados"></div>
                     </div><br>
                     <div class="form_grupo">
                         CEP:
@@ -66,10 +68,12 @@
                     <div class="form-grupo">
                         Complemento:
                         <input type="text" class="inputs" placeholder="Bloco 1" id="complemento_input">
+                        <div id="form_resultadoComplemento" class="resultados"></div>
                     </div><br>
                     <div class="form_grupo">
                         Número:
                         <input type="number" class="inputs" placeholder="123" id="numero_input">
+                        <div id="form_resultadoNumero" class="resultados"></div>
                     </div><br>
 
                     <div class="form_grupo">
@@ -120,120 +124,246 @@
 
 <script>
     function cadastrar() {
-    aguardar();
+        aguardar();
 
-    var telefoneVar = telefone_input.value;
+        var telefoneVar = telefone_input.value;
 
-    var nomeVar = nome_input.value;
-    var cnpjVar = cnpj_input.value;
-    var dddVar = telefoneVar.substr(0, 2);
-    var prefixoVar = telefoneVar.substr(2, 5);
-    var sufixoVar = telefoneVar.substr(6, 4);
-    var cepVar = cep_input.value;
-    var complementoVar = complemento_input.value;
-    var numeroVar = numero_input.value;
+        var nomeVar = nome_input.value;
+        var cnpjVar = cnpj_input.value;
+        var dddVar = telefoneVar.substr(0, 2);
+        var prefixoVar = telefoneVar.substr(2, 5);
+        var sufixoVar = telefoneVar.substr(6, 4);
+        var cepVar = cep_input.value;
+        var complementoVar = complemento_input.value;
+        var numeroVar = numero_input.value;
 
-    div_requisitos.innerHTML = ""
+        div_requisitos.innerHTML = "";
+        form_resultadoCNPJ.innerHTML = "";
+        form_resultadoCEP.innerHTML = "";
+
         const textoVazio = `➤ Preencha todos os campos`
         const texto = `➤ O CNPJ precisa ter <b>14</b> dígitos <br> <br>
-        ➤ O CEP precisa ter <b>9</b> dígitos <br> <br>
-        ➤ A senha precisa conter pelo menos <b>1</b> número e <b>@ ou #</b> e também deve conter mais de <b>8</b> caracteres`
+    ➤ O Telefone precisa ter <b>11</b> dígitos <br> <br>
+    ➤ O CEP precisa ter <b>8</b> dígitos <br> <br>
+    ➤ O Complemento pode ter no maximo <b>45</b> caracteres <br> <br>
+    ➤ O Número pode ter no maximo <b>10</b> caracteres <br> <br>`
+        const nomeVazio = '➤ Preencha o campo nome';
+        const nomeCheio = '➤ O campo nome não pode ter mais que 45 caracteres';
+        const cnpjInvalido = `➤ O CNPJ precisa ter <b>14</b> dígitos`;
+        const telefoneInvalido = `➤ O Telefone precisa ter <b>11</b> dígitos`;
+        const cepInvalido = `➤ O CEP precisa ter <b>8</b> dígitos`;
+        const complementoVazio = '➤ Preencha o campo complemento';
+        const complementoCheio = `➤ O Complemento só pode ter no maximo <b>45</b> caracteres <br> <br>`
+        const numeroVazio = `➤ O Número pode ter no maximo <b>10</b> caracteres <br> <br>`
+        const numeroCheio = '➤ Preencha o campo número';
 
-    if (
-      nomeVar == '' ||
-      cnpjVar == '' ||
-      telefoneVar == '' ||
-      cepVar == '' ||
-      complementoVar == '' ||
-      numeroVar == ''
-    ) {
-      div_requisitos.innerHTML = textoVazio  
-      div_requisitos.style.display = "block";
+        // COMEÇO DAS VALIDAÇÕES //
+        if (
+            nomeVar == '' &&
+            cnpjVar == '' &&
+            telefoneVar == '' &&
+            cepVar == '' &&
+            complementoVar == '' &&
+            numeroVar == ''
+        ) {
+            div_requisitos.innerHTML = texto;
+            div_requisitos.style.display = "block";
 
-      finalizarAguardar();
-      return false;
-    } else {
-    div_requisitos.style.display = "none";
-    setInterval(sumirMensagem, 5000);
+            finalizarAguardar();
+            return false;
+        } else {
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // VALIDAÇÃO NOME DA EMPRESA //
+        let nomeTamanho = nomeVar.length;
+        let nomeTrim = nomeVar.trim();
+
+        if (nomeTamanho == 0 || nomeTrim == '' || nomeTamanho > 45) {
+            form_resultadoNome.innerHTML = 'Nome Invalido'
+
+            if (nomeTamanho > 45) {
+                div_requisitos.innerHTML = nomeCheio;
+                div_requisitos.style.display = "block";
+            } else if (nomeTamanho < 1) {
+                div_requisitos.innerHTML = nomeVazio;
+                div_requisitos.style.display = "block";
+            }
+
+            finalizarAguardar();
+            return false;
+        } else {
+            form_resultadoNome.style.display = "none";
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        };
+
+        // VALIDAÇÃO CNPJ DA EMPRESA //
+        let cnpjTamanho = cnpjVar.length;
+
+        if (cnpjTamanho != 14) {
+            form_resultadoCNPJ.innerHTML = 'CNPJ Invalido'
+            div_requisitos.innerHTML = cnpjInvalido;
+            div_requisitos.style.display = "block";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            form_resultadoCNPJ.style.display = "none";
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        };
+
+        // VALIDAÇÃO TELEFONE DA EMPRESA //
+        let telefoneTamanho = telefoneVar.length;
+
+        if (telefoneTamanho != 11) {
+            form_resultadoTelefone.innerHTML = 'Telefone Invalido'
+            div_requisitos.innerHTML = telefoneInvalido;
+            div_requisitos.style.display = "block";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            form_resultadoTelefone.style.display = "none";
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        };
+
+        //VALIDAÇÃO CEP DA EMPRESA // 
+        let cepTamanho = cepVar.length;
+
+        if (cepTamanho != 8) {
+            form_resultadoCEP.innerHTML = 'CEP Invalido'
+            div_requisitos.innerHTML = cepInvalido;
+            div_requisitos.style.display = "block";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            form_resultadoCEP.style.display = "none";
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        };
+
+        // VALIDAÇÃO DO COMPLEMENTO //
+        let complementoTamanho = complementoVar.length;
+        let complementoTrim = complementoVar.trim();
+
+        if (complementoTamanho < 1 || complementoTamanho > 45 || complementoTrim == '') {
+            form_resultadoComplemento.innerHTML = 'Complemento Invalido'
+
+            if (complementoTamanho > 45) {
+                div_requisitos.innerHTML = complementoCheio;
+                div_requisitos.style.display = "block";
+            } else if (complementoTamanho < 1 || complementoTrim == ''){
+                div_requisitos.innerHTML = complementoVazio;
+                div_requisitos.style.display = "block";
+            }
+
+            finalizarAguardar();
+            return false;
+        } else {
+            form_resultadoComplemento.style.display = "none";
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        };
+
+        // VALIDAÇÃO D0 NUMERO //
+        let numeroTamanho = numeroVar.length;
+
+        if (numeroTamanho < 1 || numeroTamanho > 10) {
+            form_resultadoNumero.innerHTML = 'Número Invalido';
+
+            if (numeroTamanho > 10) {
+                div_requisitos.innerHTML = numeroCheio;
+                div_requisitos.style.display = "block";
+            } else if (numeroTamanho < 1) {
+                div_requisitos.innerHTML = numeroVazio
+                div_requisitos.style.display = "block";
+            }
+
+            finalizarAguardar();
+            return false;
+        } else {
+            form_resultadoNumero.style.display = "none";
+            div_requisitos.style.display = "none";
+            setInterval(sumirMensagem, 5000);
+        };
+
+        fetch("/empresas/cadastrarEndereco", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                cepServer: cepVar,
+                complementoServer: complementoVar,
+                numeroServer: numeroVar
+            }),
+        }).then(function (resposta) {
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                console.log("➤ Cadastro endereço realizado com sucesso!")
+
+                // Enviando o valor da nova input
+                fetch("/empresas/cadastrarEmpresa", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        // crie um atributo que recebe o valor recuperado aqui
+                        // Agora vá para o arquivo routes/usuario.js
+                        nomeServer: nomeVar,
+                        cnpjServer: cnpjVar,
+                        dddServer: dddVar,
+                        prefixoServer: prefixoVar,
+                        sufixoServer: sufixoVar
+                    }),
+                })
+                    .then(function (resposta) {
+                        console.log("resposta: ", resposta);
+
+                        if (resposta.ok) {
+                            div_requisitos.style.display = "block";
+
+                            div_requisitos.innerHTML =
+                                "➤ Cadastro realizado com sucesso! Redirecionando para tela Inicial...";
+
+                            console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
+
+                            setTimeout(() => {
+                                window.location = "index.html";
+                            }, "2500");
+
+                            limparFormulario();
+                            finalizarAguardar();
+                        } else {
+                            div_requisitos.style.display = 'block';
+                            div_requisitos.innerHTML = "➤ Houve um erro ao tentar realizar o cadastro!";
+                        }
+                    })
+                    .catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);
+                        finalizarAguardar();
+                    });
+
+                return false;
+            } else {
+                console.log("Houve um erro ao tentar realizar o cadastro endereço!")
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false
+    };
+
+    function sumirMensagem() {
+        div_requisitos.style.display = "none";
     }
-
-    fetch("/empresas/cadastrarEndereco", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            cepServer: cepVar,
-            complementoServer: complementoVar,
-            numeroServer: numeroVar
-        }),
-    }).then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            console.log("Cadastro endereço realizado com sucesso!")
-
-            // Enviando o valor da nova input
-    fetch("/empresas/cadastrarEmpresa", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: nomeVar,
-        cnpjServer: cnpjVar,
-        dddServer: dddVar,
-        prefixoServer: prefixoVar,
-        sufixoServer: sufixoVar
-      }),
-    })
-      .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-          div_requisitos.style.display = "block";
-
-          div_requisitos.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-            console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...")
-
-          setTimeout(() => {
-            window.location = "login.html";
-          }, "2000");
-
-          limparFormulario();
-          finalizarAguardar();
-        } else {
-          div_requisitos.style.display = 'block';
-          div_requisitos.innerHTML = "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
-
-    return false;
-        } else {
-            console.log("Houve um erro ao tentar realizar o cadastro endereço!")
-        }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
-
-    return false; 
-
-
-    
-  }
-
-
-
-  function sumirMensagem() {
-    div_requisitos.style.display = "none";
-  }
 </script>
