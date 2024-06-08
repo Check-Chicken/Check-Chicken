@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/cadastroEmpresa.css">
+    <link rel="shortcut icon" href="images\logo_galinha.png">
+    <title>Cadastro de empresa</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/logo_novo.png" alt="gfg_logo">
+                </a>
+            </div>
+            <div class="cad">
+                <h3>Cadastro de Empresas</h3>
+            </div>
+            <div class="nav-menu hide">
+                <a href="index.html">Home</a>
+            </div>
+
+            <!-- <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button> -->
+        </nav>
+    </header>
+    
+    <main>
+        <div class="corpo">
+            <div class="formulario">
+                <form class="cadastrar" action="#">
+    
+                    <div class="form_grupo">
+                        Nome da empresa:
+                        <input type="text" class="inputs" placeholder="Granja Feliz" id="inputNomeEmpresa">
+                    </div><br>
+                    <div class="form_grupo">
+                        CNPJ:
+                        <input type="text" class="inputs" placeholder="xx.xxx.xxx/yyyy-zz" id="inputCnpj" maxlength="14"
+                            minlength="14">
+                        <div id="form_resultadoCNPJ" class="resultados"></div>
+                    </div><br>
+                    <div class="form-grupo">
+                        Telefone:
+                        <input type="number" class="inputs" placeholder="11 121314556" id="inputTelefone" maxlength="11"
+                            minlength="11">
+                    </div><br>
+                    <div class="form_grupo">
+                        CEP:
+                        <input type="number" class="inputs" placeholder="012345-123" id="inputCep" maxlength="8"
+                            minlength="8">
+                        <div id="form_resultadoCEP" class="resultados"></div>
+                    </div><br>
+                    <div class="form-grupo">
+                        Complemento:
+                        <input type="text" class="inputs" placeholder="Bloco 1" id="inputComplemento">
+                    </div><br>
+                    <div class="form_grupo">
+                        Número:
+                        <input type="number" class="inputs" placeholder="123" id="inputNumero">
+                    </div><br>
+    
+                    <div class="form_grupo">
+                        <button type="button" id="botao-cadastrar" onclick="cadastrar()">CADASTRAR</button><br>
+                    </div>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/aguarde-orange.gif" id="loading-gif" />
+                    </div>
+                </form>
+            </div>
+            <div id="div_requisitos" style="display: none;"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="infos ">
+                <div>
+                    <img src="./assets/facebook.png">
+                <img src="./assets/instagram.png">
+                </div>
+                <!-- <p>|</p> -->
+                <div class="endereco">
+                    <u>Rua Haddock Lobo, 595 São Paulo - SP</u>
+                </div>
+
+                <!-- <p>|</p> -->
+
+                <div class="contato">
+                    <a href="usuario.html">www.checkchicken.com.br</a>
+                    <p>(11) 2536-6498</p>
+                    <u>© 2024 by CheckChicken</u>
+                </div>
+
+                <!-- <p>|</p> -->
+                <div class="pages">
+                    <li>Política e privacidade</li> |
+                    <li>Termos de uso</li> |
+                    <li>Info</li> |
+                    <li>Suporte</li>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        
+    }
+</script>
