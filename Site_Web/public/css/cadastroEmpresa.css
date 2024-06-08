@@ -64,12 +64,13 @@ main {
     background-image: url(../assets/fundo-teste.png);
     background-repeat: no-repeat;
     background-size: 105vw;
-    height: 100vh;
+    height: 105vh;
 }
 
 .corpo {
     display: flex;
     justify-content: center;
+    gap: 10px;
 }
 
 .formulario {
@@ -78,10 +79,10 @@ main {
     justify-content: center;
     align-items: center;
     width: 25vw;
-    height: 80vh;
+    height: min-content;
     margin-top: 8vh;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     border-radius: 10px ;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     background-color: #f4f4f4;
@@ -120,6 +121,16 @@ button:hover {
     opacity: 0.8;
 }
 
+#div_requisitos{
+    display: none;
+    background-color: #F5F4F9;
+    width: 20vw;
+    height:min-content;
+    padding: 20px;
+    border-radius: 10px 15px 15px 10px;
+    margin-top: 8vh;
+}
+
 .resultados{
     color: red;
 }
@@ -127,11 +138,12 @@ button:hover {
 .loading-div {
     width: 50px;
     display: none;
-  }
+    margin-left: 40%;
+}
   
 .loading-div img {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 /*FIM BODY*/
 
