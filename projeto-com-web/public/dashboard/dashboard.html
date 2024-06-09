@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/imgs/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Blue Horizon - Dashboard</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav>
+        <div class="navbar">
+            <div class="container nav-container">
+
+                <div class="area_icone_tema">
+                    <div class="icone_tema">
+
+                        <button id="trocaCor" onclick="changeColor()"><img src="../assets/imgs/day-night.png"
+                                alt=""></button>
+
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="logo">
+                        <img src="../assets/imgs/logo-semfundo.png">
+                    </div>
+                    <div class="foto-usuario">
+                        <br>
+                        <p>Olá, <span id="nomeUsuario"> Usuário!</span></p>
+                        <img src="../assets/imgs/mulher.png">
+                        <p>Bem vindo(a) ao Blue Horizon!</p>
+
+                    </div>
+                    <br>
+                    <li><svg class="navIcon" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            stroke="#003366">
+                            <g id="SVGRepo_bgCarrier" stroke-width="003366"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="#ff0000" stroke-width="0.144"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M16 7C16 9.2003366914 14.200336691 11 12 11C9.7900336686 11 8 9.2003366914 8 7C8 4.7900336686 9.7900336686 3 12 3C14.200336691 3 16 4.7900336686 16 7Z"
+                                    stroke="003366" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                                <path d="M12 14C8.1340033661 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
+                                    stroke="003366" stroke-width="1.104" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </g>
+                        </svg><a href="perfil.html">Editar Perfil</a></li>
+                    <li><svg class="navIcon" viewBox="-2.4 -2.4 28.80 28.80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#000000" stroke-width="0.00024000000000000003">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+                                stroke="#CCCCCC" stroke-width="0.384"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 7.75C11.3787 7.75 10.875 8.25368 10.875 8.875C10.875 9.28921 10.5392 9.625 10.125 9.625C9.71079 9.625 9.375 9.28921 9.375 8.875C9.375 7.42525 10.5503 6.25 12 6.25C13.4497 6.25 14.625 7.42525 14.625 8.875C14.625 9.58584 14.3415 10.232 13.883 10.704C13.7907 10.7989 13.7027 10.8869 13.6187 10.9708C13.4029 11.1864 13.2138 11.3753 13.0479 11.5885C12.8289 11.8699 12.75 12.0768 12.75 12.25V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V12.25C11.25 11.5948 11.555 11.0644 11.8642 10.6672C12.0929 10.3733 12.3804 10.0863 12.6138 9.85346C12.6842 9.78321 12.7496 9.71789 12.807 9.65877C13.0046 9.45543 13.125 9.18004 13.125 8.875C13.125 8.25368 12.6213 7.75 12 7.75ZM12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z"
+                                    fill="#003366"></path>
+                            </g>
+                        </svg><a href="dashboard.html" style="font-weight: bold; text-decoration: underline;">Quiz</a></li>
+                    <li><svg class="navIcon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <defs>
+                                    <style>
+                                        .a {
+                                            fill: none;
+                                            stroke: #003366;
+                                            stroke-linecap: round;
+                                            stroke-linejoin: round;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="a" d="M6.5,6.5H30.7412V18.6206M18.6206,30.7412H6.5V6.5"></path>
+                                <rect class="a" x="19.2586" y="19.2586" width="24.2415" height="24.2415"></rect>
+                                <line class="a" x1="16.7068" y1="9.0516" x2="9.0516" y2="19.1948"></line>
+                                <line class="a" x1="16.7068" y1="19.1948" x2="9.0516" y2="9.0516"></line>
+                                <polyline class="a"
+                                    points="34.441 21.81 31.188 31.953 28.126 21.81 24.872 31.953 21.81 21.81">
+                                </polyline>
+                                <polyline class="a" points="41.14 40.948 41.14 35.845 38.397 39.29 41.778 39.29">
+                                </polyline>
+                            </g>
+                        </svg><a href="cruzadinha.html">Palavras
+                            Cruzadas</a></li>
+                            <li><svg class="navIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 22V13C16 11.5858 16 10.8787 15.5607 10.4393C15.1213 10 14.4142 10 13 10H11C9.58579 10 8.87868 10 8.43934 10.4393C8 10.8787 8 11.5858 8 13V22" stroke="#003366" stroke-width="1.5" stroke-linecap="round"></path> <path d="M8 22C8 20.5858 8 19.8787 7.56066 19.4393C7.12132 19 6.41421 19 5 19C3.58579 19 2.87868 19 2.43934 19.4393C2 19.8787 2 20.5858 2 22" stroke="#003366" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 22V19C22 17.5858 22 16.8787 21.5607 16.4393C21.1213 16 20.4142 16 19 16C17.5858 16 16.8787 16 16.4393 16.4393C16 16.8787 16 17.5858 16 19V22" stroke="#003366" stroke-width="1.5" stroke-linecap="round"></path> <path d="M11.1459 3.02251C11.5259 2.34084 11.7159 2 12 2C12.2841 2 12.4741 2.34084 12.8541 3.02251L12.9524 3.19887C13.0603 3.39258 13.1143 3.48944 13.1985 3.55334C13.2827 3.61725 13.3875 3.64097 13.5972 3.68841L13.7881 3.73161C14.526 3.89857 14.895 3.98205 14.9828 4.26432C15.0706 4.54659 14.819 4.84072 14.316 5.42898L14.1858 5.58117C14.0429 5.74833 13.9714 5.83191 13.9392 5.93531C13.9071 6.03872 13.9179 6.15023 13.9395 6.37327L13.9592 6.57632C14.0352 7.36118 14.0733 7.75361 13.8435 7.92807C13.6136 8.10252 13.2682 7.94346 12.5773 7.62535L12.3986 7.54305C12.2022 7.45265 12.1041 7.40745 12 7.40745C11.8959 7.40745 11.7978 7.45265 11.6014 7.54305L11.4227 7.62535C10.7318 7.94346 10.3864 8.10252 10.1565 7.92807C9.92674 7.75361 9.96476 7.36118 10.0408 6.57632L10.0605 6.37327C10.0821 6.15023 10.0929 6.03872 10.0608 5.93531C10.0286 5.83191 9.95713 5.74833 9.81418 5.58117L9.68403 5.42898C9.18097 4.84072 8.92945 4.54659 9.01723 4.26432C9.10501 3.98205 9.47396 3.89857 10.2119 3.73161L10.4028 3.68841C10.6125 3.64097 10.7173 3.61725 10.8015 3.55334C10.8857 3.48944 10.9397 3.39258 11.0476 3.19887L11.1459 3.02251Z" stroke="#003366" stroke-width="1.5"></path> </g></svg><a href="ranking.html">Ranking</a></li>
+                    <li class="sair"><a href="..\index.html" onclick="sair()">Sair</a><svg class="navIcon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g clip-path="url(#003366clip0_429_11067)">
+                                    <path d="M15 4.00098H5V18.001C5 19.1055 5.89543 20.001 7 20.001H15" stroke="#003366"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M16 15.001L19 12.001M19 12.001L16 9.00098M19 12.001H9" stroke="#003366"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_429_11067">
+                                        <rect width="24" height="24" fill="white" transform="translate(0 0.000976562)">
+                                        </rect>
+                                    </clipPath>
+                                </defs>
+                            </g>
+                        </svg></li>
+
+                        
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="corpo" id="corpo">
+        <div id="grid_corpo">
+            <div id="corpo_kpi">
+                <div id="kpi1">
+                    <div id="titulo_kpi">Tempo Restante</div>
+                    <div id="countdown" class="info_kpi" style="display: none;"></div>
+                </div>
+                <div id="kpi2">
+                    <div id="titulo_kpi">Pergunta Atual</div>
+                    <div id="numeroQuestao" class="info_kpi" style="display: block;"></div>
+                </div>
+                <div id="kpi3">
+                    <div id="titulo_kpi">Perguntas Totais</div>
+                    <div class="info_kpi">10</div>
+                </div>
+                <div id="kpi4">
+                    <div id="titulo_kpi">Tentativas Realizadas</div>
+                    <div class="info_kpi">4</div>
+                </div>
+            </div>
+            <div class="modal_encerrado" id="modal_encerramento">
+                <form class="modal-content animate">
+                    <h1>Tempo esgotado! :(</h1>
+                    <h2>Deseja tentar mais uma vez?</h2>
+                    <button class="botoes_encerrado" id="botao_recomecar" onclick="recomecar()">Recomeçar</button>
+                    <button class="botoes_encerrado">Voltar</button>
+                </form>
+
+
+            </div>
+            <div class="div_modal_regras" id="id_modal_regras">
+                <div class="modal_regras animate" id="modal_regras">
+
+                    <h1 style="text-decoration: underline; display: flex; justify-content: center;">Regras</h1>
+                    <div class="topicos_regras">
+                        <h2>
+                            <li>Você terá 45 segundos por pergunta. </li>
+                        </h2><br>
+                        <h2>
+                            <li>Cada uma das 10 perguntas terá 4 alternativas, mas só 1 resposta correta.</li>
+                        </h2><br>
+                        <h2>
+                            <li>Caso acabe o tempo, você precisará reiniciar o quiz. </li>
+                        </h2><br>
+                        <h2>
+                            <li>Você não poderá sair ou atualizar a página durante o quiz</li>
+                        </h2><br>
+                        <h2>
+                            <li>Sua pontuação aparecerá ao final do quiz. </li>
+                        </h2>
+                        
+                    </div>
+                    <h2 style="margin-left: 19.5vw; text-decoration: underline;">Boa Sorte!</h2>
+                    <div class="corpo_botoes_regras">
+                        <button class="botoes_encerrado" onclick="voltar()">Voltar</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="corpo_perguntas">
+                <div id="conjunto">
+                    <div id="perguntas">
+                        <div id="telaInicial">
+                            <h2>Bem-vindo(a) ao Quiz Blue Horizon</h2>
+                            <button id="comecarQuiz" onclick="updateCountdown()">Começar</button>
+                            <button id="regras" onclick="regras()">Regras</button>
+                        </div>
+
+                        <div class="quiz-container">
+                            <div id="quiz">
+
+                                <div class="pergunta-container">
+                                    <div class="pergunta" id="div_perguntas"></div>
+                                    <ul class="respostas">
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="respostas">
+                        <div>
+                            <button class="botoes_respostas" id="botaoA" onclick="enviarResposta('a')">A</button>
+                            <button class="botoes_respostas" id="botaoC" onclick="enviarResposta('c')">C</button>
+                        </div>
+                        <div>
+                            <button class="botoes_respostas" id="botaoB" onclick="enviarResposta('b')">B</button>
+                            <button class="botoes_respostas" id="botaoD" onclick="enviarResposta('d')">D</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="foto_perguntas" > <img id="baleia" src="../assets/imgs/orca.jpg" alt=""><div id="grafico" style="display: none; height: 55vh; width: 85vw; margin-left: 4vw;"><canvas id="myChart"></canvas></div></div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+  
+
+nomeUsuario.innerHTML=sessionStorage.NOME_USUARIO
+let idUsuario = sessionStorage.ID_USUARIO
+
+    const numeroQuestao = document.getElementById('numeroQuestao');
+    const countdownElement = document.getElementById('countdown');
+
+    const INITIAL_SECONDS = 45;
+    let seconds = INITIAL_SECONDS;
+    const timerIds = [];
+
+    function updateCountdown() {
+        document.getElementById('respostas').style.display = 'flex';
+        document.getElementById('countdown').style.display = 'block';
+        if (perguntaAtual >= questoesSelecionadas.length) {
+            countdownElement.textContent = "";
+            document.getElementById('respostas').style.display = 'none';
+        } else if (seconds > 0) {
+            countdownElement.textContent = seconds + ' seg';
+            seconds--;
+            const timerId = setTimeout(updateCountdown, 1000);
+            timerIds.push(timerId);
+        } else {
+            for (let i = 0; i < timerIds.length; i++) {
+                clearTimeout(timerIds[i]);
+            }
+            countdownElement.textContent = 'Tempo esgotado';
+            document.getElementById('modal_encerramento').style.display = "block"
+        }
+    }
+
+    document.getElementById('botao_recomecar').addEventListener('click', () => {
+        document.getElementById('modal_encerramento').style.display = 'none';
+        document.getElementById('telaInicial').style.display = 'block';
+        document.getElementById('div_perguntas').style.display = 'none'
+        carregarQuiz();
+    });
+
+ 
+    const dadosQuiz = [
+    {
+        pergunta: "Qual é a função dos manguezais no ecossistema marinho?",
+        a: "Produzir petróleo",
+        b: "Filtrar sedimentos e poluentes",
+        c: "Aumentar a salinidade da água",
+        d: "Reduzir a biodiversidade",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual desses animais marinhos é conhecido por suas longas migrações?",
+        a: "Peixe-palhaço",
+        b: "Baleia-cinzenta",
+        c: "Tubarão-martelo",
+        d: "Camarão",
+        correta: "b"
+    },
+    {
+        pergunta: "O que é a maré vermelha?",
+        a: "Uma cor diferente do oceano durante o nascer do sol",
+        b: "A presença de algas tóxicas que coloram a água de vermelho",
+        c: "Um fenômeno causado por derramamento de petróleo",
+        d: "Uma técnica de pesca",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal causa da elevação do nível do mar?",
+        a: "Poluição plástica",
+        b: "Derretimento das calotas polares",
+        c: "Aumento da pesca",
+        d: "Desmatamento",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes é um habitat típico dos peixes-boi?",
+        a: "Oceano aberto",
+        b: "Manguezais e rios",
+        c: "Recifes de coral",
+        d: "Águas profundas",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal ameaça aos recifes de coral?",
+        a: "Pesca sustentável",
+        b: "Mudança climática",
+        c: "Exploração de petróleo",
+        d: "Redução da biodiversidade",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é um crustáceo?",
+        a: "Estrela-do-mar",
+        b: "Camarão",
+        c: "Baleia-jubarte",
+        d: "Tubarão-branco",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é o principal uso do fitoplâncton nos oceanos?",
+        a: "Produzir energia eólica",
+        b: "Ser a base da cadeia alimentar marinha",
+        c: "Aumentar a temperatura da água",
+        d: "Proteger contra predadores",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal função das barbatanas das baleias?",
+        a: "Navegação e direção",
+        b: "Respiração",
+        c: "Procriação",
+        d: "Caça",
+        correta: "a"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é um molusco?",
+        a: "Camarão",
+        b: "Polvo",
+        c: "Baleia",
+        d: "Golfinho",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal característica das águas-vivas?",
+        a: "Ter esqueleto ósseo",
+        b: "Capacidade de regeneração rápida",
+        c: "Propriedades bioluminescentes",
+        d: "Ser um mamífero marinho",
+        correta: "c"
+    },
+    {
+        pergunta: "O que é a sobrepesca?",
+        a: "Pesca realizada em águas internacionais",
+        b: "Pesca acima dos níveis sustentáveis",
+        c: "Pesca com redes de arrasto",
+        d: "Pesca de espécies invasoras",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é conhecido por formar colônias flutuantes?",
+        a: "Peixe-voador",
+        b: "Baleia-cinzenta",
+        c: "Caravela-portuguesa",
+        d: "Golfinho",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual é o impacto do aquecimento global nos oceanos?",
+        a: "Aumento da biodiversidade",
+        b: "Elevação da temperatura da água",
+        c: "Redução da poluição",
+        d: "Aumento da produção de petróleo",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal ameaça à sobrevivência dos pinguins?",
+        a: "Caça predatória",
+        b: "Mudanças climáticas e perda de habitat",
+        c: "Aumento da salinidade da água",
+        d: "Proliferação de algas tóxicas",
+        correta: "b"
+    },
+    {
+        pergunta: "O que são os microplásticos?",
+        a: "Pequenos pedaços de plástico que poluem os oceanos",
+        b: "Formas microscópicas de vida marinha",
+        c: "Minúsculas partículas de areia",
+        d: "Algas que produzem oxigênio",
+        correta: "a"
+    },
+    {
+        pergunta: "Qual é a função dos golfinhos na cadeia alimentar marinha?",
+        a: "Produtores",
+        b: "Consumidores primários",
+        c: "Consumidores secundários",
+        d: "Decompositores",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual é a principal fonte de poluição dos oceanos?",
+        a: "Resíduos industriais",
+        b: "Descarte de plásticos",
+        c: "Derramamento de petróleo",
+        d: "Excesso de pesca",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é conhecido por sua habilidade de comunicação vocal complexa?",
+        a: "Camarão",
+        b: "Tubarão-branco",
+        c: "Baleia-jubarte",
+        d: "Estrela-do-mar",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual é a principal razão para a criação de áreas marinhas protegidas?",
+        a: "Aumentar a pesca comercial",
+        b: "Preservar a biodiversidade marinha",
+        c: "Reduzir a temperatura da água",
+        d: "Promover o turismo",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes peixes é famoso por viver em simbiose com as anêmonas-do-mar?",
+        a: "Tubarão-martelo",
+        b: "Peixe-palhaço",
+        c: "Baleia-azul",
+        d: "Polvo",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é o efeito do excesso de nutrientes nos oceanos?",
+        a: "Aumento da biodiversidade",
+        b: "Proliferação de algas nocivas",
+        c: "Redução da temperatura da água",
+        d: "Fortalecimento dos recifes de coral",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é o maior desafio para a conservação das tartarugas marinhas?",
+        a: "Aumento da salinidade da água",
+        b: "Predação natural",
+        c: "Destruição de habitats de nidificação",
+        d: "Falta de alimento",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é um predador de topo?",
+        a: "Sardinha",
+        b: "Peixe-palhaço",
+        c: "Tubarão-branco",
+        d: "Camarão",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual é o papel das plantas marinhas, como a grama marinha, nos ecossistemas marinhos?",
+        a: "Aumentar a poluição",
+        b: "Fornecer abrigo e alimento para diversas espécies",
+        c: "Reduzir a biodiversidade",
+        d: "Produzir petróleo",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal causa da poluição por mercúrio nos oceanos?",
+        a: "Erupções vulcânicas",
+        b: "Descarte de baterias",
+        c: "Queima de carvão",
+        d: "Resíduos agrícolas",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual é a principal função das conchas dos moluscos marinhos?",
+        a: "Navegação",
+        b: "Proteção contra predadores",
+        c: "Respiração",
+        d: "Reprodução",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é conhecido por sua capacidade de regenerar partes do corpo?",
+        a: "Estrela-do-mar",
+        b: "Baleia-azul",
+        c: "Tubarão-martelo",
+        d: "Golfinho",
+        correta: "a"
+    },
+    {
+        pergunta: "Qual é a principal característica das águas abissais?",
+        a: "Altos níveis de luz solar",
+        b: "Baixa pressão",
+        c: "Altas temperaturas",
+        d: "Escuridão total e alta pressão",
+        correta: "d"
+    },
+    {
+        pergunta: "Qual é a importância dos estuários para a vida marinha?",
+        a: "Fornecem áreas de pesca intensiva",
+        b: "Servem como locais de reprodução e abrigo para muitas espécies",
+        c: "Aumentam a salinidade da água",
+        d: "São ricos em petróleo",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes fatores contribui para o branqueamento dos corais?",
+        a: "Aumento da pesca",
+        b: "Aquecimento das águas oceânicas",
+        c: "Redução da salinidade",
+        d: "Aumento da biodiversidade",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é conhecido por seu veneno poderoso?",
+        a: "Baleia-jubarte",
+        b: "Polvo-de-anéis-azuis",
+        c: "Golfinho",
+        d: "Peixe-voador",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal razão para a acidificação dos oceanos?",
+        a: "Desmatamento",
+        b: "Aumento de CO2 na atmosfera",
+        c: "Pesca excessiva",
+        d: "Aumento da temperatura da água",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é conhecido por suas habilidades de camuflagem?",
+        a: "Estrela-do-mar",
+        b: "Camarão",
+        c: "Polvo",
+        d: "Golfinho",
+        correta: "c"
+    },
+    {
+        pergunta: "Qual é a principal função dos manguezais para as comunidades costeiras humanas?",
+        a: "Proteger contra tsunamis",
+        b: "Servir de fonte de petróleo",
+        c: "Filtrar poluentes industriais",
+        d: "Fornecer madeira e carvão",
+        correta: "a"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é uma espécie ameaçada de extinção?",
+        a: "Camarão",
+        b: "Golfinho-do-rio",
+        c: "Peixe-voador",
+        d: "Caravela-portuguesa",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal fonte de energia para a maioria dos ecossistemas marinhos?",
+        a: "Plantas terrestres",
+        b: "Luz solar",
+        c: "Energia geotérmica",
+        d: "Fósseis de dinossauros",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é o papel das algas marinhas na produção de oxigênio?",
+        a: "Consumir oxigênio",
+        b: "Produzir oxigênio através da fotossíntese",
+        c: "Reduzir a produção de oxigênio",
+        d: "Converter oxigênio em dióxido de carbono",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual destes animais marinhos é conhecido por formar cardumes grandes?",
+        a: "Tubarão-martelo",
+        b: "Sardinha",
+        c: "Golfinho",
+        d: "Estrela-do-mar",
+        correta: "b"
+    },
+    {
+        pergunta: "Qual é a principal função do zooplâncton nos oceanos?",
+        a: "Produzir petróleo",
+        b: "Servir de alimento para muitos animais marinhos",
+        c: "Aumentar a poluição",
+        d: "Reduzir a biodiversidade",
+        correta: "b"
+    }
+];
+
+
+    function randomizarLista(listaRandomizada) {
+        for (let contagem = listaRandomizada.length - 1; contagem > 0; contagem--) {
+            const numeroPergunta = Math.floor(Math.random() * (contagem + 1));
+            [listaRandomizada[contagem], listaRandomizada[numeroPergunta]] = [listaRandomizada[numeroPergunta], listaRandomizada[contagem]];
+        }
+    }
+    
+    randomizarLista(dadosQuiz);
+    const questoesSelecionadas = dadosQuiz.slice(0, 10);
+
+    let perguntaAtual = 0;
+    let pontuacao = 0;
+
+    const quizContainer = document.getElementById('quiz');
+    const perguntaElemento = document.querySelector('.pergunta');
+    const respostasContainer = document.querySelector('.respostas');
+
+    function carregarQuiz() {
+        document.getElementById('numeroQuestao').style.display = 'block';
+        if (perguntaAtual < questoesSelecionadas.length) {
+            const quizAtual = questoesSelecionadas[perguntaAtual];
+
+            numeroQuestao.textContent = `${perguntaAtual + 1}`;
+            
+            perguntaElemento.innerText = quizAtual.pergunta;
+            respostasContainer.innerHTML =
+                `<br>
+            <b>A:</b> ${quizAtual.a}<br>
+            <b>B:</b> ${quizAtual.b}<br>
+            <b>C:</b> ${quizAtual.c}<br>
+            <b>D:</b> ${quizAtual.d}<br>`;
+        } else {
+            document.getElementById('respostas').style.display = 'none';
+            numeroQuestao.style.display = 'none';
+            document.getElementById('countdown').style.display = 'none';
+            if (pontuacao >= 6 && pontuacao<=9) {
+                quizContainer.innerHTML = `<h2>Muito bem!<br><br>Sua pontuação foi de: ${pontuacao}/${questoesSelecionadas.length}</h2>
+            <button id="comecarQuiz" onclick="location.reload()">Recarregar</button> <button id="verRanking" onclick="verRanking()">Ver Ranking</button> `
+            } else if (pontuacao == 10) {
+                quizContainer.innerHTML = `<h2>Parabéns, você gabaritou!!!<br><br>Sua pontuação foi de: ${pontuacao}/${questoesSelecionadas.length}</h2>
+            <button id="comecarQuiz" onclick="location.reload()">Recarregar</button>`
+            } else if (pontuacao <= 5) {
+                quizContainer.innerHTML = `<h2>Que pena não foi dessa vez! :(<br><br>Sua pontuação foi de: ${pontuacao}/${questoesSelecionadas.length}</h2>
+            <button id="comecarQuiz" onclick="location.reload()">Recarregar</button><button id="verRanking" onclick="verRanking()">Ver Ranking</button> `
+            }
+        }
+    }
+
+    
+    
+    async  function enviarResposta(respostaSelecionada) {
+        seconds = INITIAL_SECONDS;
+
+        if (respostaSelecionada === questoesSelecionadas[perguntaAtual].correta) {
+            pontuacao++;
+        }
+
+        perguntaAtual++;
+
+        if (perguntaAtual < questoesSelecionadas.length) {
+            carregarQuiz();
+        } else {
+            document.getElementById('respostas').style.display = 'none';
+            numeroQuestao.style.display = 'none';
+            document.getElementById('countdown').style.display = 'none';
+            if (pontuacao > 7) {
+                quizContainer.innerHTML = `<h2>Muito bem!<br><br>Sua pontuação foi de: ${pontuacao}/${questoesSelecionadas.length}</h2>
+            <button id="comecarQuiz" onclick="window.location.reload()">Recarregar</button>`
+            } else if (pontuacao === 10) {
+                quizContainer.innerHTML = `<h2>Parabéns, você gabaritou!!!<br><br>Sua pontuação foi de: ${pontuacao}/${questoesSelecionadas.length}</h2>
+            <button id="comecarQuiz" onclick="window.location.reload()">Recarregar</button>`
+            } else if (pontuacao <= 5) {
+                quizContainer.innerHTML = `<h2>Que pena não foi dessa vez! :(<br><br>Sua pontuação foi de: ${pontuacao}/${questoesSelecionadas.length}</h2>
+            <button id="comecarQuiz" onclick="window.location.reload()">Recarregar</button>`
+            }
+        }
+
+        if(perguntaAtual >= questoesSelecionadas.length){
+        console.log(pontuacao)
+   
+        const response = await fetch('/quiz/registrarPontos', {
+          
+            method: 'POST',
+          
+            headers: {
+                'Content-Type': 'application/json'
+            },
+           
+            body: JSON.stringify({
+                qtdPontos: pontuacao, 
+                idUsuario: idUsuario
+            })
+        });
+
+        if (response.ok) {
+            
+        
+            const labels = ['Erros', 'Acertos'];
+
+        
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Pontuação:',
+                    backgroundColor: ['#D72B2B', '#418FDE'],
+                    borderWidth: 10,
+                 
+                    data: [
+                        questoesSelecionadas.length - pontuacao, 
+                        pontuacao                     
+                    ],
+                }]
+            };
+
+          
+            const config = {
+                type: 'pie',
+                data: data,
+                options: {
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'black',
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                  
+                                    label += (context.raw * 1);
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+         
+            const canvas = document.getElementById('myChart');
+            canvas.height = 400; 
+            canvas.width = 600; 
+
+            new Chart(canvas, config);
+            document.getElementById('baleia').style.display="none"
+
+
+        } else {
+            console.error("Erro ao registrar pontuação:", response.status);
+        }
+      
+
+        } document.getElementById('grafico').style.display="block"
+       
+    }
+
+
+
+    document.getElementById('comecarQuiz').addEventListener('click', () => {
+        document.getElementById('telaInicial').style.display = 'none';
+        document.querySelector('.corpo_perguntas').style.display = 'flex';
+        carregarQuiz();
+    });
+
+    function regras() {
+        document.querySelector('.modal_regras').style.display = 'flex';
+    }
+
+    function voltar() {
+        document.querySelector('.modal_regras').style.display = 'none';
+    }
+
+    function sair(){
+        sessionStorage.clear();
+        window.location = "../index.html";
+    }
+    
+</script>

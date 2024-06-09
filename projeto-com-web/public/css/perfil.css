@@ -1,0 +1,382 @@
+/* Define as configurações de margem, preenchimento e caixa para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: #003366;
+  }
+  
+  
+  body {
+    font-family: "montserrat";
+    overflow: hidden;
+    background-image: url(../assets/imgs/oceano2.jpg);
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  body img {
+    width: 100%;
+  
+  }
+  
+  input::placeholder {
+    font-family: "poppins";
+  }
+  
+  /* Navbar */
+  /* Define a largura da classe container como 100% da largura da tela */
+  .container {
+    width: 100vw;
+    display: flex;
+  }
+  
+  
+  
+  
+  .corpo.second {
+    background-color: #003366;
+  }
+  
+  
+  
+  #trocaCor {
+    border: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  #trocaCor:hover {
+    background-color: #003366;
+    transition: 1s ease-in;
+  }
+  
+  
+  .area_icone_tema {
+    margin-left: 90vw;
+    border: none;
+    display: flex;
+    align-items: center;
+  
+  
+  
+  }
+  
+  .icone_tema img {
+    width: 1.5vw;
+    padding-top: 3px;
+    background-color: #f9f9f9;
+  
+  
+  
+  }
+  
+  /* Define a largura da classe navbar como 100% */
+  .navbar {
+    width: 100%;
+  
+  }
+  
+  /* Define a largura e margem direita do ícone de navegação */
+  .navIcon {
+    width: 1.8vw;
+    margin-right: 0.7vw;
+   stroke: #003366;
+   
+  }
+  
+  /* Define a exibição dos itens do menu como flex */
+  .navbar .menu-items {
+    display: flex;
+  
+  }
+  
+  /* Remove a estilização de lista dos elementos li dentro da classe nav-container */
+  .navbar .nav-container li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  /* Estiliza os links dentro da classe nav-container */
+  .navbar .nav-container a {
+    text-decoration: none;
+    color: #003366;
+    font-size: 16px;
+  
+  
+  }
+  
+  /* Estiliza os links ao passar o mouse sobre eles */
+  .navbar .nav-container a:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+  
+  }
+  
+  
+  /* Define a exibição e a posição da classe nav-container */
+  .nav-container {
+    display: block;
+    height: 30px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Define a posição e aparência do ícone de menu (hamburguer) */
+  
+  
+  
+  
+  /* Define a exibição e aparência dos itens do menu */
+  .navbar .menu-items {
+    padding-top: 3vh;
+    background-color: #f9f9f9;
+    transform: translateY(-5%);
+    height: 105vh;
+    width: 15%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  
+    position: initial;
+    /* transition: transform 0.5s ease-in-out; */
+  
+    gap: 2vh;
+  }
+  
+  /* Define a aparência dos itens do menu individualmente */
+  .navbar .menu-items li {
+    margin-bottom: 2vh;
+    font-weight: 500;
+    padding-left: 2vw;
+  }
+  
+  /* logo */
+  .logo img {
+    width: 96px;
+    height: 108px;
+  
+  }
+  
+  /* Foto usuario */
+  .foto-usuario img {
+    display: flex;
+    width: 6vw;
+    margin-top: 1vh;
+    margin-left: 4.5vw;
+    justify-content: center;
+  }
+
+  .corpo_perfil{
+    display: flex;
+    margin-top: 8vh;
+    margin-left: 20vw;
+    width: 75%;
+    flex-direction: column;
+    height: 80vh;
+    align-items: center;
+    flex-direction: row;
+    gap: 3vw;
+    justify-content: center;
+  }
+  .corpo_esquerda{
+    height: 80vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .perfil_esquerda{
+    background-color: #f9f9f9;
+    width: 20vw;
+    height: 60vh;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px;
+    flex-direction: column;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
+    
+  }
+  .foto-usuario_perfil img {
+    display: flex;
+    width: 9vw;
+    margin-top: 1vh;
+    margin: auto;
+    justify-content: center;
+    
+  }
+  #camera{
+    display: flex;
+    position: absolute;
+    margin-left: 5.8vw;
+    margin-top: 1vh;
+    width: 6vw;
+    opacity: 0%;
+  }
+  #camera:hover{
+    opacity: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+
+  }
+ 
+  .titulo_perfil{
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .caixaTexto{
+    font-weight: 350;
+    margin-top: 10px;
+    font-size: 11px;
+    background-color: #ececec;
+    padding: 5px;
+    border-radius: 10px;
+    border: 0.5px solid #dadada;
+  }
+  .bt_perfil{
+    padding: 10px;
+    background-color: #003366;
+    color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+  .bt_perfil:hover{
+    background-color: #02509e;
+  }
+  .memberSince{
+    font-size: 14px;
+  }
+
+
+
+
+  .perfil_direita{
+    background-color: #f9f9f9;
+    width: 40vw;
+    height: 82vh;
+    display: flex;
+    text-align: center;
+   
+    padding: 20px;
+    flex-direction: column;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+ .titulo_direita{
+    font-size: 40px;
+    font-weight: 600;
+    transform: translateX(-25%);
+    margin-bottom: 4vh;
+ }
+ 
+.formulario_cadastro{
+    display: flex;
+    flex-direction: column;
+   
+ 
+}
+.campos_form_cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #003366;
+    font-size: 20px;
+}
+.inputs_form_cadastro {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+   
+    
+}
+#form_senha{
+    width: 18vw;
+}
+#form_confirmacao_senha{
+    width: 18vw;
+}
+#form_cadastro_nome {
+    width: 21vw;
+    margin-right: 1vw;
+}
+
+#form_cadastro_email {
+    width: 37.5vw;
+}
+#form_cadastro_CPF{
+    width: 15vw;
+}
+.botoes_cadastro{
+    display: flex;
+    
+}
+.form_grupo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+#form_telefone {
+    width: 10vw;
+    height: auto;
+
+}
+
+#form_nome {
+    width: 13vw;
+    margin-right: 1vw;
+}
+
+#form_email {
+    width: 24.9vw;
+}
+
+.inputs_form {
+    padding: 10px;
+    width: 100%;
+}
+
+.campos_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulos_form {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 13px;
+}
+
+#form_mensagem input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.form_button {
+    padding: 10px;
+    background-color: #003366;
+    color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 25%;
+    height: auto;
+    font-size: 24px;
+  
+  }
+  .form_button:hover{
+    background-color: #02509e;
+  }
+
+  .sair{
+    margin-top: 10vh;
+    margin-left: 7vw;
+  }

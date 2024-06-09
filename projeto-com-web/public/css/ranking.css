@@ -1,0 +1,219 @@
+/* Define as configurações de margem, preenchimento e caixa para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+    color: #003366;
+  }
+  
+  
+  body {
+    font-family: "montserrat";
+    overflow: hidden;
+    background-image: url(../assets/imgs/oceano2.jpg);
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  body img {
+    width: 100%;
+  
+  }
+  
+  input::placeholder {
+    font-family: "poppins";
+  }
+  
+  /* Navbar */
+  /* Define a largura da classe container como 100% da largura da tela */
+  .container {
+    width: 100vw;
+    display: flex;
+  }
+  
+  
+  
+  
+  .corpo.second {
+    background-color: #003366;
+  }
+  
+  
+  
+  #trocaCor {
+    border: none;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  #trocaCor:hover {
+    background-color: #003366;
+    transition: 1s ease-in;
+  }
+  
+  
+  .area_icone_tema {
+    margin-left: 90vw;
+    border: none;
+    display: flex;
+    align-items: center;
+  
+  
+  
+  }
+  
+  .icone_tema img {
+    width: 1.5vw;
+    padding-top: 3px;
+    background-color: #f9f9f9;
+  
+  
+  
+  }
+  
+  /* Define a largura da classe navbar como 100% */
+  .navbar {
+    width: 100%;
+  
+  }
+  
+  /* Define a largura e margem direita do ícone de navegação */
+  .navIcon {
+    width: 1.8vw;
+    margin-right: 0.7vw;
+   stroke: #003366;
+   
+  }
+  
+  /* Define a exibição dos itens do menu como flex */
+  .navbar .menu-items {
+    display: flex;
+  
+  }
+  
+  /* Remove a estilização de lista dos elementos li dentro da classe nav-container */
+  .navbar .nav-container li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  /* Estiliza os links dentro da classe nav-container */
+  .navbar .nav-container a {
+    text-decoration: none;
+    color: #003366;
+    font-size: 16px;
+  
+  
+  }
+  
+  /* Estiliza os links ao passar o mouse sobre eles */
+  .navbar .nav-container a:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+  
+  }
+  
+  
+  /* Define a exibição e a posição da classe nav-container */
+  .nav-container {
+    display: block;
+    height: 30px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Define a posição e aparência do ícone de menu (hamburguer) */
+  
+  
+  
+  
+  /* Define a exibição e aparência dos itens do menu */
+  .navbar .menu-items {
+    padding-top: 3vh;
+    background-color: #f9f9f9;
+    transform: translateY(-5%);
+    height: 105vh;
+    width: 15%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  
+    position: initial;
+    /* transition: transform 0.5s ease-in-out; */
+  
+    gap: 2vh;
+  }
+  
+  /* Define a aparência dos itens do menu individualmente */
+  .navbar .menu-items li {
+    margin-bottom: 2vh;
+    font-weight: 500;
+    padding-left: 2vw;
+  }
+  
+  /* logo */
+  .logo img {
+    width: 96px;
+    height: 108px;
+  
+  }
+  
+  /* Foto usuario */
+  .foto-usuario img {
+    display: flex;
+    width: 6vw;
+    margin-top: 1vh;
+    margin-left: 4.5vw;
+    justify-content: center;
+  }
+  .sair{
+    margin-top: 10vh;
+    margin-left: 7vw;
+  }
+  .corpo_perfil{
+    display: flex;
+    margin-top: 8vh;
+    margin-left: 20vw;
+    width: 50%;
+    height: 80vh;
+    align-items: center;
+    flex-direction: row;
+    gap: 3vw;
+    justify-content: center;
+    background-color: #f9f9f9;
+  }
+
+
+  /* tabela */
+.janela{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.titulo_ranking{
+  display: flex;
+  margin-left: 30vw;
+  margin-bottom: 5vh;
+}
+  #ranking_table {
+    color: white;
+    width: 60vw;
+    overflow-y: auto;
+    border-collapse: collapse; 
+    background-color: #e5e5e5;
+    margin-left: 34vw;
+    margin-bottom: 4vh;
+}
+
+#ranking_table th, #ranking_table td {
+    border: 1px solid white; /* Adiciona bordas brancas para células */
+    text-align: center; /* Centraliza o texto */
+    padding: 8px;
+    background-color: #e5e5e5;
+    color: #003366;
+}
+
