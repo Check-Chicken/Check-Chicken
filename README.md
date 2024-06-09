@@ -32,9 +32,17 @@ Por fim, temos uma parte com os contatos da empresa, e um espaço reservado para
 
 ![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/889d465e-68e3-4e30-8c8d-084049a9f864)
 
+
+
 Tecnologias - ⚙
 
-alt text alt text alt text alt text
+
+![icons8-html-48](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/c1f78ef3-b645-47ab-a978-08b21407208a)
+![icons8-css-48](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/d0a7387f-637d-4a17-b60e-69b3974d4087)
+![icons8-js-48](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/bb772d62-8f2c-4f0b-a84c-4ce9b0a1b152)
+![icons8-mysql-48](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/20cefcf3-5cb7-4d14-842b-cca342aa6272)
+![icons8-nó-js-48](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/ef31369c-9b08-46f3-84ad-e0343935b4af)
+
 
 
 Regras do Grupo 
