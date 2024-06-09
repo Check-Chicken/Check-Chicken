@@ -10,6 +10,7 @@ A CheckChicken é um projeto inovador focado na avicultura, que utiliza sensores
 
 
 
+
 Site Institucional - 💻
 
 
@@ -18,6 +19,7 @@ O primeiro contato do cliente com nosso site será através da página inicial, 
 ![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/c3946eaf-6429-47d1-ba3c-6d8ff21e059e)
 
 Logo abaixo, aprofundaremos mais nas informações dos nossos serviços.
+
 ![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/5f0f9e1e-832f-4700-84bd-6111ca49c4b6)
 
 Na sequência, introduziremos um pouco Sobre Nós, (CheckChicken).
@@ -28,8 +30,7 @@ Por fim, temos uma parte com os contatos da empresa, e um espaço reservado para
 
 ![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/f892a64d-c4ec-42b6-a40a-dc77f39938f5)
 
-
-![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/4783afec-e7b7-47e5-8bd1-f098ab77fbf2)
+![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/889d465e-68e3-4e30-8c8d-084049a9f864)
 
 
 Regras do Grupo 
