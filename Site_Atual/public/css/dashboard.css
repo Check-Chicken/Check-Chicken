@@ -4,17 +4,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "montserrat";
-  color: #003366;
+  color: #0d6015;
 }
 
 
 body {
   font-family: "montserrat";
   overflow: hidden;
-  background-image: url(../assets/imgs/oceano2.jpg);
+  background-image: url(../assets/imgs/fundo-teste.png);
   position: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 115vw;
 }
 
 body img {
@@ -49,7 +49,7 @@ input::placeholder {
 }
 
 #trocaCor:hover {
-  background-color: #003366;
+  background-color: #0d6015;
   transition: 1s ease-in;
 }
 
@@ -83,8 +83,8 @@ input::placeholder {
 .navIcon {
   width: 1.8vw;
   margin-right: 0.7vw;
- stroke: #003366;
- 
+  stroke: #dc9c42;
+
 }
 
 /* Define a exibição dos itens do menu como flex */
@@ -104,7 +104,7 @@ input::placeholder {
 /* Estiliza os links dentro da classe nav-container */
 .navbar .nav-container a {
   text-decoration: none;
-  color: #003366;
+  color: #0d6015;
   font-size: 16px;
 
 
@@ -156,8 +156,8 @@ input::placeholder {
 
 /* logo */
 .logo img {
-  width: 96px;
-  height: 108px;
+  width: 170px;
+  height: 130px;
 
 }
 
@@ -168,6 +168,7 @@ input::placeholder {
   margin-top: 1vh;
   margin-left: 4.5vw;
   justify-content: center;
+  color: #000000;
 }
 
 #grid_corpo {
@@ -222,10 +223,11 @@ input::placeholder {
   padding: 5px;
   align-items: center;
   justify-content: center;
-  
+
 
 }
-#div_perguntas{
+
+#div_perguntas {
   font-weight: 700;
 }
 
@@ -285,13 +287,14 @@ input::placeholder {
 .botoes_respostas:hover {
   background-position: center;
   color: #f9f9f9;
-  z-index: 1; /* Aumenta o nível de sobreposição no hover */
- 
+  z-index: 1;
+  /* Aumenta o nível de sobreposição no hover */
+
   font-size: 50px;
-  
+
 }
 
-li{
+li {
   font-weight: 400;
 }
 
@@ -436,12 +439,14 @@ button:nth-child(1) {
   font-size: 20px;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
   width: 10vw;
-  
+
 }
+
 .botoes_encerrado:hover {
   background-color: #004f9d;
 }
-.corpo_botoes_regras{
+
+.corpo_botoes_regras {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -449,7 +454,8 @@ button:nth-child(1) {
   gap: 2vw;
   color: #F3F3F3;
 }
-.sair{
+
+.sair {
   margin-top: 10vh;
   margin-left: 7vw;
 }
