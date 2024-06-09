@@ -32,6 +32,10 @@ Por fim, temos uma parte com os contatos da empresa, e um espaço reservado para
 
 ![image](https://github.com/Check-Chicken/Check-Chicken/assets/160988685/889d465e-68e3-4e30-8c8d-084049a9f864)
 
+Tecnologias - ⚙
+
+alt text alt text alt text alt text
+
 
 Regras do Grupo 
 
