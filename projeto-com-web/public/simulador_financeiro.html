@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador Financeiro</title>
-    <link rel="stylesheet" href="style-calc.css">
+    <link rel="stylesheet" href="./css/style-calc.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="../public/assets/imgs/logo_galinha.png">
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&display=swap"
         rel="stylesheet">
-        <link rel="shortcut icon" href="images/logo_galinha.png">
+    <link rel="shortcut icon" href="images/logo_galinha.png">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                 <p class="texto">Por quanto você vende o quilo das suas aves em reais?</p>
                 <input id="input_venda_medio" placeholder="Preço do quilo em reais"><br>
                 <p class="texto">Qual o custo médio de produção mensal?</p>
-                <b style="color: orange" >(ração, água, energia, galpão, veterinário, vacinas e etc).</b>
+                <b style="color: orange">(ração, água, energia, galpão, veterinário, vacinas e etc).</b>
                 <input id="input_custo_producao" placeholder="Custo da produção mensal em reais"><br>
                 <button class="simular" onclick="CalcularKgPerdido()">SIMULAR</button>
                 <button class="botao-voltar" onclick="inicio()">Voltar</button>
@@ -35,7 +36,7 @@
                 <div class="box box3" id="div_informacao"></div>
             </div>
         </div>
-        <img class="logo" src="images/logo_novo.png">
+
     </div>
 
 </body>
@@ -44,12 +45,12 @@
 
 <script>
 
-function inicio() {
-    window.location.href = "inicio.html"
-  }
-  function cadastro() {
-    window.location.href = "cadastro-empresa.html"
-  }
+    function inicio() {
+        window.location.href = "index.html"
+    }
+    function cadastro() {
+        window.location.href = "cadastro-empresa.html"
+    }
     function CalcularKgPerdido() {
         // Coleta de dados do input
         let qtd_aves = Number(input_qtd_aves.value)
@@ -61,23 +62,23 @@ function inicio() {
         let kg_perdido = qtd_ave_perdida * peso_galinha
 
 
-        if( qtd_aves == "" ||qtd_ave_perdida == "" || peso_galinha == "" || kg_perdido=="" || custo_producao=="" ){
-            div_resultado.innerHTML  = `<p style="color: rgb(255, 86, 86);">Preencha todos os campos</p>`
-        }else{
-        // Exibição do resultado
-        div_resultado.innerHTML = `${kg_perdido.toFixed(2)} KG <br><span>EM AVES PERDIDAS</span>`
+        if (qtd_aves == "" || qtd_ave_perdida == "" || peso_galinha == "" || kg_perdido == "" || custo_producao == "") {
+            div_resultado.innerHTML = `<p style="color: rgb(255, 86, 86);">Preencha todos os campos</p>`
+        } else {
+            // Exibição do resultado
+            div_resultado.innerHTML = `${kg_perdido.toFixed(2)} KG <br><span>EM AVES PERDIDAS</span>`
 
-        // Inserção de botão
-        div_resultado.innerHTML += `
+            // Inserção de botão
+            div_resultado.innerHTML += `
             <div class="seta_unica">
                 <button class="seta" onclick="CalcularPrejuizo()">></button>
             </div>`
 
-        // Exibição da explicação do calculo realizado
-        div_informacao.innerHTML = `<div>Calculamos a quantidade de quilos perdidos baseados no peso médio do abate de frangos no Brasil. Que de acordo o AveSite, que fez seus cálculos baseados nos dados do IBGE, está em torno de 2.1 kg em 2022.
+            // Exibição da explicação do calculo realizado
+            div_informacao.innerHTML = `<div>Calculamos a quantidade de quilos perdidos baseados no peso médio do abate de frangos no Brasil. Que de acordo o AveSite, que fez seus cálculos baseados nos dados do IBGE, está em torno de 2.1 kg em 2022.
             <br><a style="color: orange;" href="https://www.avisite.com.br/com-correcao-dos-parametros-peso-medio-do-frango-abatido-pelo-ibge-sofre-retracao-de-mais-de-10/#gsc.tab=0">Fonte</a> </div>`
+        }
     }
-}
     function CalcularPrejuizo() {
         // Coleta de dados dos inputs
         let qtd_ave_perdida = Number(input_qtd_perdida.value)
@@ -152,7 +153,7 @@ function inicio() {
         // Exibição do resultado
         div_dash.innerHTML = `<span>TOTALIZANDO O PREJUIZO DE</span>`
         div_dash.innerHTML += `<div class="conteiner-resultado2" id="div_conteiner"></div>`
-        div_conteiner.innerHTML = `${prejuizoTotalFixed.toLocaleString('pt-Br', { style: 'currency', currency: 'BRL'})} REAIS <span>ANUAIS</span>`
+        div_conteiner.innerHTML = `${prejuizoTotalFixed.toLocaleString('pt-Br', { style: 'currency', currency: 'BRL' })} REAIS <span>ANUAIS</span>`
 
         // Inserção do botão
         div_dash.innerHTML += `<button onclick="cadastro()" class="botao-ajuda">VER COMO A CHECK<br>CHICKEN PODE ME AJUDAR</button>

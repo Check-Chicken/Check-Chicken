@@ -5,18 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href=".\css\style.css">
-  <link rel="shortcut icon" href="./assets\imgs\logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="shortcut icon" href="/assets/imgs/logo_galinha.png">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
-
   <script src="./js/sessao.js"></script>
 
 
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <title>Blue Horizon</title>
+  <title>CheckChicken | Home</title>
 </head>
 
 <body>
@@ -31,9 +27,9 @@
 
         <div class="nav-menu">
           <a href="index.html" class="home">Home</a>
-          <a href="#titulo_postagens" class="servicos">Serviços</a>
-          <a href="#tubarao" class="sobreNos">Sobre Nós</a>
-          <a href="#form_nome" class="contato2">Contato</a>
+          <a href="#servicos" class="servico">Serviços</a>
+          <a href="#div_sobre-nos" class="sobreNos">Sobre Nós</a>
+          <a href="#form_mapa" class="contato2">Contato</a>
           <button id="entrar" onclick="document.getElementById('div_login').style.display='block'">Entrar</button>
         </div>
       </nav>
@@ -42,100 +38,108 @@
   <div class="corpo">
 
 
+    <!-- CARROSEL -->
 
-    <div class="corpo_titulo">
-      <div id="titulo_inicio">
-        <p id="titulo_texto">EXPLORE O MUNDO MARINHO COM BLUE HORIZON</p>
-        <p id="subtitulo">Explore o Blue Horizon e descubra o incrível mundo marinho conosco. Nossa plataforma
-          oferece vídeos educativos, infográficos interativos e histórias inspiradoras sobre oceanos, vida
-          marinha e conservação. Venha se maravilhar conosco e junte-se à nossa jornada de descoberta e
-          aprendizado!</p>
+    <div class="slideshow-container">
 
-      </div>
-      <div id="foto_baleia">
-        <img src="./assets\imgs\rabo-baleia.jpg" alt="">
-      </div>
-    </div>
 
-    <div class="corpo_tubarao">
-      <div id="tubarao">
-        <img src="./assets\imgs\tubarao.webp" alt="">
-      </div>
-      <div id="texto_tubarao">
-        <p id="titulo_tubarao">Visão geral do projeto Blue Horizon</p>
-        <p id="subtitulo_tubarao">Explore as maravilhas dos oceanos e descubra um mundo de possibilidades além
-          do horizonte azul.</p><br>
-        <p>Cadastre-se para ter acesso a um íncrivel Quiz e a um jogo de Palavras-Cruzadas exclusivo!</p>
-      </div>
-      <button id="saibaMais" onclick="document.getElementById('div_login').style.display='block'">Cadastrar</button>
+      <div class="mySlides fade">
 
-    </div>
-    <!-- ultimas postagens -->
-    <div class="ultimasPostagens">
-      <div id="titulo_postagens"><span id="ultimas"> Últimas</span> Postagens</div>
+        <div class="textoInicial">
+          <div class="imagem-inicio">
+            <img src="/assets/imgs/fundo-inicio.jpg">
 
-      <div id="primeiraPostagem">
-        <img src="./assets\imgs\coral.jpg" alt="">
-        <div>
-          <div>Expedição Submarina: Uma Jornada pelos Recifes de Coral</div><br>
-          <div id="texto_primeiraPostagem">Compartilhe uma emocionante recapitulação de uma recente expedição
-            submarina, destacando os incríveis recifes de coral e a diversidade de vida marinha encontrada
-            durante a viagem.</div>
-          <a href="https://g1.globo.com/ap/amapa/noticia/2017/01/video-mostra-primeira-expedicao-submarina-em-corais-na-costa-do-ap.html"
-            target="_blank" class="vermais">Ver mais... </a>
-        </div>
-      </div>
-      <div id="segundaPostagem">
-        <img src="./assets\imgs\golfinhos.png" alt="">
-        <div>
-          <div>Top 10 Destinos de Ecoturismo Marinho</div><br>
-          <div id="texto_segundaPostagem">Descubra a beleza única dos oceanos. Cada local oferece uma
-            experiência de conexão com a natureza. Prepare-se para se encantar com a diversidade marinha e
-            inspirar-se a proteger esses ambientes para o futuro.</div>
-          <a href="https://espacomergulho.com.br/top-10-melhores-lugares-do-mundo-pra-se-mergulhar-em-2019/"
-            target="_blank" class="vermais">Ver mais...</a>
-        </div>
-      </div>
-      <div id="terceiraPostagem">
-        <img src="./assets\imgs\limpeza.jpg" alt="">
-        <div>
-          <div>Projeto de Limpeza Costeira</div><br>
-          <div id="texto_terceiraPostagem">O objetivo deste ciclo de mutirões é promover a conscientização
-            ambiental, por meio da coleta desses resíduos. Desta forma, compartilhamos informações sobre a
-            importância do ecossistema costeiro e os motivos pelos quais não se deve descartar lixo na
-            praia.</div>
-          <a href="https://www.limpezadosmares.com/#:~:text=O%20Projeto%20Limpeza%20dos%20Mares,impacto%20negativo%20das%20a%C3%A7%C3%B5es%20humanas."
-            target="_blank " class="vermais">Ver mais...</a>
-        </div>
-      </div>
-
-      <div class="caixaTexto">
-        <div id="imagens_caixaTexto">
-          <img src="./assets\imgs\aspas.png" alt="">
-          <img src="./assets\imgs\aspas2.png" alt="">
-        </div>
-        <div id="corpo_caixaTexto">
-          <div id="texto1">
-            <p> O mar é o nosso recurso comum mais global, a conexão entre todas as pessoas e lugares, e
-              nossa última fronteira verdadeiramente selvagem. O oceano é o coração do nosso planeta.
-            </p>
+            <p id="textojust" class="textos"><span><span class="verde"> <b>Reduza sua perda <span class="laranja">do
+                      lote de galinhas de corte</span> em até 50%.</b> </span> Veja como podemos ajudar através de nosso
+                simulador!
+                <br><button id="simulador" onclick="simulador()">Simulador</button></p></span>
           </div>
-          <div id="texto2">
-            <p> A maior parte da Terra é coberta pelo oceano, mas a maioria das pessoas só vê uma pequena parte dele. A
-              saúde dos oceanos é crucial para a saúde do nosso planeta.</p>
 
-          </div>
-        </div>
-        <div id="nomes">
-          <p>Sylvia Earle</p>
-          <p>Sylvia Earle</p>
         </div>
       </div>
 
 
+      <div class="mySlides fade">
+
+        <img src="/assets/imgs/fundo2.png" style="width:100%; opacity: 80%;">
+        <p id="texto2">Ajudamos a aumentar a <span class="verde"> <br>lucratividade</span> de sua produção</p>
+        <p id="texto2_parte2">Através do monitoramento de <span class="laranja"> temperatura</span> e <span
+            class="azul"> umidade</span></p>
+
+
+      </div>
+
+      <div class="mySlides fade">
+        <div class="image3">
+          <img src="/assets/imgs/fundo-galinha3.png">
+        </div>
+        <p id="texto3">Através do monitoramento de<span class="laranja"> <br> <b>temperatura</b></span> e <span
+            class="azul"><b>umidade</b> </span></p>
+        <p id="texto3_parte2">conseguimos ajudar você<br> a tomar <span class="azul"><b> melhores decisões.</b></span>
+
+        </p>
+
+      </div>
+
+      <!-- setas de ir e voltar -->
+      <a class="prev" onclick="passarSlides(-1)">&#10094;</a>
+      <a class="next" onclick="passarSlides(1)">&#10095;</a>
+    </div>
+
+
+    <!-- Serviços -->
+
+
+    <h1 id="servicos"
+      style="text-align: center; color: #FFA05D; font-size: 42px; background-color: #F5F4F9; padding-top: 10vh;">
+      Serviços
+    </h1>
+    <div class="servicos">
+      <div id="servico1" class="servicos">
+        <img src="/assets/imgs/icone-servicos1.png">
+        <p style="color: white; font-weight: 700 ; font-size: 3.2vh;">Gerenciamento de Informações</p><br>
+        <span style="color: white; font-size: 20px;">Os dados serão <span
+            style="color: #FFA05D; font-weight: 600;">capturados pelos sensores</span>, e através disso damos inicio ao
+          gerencianmento e ao controle de dados dos lotes.</span>
+      </div>
+
+      <div id="servico2" class="servicos">
+        <img src="/assets/imgs/icone-servicos2.png" alt="">
+        <p style="color: white; font-weight: bold;font-size: 3.2vh;">Monitoramento dos Aviários</p><br>
+        <span class="servicoEspaco" style="color: white; font-size: 20px;">Controlamos os <span
+            style="color: #FFA05D; font-weight: 600;">níveis
+            de temperatura e umidade</span> de cada lote existente, prezando sempre em manter a<span
+            style="color: #FFA05D; font-weight: 600;"> qualidade das aves.</span></span>
+      </div>
+    </div>
+
+
+    <!-- Sobre Nós -->
+
+    <h2 id="sobre-nos" style="text-align: center; color: #FFA05D; font-size: 42px; padding-top: 10vh;">Sobre Nós</h2>
+
+    <div id="div_sobre-nos">
+      <img id="galinha_sobre-nos" src="/assets/imgs/galinha_sobrenos2.png">
+
+      <p style="font-size: 3vh;"><span style="font-weight: bold; font-size: 6vh; color: #5db868;">Check</span> <span
+          style="font-weight: bold; font-size: 6vh; color: #4a7a50;">Chicken</span><br> <br><br>
+
+        Somos uma empresa de prestação de serviços focados no setor avícola e realizamos o <span
+          style="color: #FFA05D; font-weight: 500; font-size:3vh;">monitoramento </span>e <span
+          style="color: #FFA05D; font-weight: 500; font-size: 3vh;">análise de dados</span> <br> <br>
+
+        A <span style="color: #FFA05D; font-weight: 500; font-size: 3vh;">Avicultura</span> é a criação de aves
+        visando
+        a produção de
+        alimentos principalmente carne e ovos, sendo o frango a principal espécie criada.</p>
 
     </div>
-    <!-- formulario -->
+
+
+
+
+
+    <!--FORMULÁRIO -->
 
     <div id="form_mapa" class="form_mapa_container">
       <div>
@@ -145,10 +149,10 @@
       </div>
       <div id="id_form" class="formulario">
 
-        <p style="display: flex;"><img src="./assets\imgs\logo-semfundo.png"
-            style="width: 15%;display: flex; margin-right: 1.6vw;"><span
-            style="color: #003366; font-size: 44px; font-weight: 300;">Fale </span><span
-            style="color: #003366;  font-size: 44px; font-weight: 600;">Conosco</span></p>
+        <p style="display: flex;"><img src="/assets/imgs/logo_galinha.png"
+            style="width: 20%; margin-right: 1.6vw;"><span
+            style="color: #4a7a50; font-size: 44px; font-weight: 300;">Fale </span><span
+            style="color: #FFA05D;  font-size: 44px; font-weight: 600;">Conosco</span></p>
         <br><br>
         <div>
           <div class="form_grupo">
@@ -190,7 +194,7 @@
       <!-- Modal Content -->
       <div class="modal-content animate">
         <div class="imgcontainer">
-          <img src="./assets\imgs\logo-semfundo.png" alt="Logo" class="avatar">
+          <img src="/assets/imgs/logo_galinha.png" alt="Logo" class="avatar">
         </div>
         <div class="linha-vertical"></div>
 
@@ -226,19 +230,19 @@
           </div>
           <div class="modal_formulario" id="modal_formulario">
 
-            <p style="display: flex;"><span style="color: #003366; font-size: 44px; font-weight: 500;">Cadastro</span>
+            <p style="display: flex;"><span style="color: #4a7a50; font-size: 44px; font-weight: 500;">Cadastro</span>
             </p>
             <br>
 
             <div class="div_validacao" id="div_erroCadastro" style="color: red;"></div><br>
             <div class="form_grupo">
               <div class="campos_form_cadastro">
-                <div class="titulos_form">Nome Completo: </div>
+                <div class="titulos_form">Nome da Empresa: </div>
                 <input type="text" id="form_cadastro_nome" class="inputs_form_cadastro"
                   placeholder="Insira seu nome aqui">
               </div>
               <div class="campos_form_cadastro">
-                <div class="titulos_form">CPF: </div>
+                <div class="titulos_form">CNPJ: </div>
                 <input type="text" id="form_cadastro_CPF" class="inputs_form_cadastro" placeholder="12345678910"
                   maxlength="11">
 
@@ -247,80 +251,83 @@
             </div>
             <div class="form_grupo">
               <div class="campos_form_cadastro">
-                <div class="titulos_form">Email: </div>
-                <input type="email" id="form_cadastro_email" class="inputs_form_cadastro"
-                  placeholder="exemplo@gmail.com">
+                <div class="titulos_form">CEP: </div>
+                <input id="form_cadastro_cep" class="inputs_form_cadastro" placeholder="exemplo@gmail.com">
 
               </div>
-
-            </div>
-            <div class="form_grupo">
-              <div class="campos_form_cadastro">
-                <div class="titulos_form">Senha: </div>
-                <input id="form_senha" class="inputs_form_cadastro" placeholder="************" type="password">
-
-              </div>
-              <div class="campos_form_cadastro">
-                <div class="titulos_form">Confirme sua senha: </div>
-                <input id="form_confirmacao_senha" class="inputs_form_cadastro" placeholder="************"
-                  type="password">
+<!-- 
+              <div class="form_grupo">
+                <div class="campos_form_cadastro">
+                  <div class="titulos_form">Numero: </div>
+                  <input id="form_cadastro_numero" class="inputs_form_cadastro" placeholder="02317000">
+                </div> -->
 
               </div>
+              <div class="form_grupo">
+                <div class="campos_form_cadastro">
+                  <div class="titulos_form">Senha: </div>
+                  <input id="form_senha" class="inputs_form_cadastro" placeholder="************" type="password">
 
+                </div>
+                <!-- <div class="campos_form_cadastro">
+                  <div class="titulos_form">Confirme sua senha: </div>
+                  <input id="form_confirmacao_senha" class="inputs_form_cadastro" placeholder="************"
+                    type="password">
+
+                </div> -->
+
+              </div>
+              <div class="botoes_cadastro">
+                <button id="botao_voltar" onclick="voltarLogin()" type="button">Voltar</button>
+                <button class="form_button" onclick="cadastrar()">Cadastrar</button>
+              </div>
+
+
+              <div id="div_erros_login"></div>
             </div>
-            <div class="botoes_cadastro">
-              <button id="botao_voltar" onclick="voltarLogin()" type="button">Voltar</button>
-              <button class="form_button" onclick="cadastrar()">Cadastrar</button>
-            </div>
-
-
-            <div id="div_erros_login"></div>
           </div>
+          <button id="botao_cancelar" onclick="document.getElementById('div_login').style.display='none'"
+            class="botao-cancelar">X</button>
         </div>
-        <button id="botao_cancelar" onclick="document.getElementById('div_login').style.display='none'"
-          class="botao-cancelar">X</button>
+
+
       </div>
 
 
     </div>
+    <a href="#id_navbar">
+      <button id="botao_topo" title="Voltar ao topo">&#8679;</button>
+    </a>
 
+    <!-- END BODY -->
 
-
-
-  </div>
-
-  </div>
-  <a href="#id_navbar">
-    <button id="botao_topo" title="Voltar ao topo">&#8679;</button>
-  </a>
-  <!-- fim do corpo -->
   </div>
 
 </body>
 <footer>
   <div class="footer">
     <div class="infos footerText">
-      <a href="inicio.html"><img src="./assets\imgs\logo-semfundo.png" style="width: 4vw;"></a>
+      <a href="inicio.html"><img src="/assets/imgs/logo_galinha.png" style="width: 4vw;"></a>
 
       <div class="contato">
 
-        <a href="..\public\dashboard\dashboard.html" style="font-size: 20px; color: #003366;">Developed by João Paulo</a>
-        <p style="font-size: 16px; color: #003366;">(11) 97571-1141</p>
-        <p style="font-size: 14px; color:#d0ad00;">© 2024 All rights reserved</p>
+        <a href="..\public\dashboard\dashboard.html" style="font-size: 20px; color: white;">www.checkchicken.com.br</a>
+        <p style="font-size: 16px; color: white;">(11) 97571-1141</p>
+        <p style="font-size: 14px; color:#d0ad00;">© 2024 All rights reserved by CheckChicken</p>
 
       </div>
-      <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: #003366;">|</p>
+      <p style="font-size: 50px; margin-left: 2vw; font-weight: lighter; color: white;">|</p>
 
       <div class="endereco">
-        <u style="color: #003366; font-size: 16px;">Rua Haddock Lobo, 595 São Paulo - SP</u>
+        <u style="color: white; font-size: 16px;">Rua Haddock Lobo, 595 São Paulo - SP</u>
       </div>
 
 
 
-   
-    
+
+
     </div>
-    
+
   </div>
 </footer>
 
@@ -328,6 +335,10 @@
 </html>
 <script>
 
+  // controles para trocar de paginas
+  function simulador() {
+    window.location.href = "simulador_financeiro.html"
+  }
 
   function cadastrar() {
 
@@ -399,7 +410,7 @@
     }
 
 
-  
+
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
@@ -418,8 +429,8 @@
 
         if (resposta.ok) {
 
-         
-          div_resultado.innerHTML = `<p style="top: 0; opacity: 50%; background-color: #003366; width: 50%; height: 10vh; transform: translateX(-50%); margin-bottom: 0; color: white; justify-content:center; align-items:center; position: absolute; text-align:center; display: flex">Cadastro realizado com sucesso! Por favor faça o Login!</p>`;
+
+          div_resultado.innerHTML = `<p style="top: 0; opacity: 50%; background-color: #4a7a50; width: 50%; height: 10vh; transform: translateX(-50%); margin-bottom: 0; color: white; justify-content:center; align-items:center; position: absolute; text-align:center; display: flex">Cadastro realizado com sucesso! Por favor faça o Login!</p>`;
 
           setTimeout(() => {
             modal_formulario.style.display = "none"
@@ -447,7 +458,7 @@
 
 
   function enviarMensagem() {
-    id_form.innerHTML = `<h1 style="color: #003366; font-size: 44px; font-weight: 600;">Mensagem enviada com sucesso!</h1><img src="./assets\imgs/verificado.png" alt="" style="width: 20%; margin-left: 38%; margin-top: 2vh"> <button class="form_button" onclick="location.reload()"> Voltar</button>`
+    id_form.innerHTML = `<h1 style="color: #4a7a50; font-size: 44px; font-weight: 600;">Mensagem enviada com sucesso!</h1><img src="./assets\imgs/verificado.png" alt="" style="width: 20%; margin-left: 38%; margin-top: 2vh"> <button class="form_button" onclick="location.reload()"> Voltar</button>`
   }
   function modalCadastro() {
     modal_formulario.style.display = "block"
@@ -489,7 +500,7 @@
 
       if (resposta.ok) {
         console.log(resposta);
-        div_resultado.innerHTML = `<p style="top: 0; opacity: 50%; background-color: #003366; width: 50%; height: 10vh; transform: translateX(-50%); margin-bottom: 0; color: white; justify-content:center; align-items:center; position: absolute; text-align:center; display: flex">Logado com sucesso, redirecionando para a tela de usuário... </p>`
+        div_resultado.innerHTML = `<p style="top: 0; opacity: 50%; background-color: #4a7a50; width: 50%; height: 10vh; transform: translateX(-50%); margin-bottom: 0; color: white; justify-content:center; align-items:center; position: absolute; text-align:center; display: flex">Logado com sucesso, redirecionando para a tela de usuário... </p>`
         resposta.json().then(json => {
           console.log(json);
           console.log(JSON.stringify(json));
@@ -497,7 +508,7 @@
           sessionStorage.NOME_USUARIO = json.nome;
           sessionStorage.ID_USUARIO = json.idUsuario;
           sessionStorage.DT_CRIACAO = json.DT_CRIACAO;
-         
+
 
           setTimeout(() => {
 
@@ -523,6 +534,47 @@
 
     return false;
   }
+
+
+  let paginaSlide = 1;
+
+  mostrarSlides(paginaSlide);
+
+  // controles para passar slides 
+  function passarSlides(numeroSlide) {
+    mostrarSlides(paginaSlide += numeroSlide);
+  }
+
+
+  function mostrarSlides(numeroSlide) {
+    let contagem;
+    let slides = document.getElementsByClassName("mySlides");
+
+
+    if (numeroSlide > slides.length) {
+      paginaSlide = 1
+    }
+    if (numeroSlide < 1) {
+      paginaSlide = slides.length
+    }
+    for (let contagem = 0; contagem < slides.length; contagem++) {
+      slides[contagem].style.display = "none";
+    }
+
+    slides[paginaSlide - 1].style.display = "block";
+
+  }
+  let btn = document.querySelector('.lnr-eye');
+  btn.addEventListener('click', function () {
+    let input_senha = document.querySelector('#input_senha');
+    if (input_senha.getAttribute('type') == 'password') {
+      input_senha.setAttribute('type', 'text');
+    } else {
+      input_senha.setAttribute('type', 'password');
+    }
+  });
+
+
 
 
 
