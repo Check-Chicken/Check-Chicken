@@ -1,8 +1,8 @@
-# Check-Chicken
+# Check-Chicken -  🐥
 
 
 
-Check Chicken - 🐥
+
 
 
 A CheckChicken é um projeto inovador focado na avicultura, que utiliza sensores de temperatura e umidade para monitorar e melhorar o ambiente dos aviários. Com um sistema baseado em Arduino e uma API em Node.js, os dados são coletados e analisados em um dashboard interativo, ajudando a reduzir o estresse calórico nas galinhas e melhorar a produtividade. Integrantes: Felipe Lopes, Guilherme Brito, João Paulo, Matheus Oliveira e Pedro Paulo. O objetivo é minimizar as perdas causadas por variações climáticas, garantindo melhor gestão e bem-estar das aves.
