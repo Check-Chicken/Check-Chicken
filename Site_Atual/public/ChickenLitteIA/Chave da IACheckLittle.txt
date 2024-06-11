@@ -1,0 +1,2 @@
+MINHA_CHAVE='AIzaSyALzwbs2I1I9LouWxuCcAOzcDaaVF7Te7A'
+porta=3000

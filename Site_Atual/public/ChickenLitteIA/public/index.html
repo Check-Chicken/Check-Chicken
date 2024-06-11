@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="./img/image.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chat | Chicken LittleIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="chat">
+
+            <div class="topo">
+                <a href="index.html" class="imgArrow">
+                    <img src="./img/icons8-esquerda-50.png" class="arrow" alt="Voltar para tela de usuário">
+                </a>
+
+                <div class="texto">
+                    <h3>Chicken<b style="color:#FF964C;">Little <b style="color: white;">IA</b></b></h3>
+                </div>
+
+                <div class="Corpologo">
+                    <img src="./img/logoLittle.png" class="logo" width="70%">
+                </div>
+
+            </div>
+
+            <div class="tempo">
+                <p id="data"></p>
+            </div>
+
+
+            <div id="resposta"></div>
+
+            <img src="./img/image.png" id="logo" width="11%" style="display: none;">
+
+            <div id="tempoMensagemEnviada"></div>
+
+            <div class="campoPergunta">
+                <input id="pergunta" type="text" placeholder="Digite sua pergunta..."></input>
+
+                <button onclick="gerarResposta()"><img src="./img/icons8-enviado-48.png" class="send"></button>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <script>
+
+
+        function mostrarDataHora() {
+
+            const agora = new Date();
+            const dia = agora.getDate();
+            const mes = agora.getMonth() + 1; // Mês é base 0, então adicionamos 1
+            const ano = agora.getFullYear();
+            const hora = agora.getHours();
+            const minutos = agora.getMinutes();
+            const segundos = agora.getSeconds();
+
+            const dataHoraString = `Data: ${dia}/${mes}/${ano} | Hora: ${hora}:${minutos}:${segundos}`;
+
+            data.innerHTML = `${dataHoraString}`
+        }
+
+        // Atualiza a cada segundo
+        setInterval(mostrarDataHora, 1000);
+
+        // Exibe a data e hora assim que a página carrega
+
+
+        async function gerarResposta() {
+
+            const horaDeAgora = new Date();
+            let mensagemEnviadaHa = horaDeAgora.getMinutes();
+
+            const pergunta = document.getElementById('pergunta').value;
+
+            const response = await fetch('/perguntar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ pergunta })
+            });
+
+            const data = await response.json();
+
+            const resposta = document.getElementById('resposta'); // Corrigido aqui
+
+
+            resposta.style.opacity = '0'; // Configura a opacidade para 0 antes de mostrar
+            resposta.style.display = 'block';
+            logo.style.display = 'block';
+            document.getElementById('resposta').innerText = data.resultado;
+
+            // Após um pequeno atraso, configurar a opacidade para 1
+            setTimeout(() => {
+                resposta.style.opacity = '1';
+                logo.style.opacity = '1';
+                tempoMensagemEnviada.style.opacity = '1';
+            }, 100);
+
+
+            // Função para atualizar o tempo decorrido
+            function updateTempoMensagemEnviada() {
+                const agora = new Date();
+                const diff = agora - horaDeAgora;
+
+                const segundos = Math.floor(diff / 1000);
+                const minutos = Math.floor(segundos / 60);
+                const horas = Math.floor(minutos / 60);
+                const dias = Math.floor(horas / 24);
+
+                let tempoString = '';
+
+                if (dias > 0) {
+                    tempoString = `${dias} dia${dias > 1 ? 's' : ''}`;
+                } else if (horas > 0) {
+                    tempoString = `${horas} hora${horas > 1 ? 's' : ''}`;
+                } else if (minutos > 0) {
+                    tempoString = `${minutos} minuto${minutos > 1 ? 's' : ''}`;
+                } else {
+                    tempoString = `${segundos} segundo${segundos > 1 ? 's' : ''}`;
+                }
+
+                tempoMensagemEnviada.innerHTML = `Enviado há ${tempoString}`;
+            }
+
+            updateTempoMensagemEnviada();
+            setInterval(updateTempoMensagemEnviada, 60000); // Atualiza a cada minuto
+        }
+
+
+    </script>
+
+</body>
+
+</html>
