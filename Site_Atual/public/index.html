@@ -15,7 +15,7 @@
   <title>CheckChicken | Home</title>
 </head>
 
-<body>
+<body onload="listar()">
   <header>
     <div>
       <nav class="navbar" id="id_navbar">
@@ -228,6 +228,8 @@
               <a href="" class="esqueceu">Esqueceu sua senha?</a>
             </div>
           </div>
+
+          <!-- // Tela do Cadastro de Usuario // -->
           <div class="modal_formulario" id="modal_formulario">
 
             <p style="display: flex;"><span style="color: #4a7a50; font-size: 44px; font-weight: 500;">Cadastro</span>
@@ -236,25 +238,38 @@
 
             <div class="div_validacao" id="div_erroCadastro" style="color: red;"></div><br>
             <div class="form_grupo">
+
               <div class="campos_form_cadastro">
-                <div class="titulos_form">Nome da Empresa: </div>
-                <input type="text" id="form_cadastro_nome" class="inputs_form_cadastro"
+                <div class="titulos_form">Selecione uma empresa: </div>
+                <select name="empresas" id="listaEmpresas">
+                  <option selected>Selectione uma empresa</option>
+                </select>
+              </div>
+
+              <div class="campos_form_cadastro">
+                <div class="titulos_form">Nome: </div>
+                <input type="text" id="nome_input" class="inputs_form_cadastro"
                   placeholder="Insira seu nome aqui">
               </div>
-              <div class="campos_form_cadastro">
-                <div class="titulos_form">CNPJ: </div>
-                <input type="text" id="form_cadastro_CPF" class="inputs_form_cadastro" placeholder="12345678910"
-                  maxlength="11">
 
+              <div class="campos_form_cadastro">
+                <div class="titulos_form">Telefone: </div>
+                <input type="text" id="telefone_input" class="inputs_form_cadastro" placeholder="12345678910"
+                  maxlength="11">
               </div>
 
             </div>
             <div class="form_grupo">
               <div class="campos_form_cadastro">
-                <div class="titulos_form">CEP: </div>
-                <input id="form_cadastro_cep" class="inputs_form_cadastro" placeholder="exemplo@gmail.com">
-
+                <div class="titulos_form">Email: </div>
+                <input id="email_input" class="inputs_form_cadastro" placeholder="exemplo@gmail.com">
               </div>
+
+              <!-- <div class="campos_form_cadastro">
+                <div class="titulos_form">Senha: </div>
+                <input type="text" id="form_cadastro_CPF" class="inputs_form_cadastro" placeholder="12345678910"
+                  maxlength="11">
+              </div> -->
 <!-- 
               <div class="form_grupo">
                 <div class="campos_form_cadastro">
@@ -266,15 +281,14 @@
               <div class="form_grupo">
                 <div class="campos_form_cadastro">
                   <div class="titulos_form">Senha: </div>
-                  <input id="form_senha" class="inputs_form_cadastro" placeholder="************" type="password">
+                  <input id="senha_input" class="inputs_form_cadastro" placeholder="************" type="password">
 
                 </div>
-                <!-- <div class="campos_form_cadastro">
+                <div class="campos_form_cadastro">
                   <div class="titulos_form">Confirme sua senha: </div>
-                  <input id="form_confirmacao_senha" class="inputs_form_cadastro" placeholder="************"
+                  <input id="confirmacao_senha_input" class="inputs_form_cadastro" placeholder="************"
                     type="password">
-
-                </div> -->
+                </div>
 
               </div>
               <div class="botoes_cadastro">
@@ -336,13 +350,16 @@
   }
 
   function cadastrar() {
+    var telefoneVar = telefone_input.value;
 
-
-    var nomeVar = form_cadastro_nome.value;
-    var cpfVar = form_cadastro_CPF.value;
-    var emailVar = form_cadastro_email.value;
-    var senhaVar = form_senha.value;
-    var confirmacaoSenhaVar = form_confirmacao_senha.value;
+    var nomeVar = nome_input.value;
+    var dddVar = telefoneVar.substr(0, 2);
+    var prefixoVar = telefoneVar.substr(2, 5);
+    var sufixoVar = telefoneVar.substr(6, 4);
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var empresaVar = listaEmpresas.value
 
     const arroba = emailVar.indexOf('@')
     const ponto = emailVar.indexOf('.com')
@@ -359,49 +376,181 @@
 
     if (
       nomeVar == "" ||
-      emailVar == "" ||
-      cpfVar == "" ||
-      senhaVar == "" ||
-      confirmacaoSenhaVar == ""
+      telefoneVar == '' ||
+      emailVar == '' ||
+      senhaVar == '' ||
+      confirmacaoSenhaVar == '' ||
+      empresaVar == ''
     ) {
+      
+      div_erroCadastro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
 
-      div_erroCadastro.innerHTML = `Preencha todos os campos!`;
-
-
+      finalizarAguardar();
       return false;
-    } else if (nomeVar.length <= 1) {
-      div_erroCadastro.innerHTML = `Seu nome precisa conter<br>
-                        mais de 1 caracter!`
-      return false;
-    } else if (cpfVar.length != 11) {
-      div_erroCadastro.innerHTML = `Insira um CPF válido (É necessário ter 11 caracteres)`
-      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }  
 
+    // VALIDAÇÕES NOME //
+    let nomeTrim = nomeVar.trim(); 
+    let nomeTamanho = nomeVar.length;
+    let nomeMaiusculo = nomeTrim[0].toLowerCase();
+
+    // SE O NOME SEM OS ESPACOS FOR IGUAL A VAZIO, ELE NÃO PASSA
+    if (nomeTrim == '') {
+      
+      div_erroCadastro.innerHTML =
+        "(Preencha o campo Nome)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
     }
-    else if (arroba < 0 && ponto < 0) {
-      div_erroCadastro.innerHTML = `Insira um email válido`
-      return false;
-    } else if (arroba < 0 && ponto >= 0) {
-      div_erroCadastro.innerHTML = `Insira um email válido`
-      return false;
-    } else if (ponto < 0 && arroba >= 0) {
-      div_erroCadastro.innerHTML = `Insira um email válido`
-      return false;
 
-    } else if ((emailVar.indexOf(".com") || emailVar.indexOf(".school")) < emailVar.indexOf("@")) {
-      div_erroCadastro.innerHTML = `@ precisa vir antes do .`
-      return false
-    } else if (senhaVar.length < 7 || (exclamacao < 0 && arrobs < 0 && velha < 0 && cifrao < 0 && ast < 0 && comercial < 0 && porcento < 0)) {
-      div_erroCadastro.innerHTML = `Sua senha deve conter<br>
-                        no mínimo 7 caracteres<br>
-                        pelo menos 1 caracter especial`
-      return false
+    // SE O TAMANHO DO NOME FOR MENOR QUE 3 OU MAIOR QUE 50, ELE NÃO PASSA
+    if (nomeTamanho > 45 || nomeTamanho < 3) {
+      
+      div_erroCadastro.innerHTML =
+        "(O nome precisa ter no minimo 3 caracteres, e só pode ter no maximo 45 caracteres)";
 
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
     }
-    else if (senhaVar != confirmacaoSenhaVar || confirmacaoSenhaVar != senhaVar) {
-      div_erroCadastro.innerHTML = `As senhas devem ser compatíveis!`
-      return false
 
+    // VALIDAÇÕES TELEFONE//
+    let telefoneTamanho = telefoneVar.length;
+    
+    // SE O TELEFONE TIVER UM TAMANHO DIFERENTE DE 11, ELE NÃO PASSA
+    if (telefoneTamanho != 11) {
+      
+      div_erroCadastro.innerHTML =
+        "(O telefone precisa ter 11 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // VALIDAÇÕES EMAIL //
+    let emailTrim = emailVar.trim();
+    let emailTamanho = emailVar.length;
+    let emailDominioGmail = emailVar.indexOf('@gmail.com'); 
+    let emailDominioHotmail = emailVar.indexOf('@hotmail.com'); 
+    let emailDominioSptech = emailVar.indexOf('@sptech.school'); 
+    
+
+    // SE O EMAIL SEM OS ESPACOS FOR IGUAL A VAZIO, ELE NÃO PASSA
+    if (emailTrim == '') {
+      
+      div_erroCadastro.innerHTML =
+        "(Preencha o campo Email)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // SE O EMAIL TIVER UM TAMANHO MENOR QUE 10 CARACTERES OU MAIOR QUE 200, ELE NÃO PASSA
+    if (emailTamanho < 11 || emailTamanho > 200) {
+      
+      div_erroCadastro.innerHTML =
+        "(O email precisa ter no minimo 11 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // SE O EMAIL NÃO TIVER O DOMINIO, ELE NÃO PASSA
+    if (emailDominioGmail == -1 && emailDominioHotmail == -1 && emailDominioSptech == -1) {
+      
+      div_erroCadastro.innerHTML =
+        "(Seu email não contem um dominio valido)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // SE O DOMINIO NÃO FOR O FINAL DO EMAIL. ELE NÃO PASSA
+    if (!emailVar.endsWith('@gmail.com') && !emailVar.endsWith('@hotmail.com') && !emailVar.endsWith('@sptech.school')) {
+      
+      div_erroCadastro.innerHTML =
+        "(O dominio do email precisa estar no final)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // VALIDAÇÕES SENHA //
+    let senhaTamanho = senhaVar.length;
+    let senhaNumero = senhaVar.indexOf(0);
+    
+
+    // SE O TAMANHO DA SENHA FOR MENOR QUE 6 OU MAIOR QUE 20, ELE NÃO PASSA
+    if (senhaTamanho < 6 || senhaTamanho > 45) {
+      
+      div_erroCadastro.innerHTML =
+        "(Senha precisa ter no minimo 6 caracteres e no maximo 45)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // SE A SENHA NÃO TIVER PELO MENOS 2 NUMEROS E 1 CARACTER ESPECIAL, ELE NÃO PASSA 
+    let numero = 0;
+    let caracter = 0;
+    for (let contador = 0; contador < senhaTamanho; contador += 1) {
+        // Verifica se o caractere é um número
+        if (senhaVar[contador] >= '0' && senhaVar[contador] <= '9') {
+            numero += 1;
+        }
+
+        if (senhaVar[contador] == '@' || senhaVar[contador] == '#' || senhaVar[contador] == '&') {
+          caracter += 1;
+        }
+    }
+
+    if (numero < 2) {
+        
+        div_erroCadastro.innerHTML = "(Senha precisa ter no minimo 2 numeros)";
+        finalizarAguardar();
+        return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    if (caracter < 1) {
+        
+        div_erroCadastro.innerHTML = "(Senha precisa ter pelo menos 1 caracter especial como @, &,#)";
+        finalizarAguardar();
+        return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    //SE A CONFIRMAÇÃO DE SENHA NAO FOR IGUAL A SENHA, ELE NÃO PASSA
+    if (senhaVar != confirmacaoSenhaVar) {
+      
+      div_erroCadastro.innerHTML =
+        "(Senhas não são iguais)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
     }
 
 
@@ -413,10 +562,12 @@
       },
       body: JSON.stringify({
         nomeServer: nomeVar,
-        cpfServer: cpfVar,
+        dddServer: dddVar,
+        prefixoServer: prefixoVar,
+        sufixoServer: sufixoVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        confirmacaoSenhaServer: confirmacaoSenhaVar
+        empresaServer: empresaVar
       }),
     })
       .then(function (resposta) {
@@ -467,6 +618,8 @@
 
   function entrar() {
 
+    
+
 
     var emailVar = modal_email.value;
     var senhaVar = modal_senha.value;
@@ -501,13 +654,12 @@
           console.log(JSON.stringify(json));
           sessionStorage.EMAIL_USUARIO = json.email;
           sessionStorage.NOME_USUARIO = json.nome;
-          sessionStorage.ID_USUARIO = json.idUsuario;
-          sessionStorage.DT_CRIACAO = json.DT_CRIACAO;
+          sessionStorage.ID_USUARIO = json.idUsuario
 
 
           setTimeout(() => {
 
-            window.location.href = "./dashboard/dashboard.html";
+            window.location.href = "./dashboard/perfil.html";
           }, "2000"); // apenas para exibir o loading
         });
 
@@ -570,7 +722,24 @@
   });
 
 
+  function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresas.innerHTML += `<option value='${empresa.idEmpresa}'>${empresa.cnpj}</option>`;
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }
 
+  function sumirMensagem() {
+      }
 
 
 </script>
