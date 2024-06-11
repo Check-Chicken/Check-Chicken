@@ -33,17 +33,21 @@
                 <p id="data"></p>
             </div>
 
+            <div class="conteudoMensagem">
 
-            <div id="resposta"></div>
 
-            <img src="./img/image.png" id="logo" width="11%" style="display: none;">
+                <div id="resposta"></div>
 
-            <div id="tempoMensagemEnviada"></div>
+                <img src="./img/image.png" id="logo" width="11%" style="display: none;">
+
+                <div id="tempoMensagemEnviada"></div>
+
+            </div>
 
             <div class="campoPergunta">
                 <input id="pergunta" type="text" placeholder="Digite sua pergunta..."></input>
 
-                <button onclick="gerarResposta()"><img src="./img/icons8-enviado-48.png" class="send"></button>
+                <button onclick="gerarResposta()"><img src="./img/icons8-paper-plane-48.png" ></button>
             </div>
 
 
@@ -77,6 +81,8 @@
 
 
         async function gerarResposta() {
+
+            
 
             const horaDeAgora = new Date();
             let mensagemEnviadaHa = horaDeAgora.getMinutes();

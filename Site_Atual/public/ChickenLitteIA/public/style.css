@@ -56,7 +56,7 @@
 }
 
 #tempoMensagemEnviada{
-    transform: translateY(-10vh)translateX(-35vh);
+    transform: translateY(-10vh)translateX(-31vh);
     font-size: 1.8vh;
 }
 
@@ -74,7 +74,7 @@ h3 {
 
 
 input {
-    padding: 2vh;
+    padding: 1vh;
     color: #ffffff;
     border-radius: 5vh;
     width: 50%;
@@ -92,37 +92,38 @@ input:focus{
    background-color: #999898;
 }
 
-.send{
-    width: 80%;
-    transform: rotate(-90deg);
-}
 
 button {
+    outline: none;
     padding: 1vh;
     border-radius: 50%;
     cursor: pointer;
     background-color: #4E7659;
     border: none;
-    transition: 0.5s;
+    transition: 0.8s;
     margin-left: 20px;
 }
 
-button:hover {
+button:hover{
  transform: scale(1.1);
 }
 
 
+button:focus-within{
+    transform: scale(1);
+   }
+
 #logo{
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    transform: translateX(-50vh) translateY(-5vh);
+    transform: translateX(-47vh) translateY(-5vh);
 }
 
 #resposta {
-    padding: 15px;
+    margin-top: 25px;
+    padding: 10px;
     width: 80%;
     color: white;
-    margin-top: 10vh;
     border-radius: 5px;
     background-color: #7ec091;
     text-align: left;
@@ -131,4 +132,14 @@ button:hover {
     /* Transição suave de opacidade */
     display: none;
 
+}
+
+.conteudoMensagem{
+    margin-left: 5px;
+    overflow-y: auto;
+    height: 58%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
 }
