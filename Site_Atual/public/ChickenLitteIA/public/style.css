@@ -72,6 +72,9 @@ h3 {
     transform: translateY(70vh);
 }
 
+::-moz-placeholder{
+    color: white;
+}
 
 input {
     padding: 1vh;
@@ -85,11 +88,12 @@ input {
 
 input:focus::placeholder{
     transition: 0.5s;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
-input:focus{
-   background-color: #999898;
+input:focus-within{
+   background-color: #b6a5a5;
+   color: rgb(255, 255, 255);
 }
 
 
@@ -105,7 +109,7 @@ button {
 }
 
 button:hover{
- transform: scale(1.1);
+ transform: scale(1.2);
 }
 
 
