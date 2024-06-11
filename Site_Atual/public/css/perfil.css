@@ -11,9 +11,14 @@
 }
 
 
+<<<<<<< HEAD
 
 body {
   font-family: "Poppins";
+=======
+body {
+  font-family: "montserrat";
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
   overflow: hidden;
   background-image: url(../assets/imgs/fundo-teste.png);
   position: fixed;
@@ -27,7 +32,11 @@ body img {
 }
 
 input::placeholder {
+<<<<<<< HEAD
   font-family: "Poppins";
+=======
+  font-family: "poppins";
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
 }
 
 /* Navbar */
@@ -72,6 +81,12 @@ input::placeholder {
   width: 1.5vw;
   padding-top: 3px;
   background-color: #f9f9f9;
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
 }
 
 /* Define a largura da classe navbar como 100% */
@@ -103,7 +118,11 @@ input::placeholder {
 }
 
 /* Estiliza os links dentro da classe nav-container */
+<<<<<<< HEAD
 .navbar .nav-container {
+=======
+.navbar .nav-container a {
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
   text-decoration: none;
   color: #0d6015;
   font-size: 16px;
@@ -112,6 +131,14 @@ input::placeholder {
 }
 
 /* Estiliza os links ao passar o mouse sobre eles */
+<<<<<<< HEAD
+=======
+.navbar .nav-container a:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+
+}
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
 
 
 /* Define a exibição e a posição da classe nav-container */
@@ -121,6 +148,10 @@ input::placeholder {
   background-color: #f9f9f9;
 }
 
+<<<<<<< HEAD
+=======
+/* Define a posição e aparência do ícone de menu (hamburguer) */
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
 
 
 
@@ -135,16 +166,26 @@ input::placeholder {
   text-align: center;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   position: initial;
   /* transition: transform 0.5s ease-in-out; */
+=======
+
+  position: initial;
+  /* transition: transform 0.5s ease-in-out; */
+
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
   gap: 2vh;
 }
 
 /* Define a aparência dos itens do menu individualmente */
 .navbar .menu-items li {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
   margin-bottom: 2vh;
   font-weight: 500;
   padding-left: 2vw;
@@ -152,7 +193,13 @@ input::placeholder {
 
 /* logo */
 .logo img {
+<<<<<<< HEAD
   transform: translateY(2vh);
+=======
+  width: 170px;
+  height: 130px;
+
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
 }
 
 /* Foto usuario */
@@ -393,6 +440,7 @@ input::placeholder {
   background-color: #dc9c42;
 }
 
+<<<<<<< HEAD
 
 /* Botao sair */
 .botaoLogout {
@@ -462,3 +510,9 @@ input::placeholder {
   margin: 0;
   padding: 0;
 }
+=======
+.sair {
+  margin-top: 10vh;
+  margin-left: 7vw;
+}
+>>>>>>> 8922c0f2c46ba2cf3be016b5ffd675dfe9d32921
