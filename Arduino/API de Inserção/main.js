@@ -29,11 +29,11 @@ const serial = async (
         {
             // altere!
             // Credenciais do banco de dados
-            
-            host: '10.18.33.94', // IPV4 da máquina que receberá os dados da outra que estará com o Arduino
-            user: 'aluno',
+
+            host: '10.18.33.195', // IPV4 da máquina que receberá os dados da outra que estará com o Arduino
+            user: 'proj',
             password: 'Sptech#2024',
-            database: 'checkchicken',
+            database: 'CheckChicken',
             port: 3307
         }
     ).promise();
@@ -85,15 +85,20 @@ const serial = async (
             //     [dht11Umidade, dht11Temperatura, luminosidade, lm35Temperatura, chave]
             // );
             // console.log("valores inseridos no banco: ", dht11Umidade + ", " + dht11Temperatura + ", " + luminosidade + ", " + lm35Temperatura + ", " + chave)
-        
+
 
             await poolBancoDados.execute(
-                'INSERT INTO medidas (dht11_umidade, lm35_temperatura) VALUES ( ?, ?)',
+                'INSERT INTO medida (dht11_umidade, lm35_temperatura) VALUES (?,?)',
                 [dht11Umidade, lm35Temperatura]
             );
-            console.log("valores inseridos no banco: ", dht11Umidade + ", " +  lm35Temperatura )
+
+            // await poolBancoDados.execute(
+            //     'INSERT INTO captura (valor) VALUES ( ?)',
+            //     [lm35Temperatura]
+            // );
+            console.log("valores inseridos no banco: ", dht11Umidade + ", " + lm35Temperatura)
         }
-        
+
     });
 
     // Evento para lidar com erros na comunicação serial
