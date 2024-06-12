@@ -56,7 +56,7 @@
 }
 
 #tempoMensagemEnviada{
-    transform: translateY(-10vh)translateX(-31vh);
+    transform: translateY(-10vh)translateX(-40vh);
     font-size: 1.8vh;
 }
 
@@ -120,7 +120,7 @@ button:focus-within{
 #logo{
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    transform: translateX(-47vh) translateY(-5vh);
+    transform: translateX(-56vh) translateY(-5vh);
 }
 
 #resposta {
@@ -139,9 +139,10 @@ button:focus-within{
 }
 
 .conteudoMensagem{
+    margin-top: 10px;
     margin-left: 5px;
     overflow-y: auto;
-    height: 58%;
+    height: 55%;
     display: flex;
     flex-direction: column;
     align-items: center;
