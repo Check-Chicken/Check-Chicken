@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "montserrat";
-  color: #003366;
+  color: #0d6015;
 }
 
 
@@ -13,7 +13,7 @@ body {
   background-image: url(../assets/imgs/oceano2.jpg);
   position: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 105vw;
 }
 
 body img {
@@ -48,7 +48,7 @@ input::placeholder {
 }
 
 #trocaCor:hover {
-  background-color: #003366;
+  background-color: #0d6015;
   transition: 1s ease-in;
 }
 
