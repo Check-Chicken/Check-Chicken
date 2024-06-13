@@ -109,6 +109,67 @@ input::placeholder {
 
 
 }
+.legenda{
+  width: 69%;
+  height: 10vh;
+margin-left: 22.5vw;
+  background-color: #f9f9f9;
+  margin-top: 2vh;
+  display: flex;
+
+
+}
+.abaixo{
+  background-color: #72b9ff;
+  width: 17.25vw;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: #000000;
+}
+.alerta{
+  background-color: #faff72;
+  width: 17.25vw;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid #000000;
+  padding: 10px;
+  color: #000000;
+}
+.ideal{
+  background-color: #29a045;
+  width: 17.25vw;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid #000000;
+  padding: 10px;
+  color: #000000;
+}
+.acima{
+  background-color: #ff5a5a;
+  width: 17.25vw;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px solid #000000;
+  padding: 10px;
+  color: #000000;
+}
 
 /* Estiliza os links ao passar o mouse sobre eles */
 .navbar .nav-container a:hover {
@@ -140,6 +201,7 @@ input::placeholder {
   text-align: center;
   display: flex;
   flex-direction: column;
+  list-style: none;
 
   position: initial;
   /* transition: transform 0.5s ease-in-out; */
@@ -173,11 +235,12 @@ input::placeholder {
 
 #grid_corpo {
   display: flex;
-  padding-top: 4vw;
+  padding-top: 4vh;
   padding-left: 22.5vw;
   flex-direction: column;
 
 }
+
 
 #corpo_kpi {
   display: flex;
@@ -231,11 +294,11 @@ input::placeholder {
   font-weight: 700;
 }
 
-.foto_perguntas {
+.grafico {
   margin-top: 2vw;
-  margin-left: 3vw;
+margin-right: 3vw;
   width: 33vw;
-  height: 65vh;
+  height: 55vh;
   background-color: #f9f9f9;
   padding: 10px;
   display: flex;

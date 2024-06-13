@@ -10,10 +10,10 @@
 body {
   font-family: "montserrat";
   overflow: hidden;
-  background-image: url(../assets/imgs/oceano2.jpg);
+  background-image: url(../assets/imgs/fundo-teste.png);
   position: fixed;
   background-repeat: no-repeat;
-  background-size: 105vw;
+  background-size: 115vw;
 }
 
 body img {
@@ -34,10 +34,6 @@ input::placeholder {
 
 
 
-
-.corpo.second {
-  background-color: #003366;
-}
 
 
 
@@ -82,7 +78,7 @@ input::placeholder {
 .navIcon {
   width: 1.8vw;
   margin-right: 0.7vw;
- stroke: #003366;
+ stroke: #dc9c42;
  
 }
 
@@ -103,7 +99,7 @@ input::placeholder {
 /* Estiliza os links dentro da classe nav-container */
 .navbar .nav-container a {
   text-decoration: none;
-  color: #003366;
+  color: #0d6015;
   font-size: 16px;
 
 
@@ -143,7 +139,7 @@ input::placeholder {
   position: initial;
   /* transition: transform 0.5s ease-in-out; */
 
-  gap: 2vh;
+  gap: 2vh
 }
 
 /* Define a aparência dos itens do menu individualmente */
@@ -155,8 +151,8 @@ input::placeholder {
 
 /* logo */
 .logo img {
-  width: 96px;
-  height: 108px;
+  width: 170px;
+  height: 130px;
 
 }
 
@@ -237,14 +233,14 @@ input::placeholder {
 }
 .bt_perfil{
   padding: 10px;
-  background-color: #003366;
+  background-color: #0d6015;
   color: #f9f9f9;
   border: none;
   cursor: pointer;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
 }
 .bt_perfil:hover{
-  background-color: #02509e;
+  background-color: #0d6015;
 }
 .memberSince{
   font-size: 14px;
@@ -281,7 +277,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #003366;
+  color: #0d6015;
   font-size: 20px;
 }
 .inputs_form_cadastro {
@@ -357,7 +353,7 @@ input::placeholder {
 }
 .form_button {
   padding: 10px;
-  background-color: #003366;
+  background-color: #0d6015;
   color: #f9f9f9;
   border: none;
   cursor: pointer;
@@ -372,7 +368,7 @@ input::placeholder {
 
 }
 .form_button:hover{
-  background-color: #02509e;
+  background-color: #5cbd65;
 }
 
 .sair{
