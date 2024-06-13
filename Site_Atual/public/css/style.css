@@ -28,7 +28,7 @@ input::placeholder {
 }
 
 .logo img {
-    width: 16vw;
+    width: 12vw;
     height: 16vh;
     margin-left: 1vw;
 
@@ -90,7 +90,7 @@ a {
     cursor: pointer;
     font-weight: 700;
     transition: 0.7s;
-    border: 2px solid #fa8a3b;
+    border: none;
 }
 
 
@@ -367,13 +367,16 @@ a {
 .form_grupo {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
 }
 
 #form_telefone {
     width: 10vw;
     height: auto;
 
+}
+#telefone_input{
+    width: 8vw;
 }
 
 #form_nome {
@@ -424,7 +427,7 @@ a {
     text-align: center;
     align-items: center;
     justify-content: center;
-    width: 25%;
+    width: 35%;
     margin-top: 7vh;
     margin-left: 35%;
     font-size: 20px;
@@ -556,6 +559,11 @@ footer {
     border: 1px solid #ccc;
 }
 
+#confirmacao_senha_input, #senha_input,#telefone_input, #nome_input {
+    width: 14vw;
+}
+
+
 .direita {
     width: 30vw;
     height: 70%;
@@ -582,7 +590,14 @@ footer {
     display: flex;
     align-items: center;
     gap: 5px;
+    
 
+}
+#listaEmpresas{
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #6f6f6f;
+    border-radius: 0px;
 }
 
 #botao_lembrar {
@@ -591,7 +606,7 @@ footer {
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
-    border: 3px solid whi;
+    border: 3px solid #4a7a50;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -623,7 +638,7 @@ footer {
 }
 
 #modal_botao_cadastro:hover {
-    background-color: #85c7f4;
+    background-color: #a5c8a8;
 }
 
 #botao_lembrar:checked {
@@ -631,7 +646,7 @@ footer {
 }
 
 #botao_lembrar:hover {
-    background-color: #0060c0;
+    background-color: #a5c8a8;
 }
 
 .modal_titulo {
@@ -639,7 +654,7 @@ footer {
     font-size: 50px;
     font-family: "Poppins";
     margin-right: 25vw;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
     font-weight: 500;
 }
 
@@ -654,9 +669,13 @@ footer {
     margin-top: 3vh;
     cursor: pointer;
 }
+#entrar:hover{
+    background-color: #ffc297;
+   
+}
 
 #modal_entrar:hover {
-    background-color: #85c7f4;
+    background-color: #a5c8a8;
 }
 
 .esqueceu {
@@ -748,6 +767,7 @@ footer {
     justify-content: center;
     color: #4a7a50;
     font-size: 20px;
+   margin-right: 10px;
 }
 
 .inputs_form_cadastro {
@@ -765,6 +785,9 @@ footer {
 #form_cadastro_nome {
     width: 13vw;
     margin-right: 1vw;
+}
+#email_input{
+    width: 30vw;
 }
 
 #form_cadastro_email {
