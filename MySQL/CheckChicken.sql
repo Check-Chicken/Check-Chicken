@@ -67,8 +67,8 @@ CREATE TABLE sensor (
     CONSTRAINT chkUnidadeMedida CHECK (unidadeMedida in ('°C', '%')), 
     fkLote INT,
     fkEmpresa INT,
-        CONSTRAINT fkSensorLote FOREIGN KEY (fkLote) REFERENCES Lote(idLote),
-        CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES Lote(fkEmpresa)
+        CONSTRAINT fkSensorLote FOREIGN KEY (fkLote) REFERENCES lote(idLote),
+        CONSTRAINT fkSensorEmpresa FOREIGN KEY (fkEmpresa) REFERENCES lote(fkEmpresa)
 );
 
 CREATE TABLE captura (
@@ -77,7 +77,7 @@ CREATE TABLE captura (
 	dtMedicao DATETIME,
 	fkSensor INT,
     CONSTRAINT pkCapSensor PRIMARY KEY (idCaptura, fkSensor), 
-	CONSTRAINT fkCapturaSensor FOREIGN KEY (fkSensor) REFERENCES Sensor(idSensor)
+	CONSTRAINT fkCapturaSensor FOREIGN KEY (fkSensor) REFERENCES sensor(idSensor)
 );
 
 INSERT INTO parametro VALUES
@@ -167,9 +167,10 @@ SELECT * FROM usuario;
 SELECT * FROM endereco;
 SELECT * FROM lote;
 SELECT * FROM sensor;
+SELECT * FROM captura;
 
-SELECT sensor.tipo, l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, unidadeMedida, dtMedicao FROM Lote AS l
-	JOIN Parametro ON DATEDIFF(CURRENT_DATE(), dtLote) >= diaMin
+SELECT sensor.tipo, l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, unidadeMedida, dtMedicao FROM lote AS l
+	JOIN parametro ON DATEDIFF(CURRENT_DATE(), dtLote) >= diaMin
     AND DATEDIFF(CURRENT_DATE(), dtLote) <= diaMax
     JOIN sensor ON fkLote = idLote
     JOIN captura ON fkSensor = idSensor;
