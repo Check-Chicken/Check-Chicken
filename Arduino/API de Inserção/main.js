@@ -88,8 +88,13 @@ const serial = async (
 
 
             await poolBancoDados.execute(
-                'INSERT INTO medida (dht11_umidade, lm35_temperatura) VALUES (?,?)',
-                [dht11Umidade, lm35Temperatura]
+                'INSERT INTO captura (valor, dtMedicao, idSensor) VALUES (?, now(), 1)',
+                [dht11Umidade]
+            );
+
+            await poolBancoDados.execute(
+                'INSERT INTO captura (valor, dtMedicao, idSensor) VALUES (?, now(), 2)',
+                [lm35Temperatura]
             );
 
             // await poolBancoDados.execute(

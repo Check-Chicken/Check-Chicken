@@ -19,7 +19,7 @@ var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
 var quizRouter = require("./src/routes/quiz");
 var perfilRouter = require("./src/routes/perfil");
-var rankingRouter = require("./src/routes/ranking");
+var dataRouter = require("./src/routes/data");
 var empresasRouter = require("./src/routes/empresas");
 
 
@@ -35,7 +35,7 @@ app.use("/index", indexRouter);
 app.use("/usuarios", usuarioRouter);
 app.use("/quiz", quizRouter);
 app.use("/perfil", perfilRouter);
-app.use("/ranking", rankingRouter);
+app.use("/data", dataRouter);
 app.use("/empresas", empresasRouter);
 
 

@@ -174,7 +174,7 @@ SELECT sensor.tipo, l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdea
     JOIN sensor ON fkLote = idLote
     JOIN captura ON fkSensor = idSensor;
 
-SELECT avg(valor) AS mediaTemp FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote WHERE idLote = 1 AND unidadeMedida = '%';
+SELECT avg(valor) AS mediaTemp FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote WHERE idLote = 1 AND unidadeMedida = '%' AND dtMedicao = now();
 SELECT avg(valor) AS mediaTemp FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote WHERE idLote = 1 AND unidadeMedida = '°C';
 
 /*
@@ -185,3 +185,5 @@ INSERT INTO captura (valor, dtMedicao, idSensor) VALUES
 SELECT * FROM lote join empresa on fkEmpresa = idEmpresa;
 
 SELECT now();
+
+SELECT round(avg(valor), 2) AS mediaTemperatura FROM captura WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa WHERE idEmpresa = 1 AND sensor.unidadeMedida = '°C' AND idLote = 1);
