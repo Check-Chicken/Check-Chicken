@@ -146,20 +146,20 @@ INSERT INTO sensor (tipo, unidadeMedida, fkLote, fkEmpresa) VALUES
 
 -- Inserindo dados na tabela captura
 INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES
-	(30, '2024-05-06 22:00:00', 1),
-    (65, '2024-05-06 22:00:00', 2),
-	(31, '2024-05-06 22:00:00', 3),
-    (61, '2024-05-06 22:00:00', 4),
-	(28.6, '2024-05-06 22:00:00', 5),
-	(60.3, '2024-05-06 22:00:00', 6),
-	(25, '2024-05-06 22:00:00', 7),
-	(68, '2024-05-06 22:00:00', 8),
-	(21, '2024-05-06 22:00:00', 9),
-	(69.7, '2024-05-06 22:00:00', 10),
-    (20.7, '2024-05-06 22:00:00', 11),
-    (59.4, '2024-05-06 22:00:00', 12),
-    (22.2, '2024-05-06 22:00:00', 13),
-    (71, '2024-05-06 22:00:00', 14);
+	(65, '2024-05-06 22:00:00', 1),
+    (30, '2024-05-06 22:00:00', 2),
+	(61, '2024-05-06 22:00:00', 3),
+    (31, '2024-05-06 22:00:00', 4),
+	(60.3, '2024-05-06 22:00:00', 5),
+	(28.6, '2024-05-06 22:00:00', 6),
+	(68, '2024-05-06 22:00:00', 7),
+	(25, '2024-05-06 22:00:00', 8),
+	(69.7, '2024-05-06 22:00:00', 9),
+	(21, '2024-05-06 22:00:00', 10),
+    (59.4, '2024-05-06 22:00:00', 11),
+    (20.7, '2024-05-06 22:00:00', 12),
+    (71, '2024-05-06 22:00:00', 13),
+    (22.2, '2024-05-06 22:00:00', 14);
 
 SELECT * FROM parametro;
 SELECT * FROM empresa;
@@ -168,10 +168,20 @@ SELECT * FROM endereco;
 SELECT * FROM lote;
 SELECT * FROM sensor;
 
-SELECT l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, unidadeMedida, dtMedicao FROM Lote AS l
+SELECT sensor.tipo, l.tipo, l.dtLote, tempMinIdeal, tempMaxIdeal, umidadeMinIdeal, umidadeMaxIdeal, valor, unidadeMedida, dtMedicao FROM Lote AS l
 	JOIN Parametro ON DATEDIFF(CURRENT_DATE(), dtLote) >= diaMin
     AND DATEDIFF(CURRENT_DATE(), dtLote) <= diaMax
     JOIN sensor ON fkLote = idLote
     JOIN captura ON fkSensor = idSensor;
+
+SELECT avg(valor) AS mediaTemp FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote WHERE idLote = 1 AND unidadeMedida = '%';
+SELECT avg(valor) AS mediaTemp FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote WHERE idLote = 1 AND unidadeMedida = '°C';
+
+/*
+INSERT INTO captura (valor, dtMedicao, idSensor) VALUES
+	(0, now(), 0);
+*/
     
-    SELECT * FROM lote join empresa on fkEmpresa = idEmpresa;
+SELECT * FROM lote join empresa on fkEmpresa = idEmpresa;
+
+SELECT now();
