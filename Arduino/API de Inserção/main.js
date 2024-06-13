@@ -30,7 +30,7 @@ const serial = async (
             // altere!
             // Credenciais do banco de dados
 
-            host: '10.18.33.195', // IPV4 da máquina que receberá os dados da outra que estará com o Arduino
+            host: '192.168.158.221', // IPV4 da máquina que receberá os dados da outra que estará com o Arduino
             user: 'proj',
             password: 'Sptech#2024',
             database: 'CheckChicken',
@@ -88,12 +88,12 @@ const serial = async (
 
 
             await poolBancoDados.execute(
-                'INSERT INTO captura (valor, dtMedicao, idSensor) VALUES (?, now(), 1)',
+                'INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES (?, now(), 1)',
                 [dht11Umidade]
             );
 
             await poolBancoDados.execute(
-                'INSERT INTO captura (valor, dtMedicao, idSensor) VALUES (?, now(), 2)',
+                'INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES (?, now(), 2)',
                 [lm35Temperatura]
             );
 

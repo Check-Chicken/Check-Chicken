@@ -24,5 +24,5 @@ void loop() {
     // Serial.print(";");
     Serial.println(valoresLM35Temperatura);
   }
-  delay(2000);
+  delay(1000);
 }
