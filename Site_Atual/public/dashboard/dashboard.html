@@ -127,12 +127,12 @@
         <div id="grid_corpo">
             <div id="corpo_kpi">
                 <div id="kpi1">
-                    <div id="titulo_kpi">Temperatura atual do lote</div>
-                    <div id="countdown" class="info_kpi" style="display: none;"></div>
+                    <div id="titulo_kpi">Umidade atual do lote</div>
+                    <div id="numeroQuestao" class="info_kpi" style="display: none;"></div>
                 </div>
                 <div id="kpi2">
-                    <div id="titulo_kpi">Umidade atual do lote</div>
-                    <div id="numeroQuestao" class="info_kpi" style="display: block;"></div>
+                    <div id="titulo_kpi">Temp. atual do lote</div>
+                    <div id="countdown" class="info_kpi" style="display: block;"></div>
                 </div>
               
             </div>
@@ -238,7 +238,7 @@
         let dadosTemperatura = {
             labels: labelsTemp,
             datasets: [{
-                label: 'Temperatura',
+                label: 'Umidade',
                 data: [],
                 fill: false,
                 backgroundColor: ['#2D5731'],
@@ -251,7 +251,7 @@
         let dadosUmidade = {
             labels: labelsUmi,
             datasets: [{
-                label: 'Umidade',
+                label: 'Temperatura',
                 data: [],
                 fill: false,
                 backgroundColor: ['#2D5731'],
@@ -386,6 +386,9 @@ function alterarCorUmid(valor, caixa) {
                     // let avisoCaptura = document.getElementById(`avisoCaptura${idEmpresa}`)
                     // avisoCaptura.innerHTML = "" 
 
+                    let temperaturaAtual = 0;
+                    let umidadeAtual = 0;
+
                  
 
                     if (novoRegistro.resultado[0].dtMedicao == dadosTemperatura.labels[labelsTemp.length - 1]) {
@@ -405,8 +408,9 @@ function alterarCorUmid(valor, caixa) {
                         dadosTemperatura.datasets[0].data.shift();  // apagar o primeiro de temperatura
                         dadosTemperatura.datasets[0].data.push(novoRegistro.resultado[0].valor); // incluir uma nova medida de temperatura
 
-                        let temperaturaAtual = novoRegistro.resultado[0].valor;
+                        temperaturaAtual = novoRegistro.resultado[0].valor;
 
+                        numeroQuestao.innerHTML = temperaturaAtual;
 
                         myChartTemp.update();
                     }
@@ -431,15 +435,11 @@ function alterarCorUmid(valor, caixa) {
                         dadosUmidade.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dadosUmidade.datasets[0].data.push(novoRegistro.resultado1[0].valor); // incluir uma nova medida de umidade
 
-                        let umidadeAtual = novoRegistro.resultado1[0].valor;
+                        umidadeAtual = novoRegistro.resultado1[0].valor;
 
                         myChartUmi.update();
 
-                        umiLote = novoRegistro.resultado[0].MediaUmiLote; 
-                        tempLote = novoRegistro.resultad1[0].MediaTempLote;
-
                         countdown.innerHTML = umidadeAtual;
-                        numeroQuestao.innerHTML = temperaturaAtual;
                     }
                     alterarCorTemp(temperaturaAtual, document.getElementById('countdown'));
                     alterarCorUmid(umidadeAtual, document.getElementById('numeroQuestao'));
