@@ -2,21 +2,23 @@ var dataModel = require("../models/dataModel");
 
 function obterDadosGrafico(req, res) {
     idEmpresa = req.params.idEmpresa
+    let limiteLinha = 12
 
-    dataModel.obterDadosTemperatura(idEmpresa)
+    dataModel.obterDadosTemperatura(idEmpresa, limiteLinha)
         .then(function (resultado1) {
 
-            dataModel.obterDadosUmidade(idEmpresa)
+            dataModel.obterDadosUmidade(idEmpresa, limiteLinha)
                 .then(function (resultado) {
-                    let temperatura = resultado1[0].mediaTemperatura
-                    let umidade = resultado[0].mediaUmidade
+
+                    let umidade = resultado
+                    let temperatura = resultado1
 
                     console.log(temperatura, umidade)
 
                     if (resultado.length > 0) {
                         res.status(200).json({
-                            umidade: umidade,
-                            temperatura: temperatura
+                            resultado: resultado,
+                            resultado1: resultado1
                         });
                     } else {
                         res.status(204).send("Nenhum resultado encontrado!")

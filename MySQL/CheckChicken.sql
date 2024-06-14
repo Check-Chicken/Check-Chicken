@@ -188,3 +188,15 @@ SELECT * FROM lote join empresa on fkEmpresa = idEmpresa;
 SELECT now();
 
 SELECT round(avg(valor), 2) AS mediaTemperatura FROM captura WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa WHERE idEmpresa = 1 AND sensor.unidadeMedida = '°C' AND idLote = 1);
+
+SELECT valor, dtMedicao, (SELECT round(avg(valor), 2) FROM captura 
+                        WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
+                                            WHERE idEmpresa = 1 AND sensor.unidadeMedida = '°C' AND idLote = 1 AND dtMedicao = now())) AS MediaTempLote
+FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
+WHERE idEmpresa = 1 AND sensor.unidadeMedida = '°C' AND idLote = 1 ORDER BY idCaptura DESC LIMIT 12;
+
+SELECT valor, dtMedicao, (SELECT round(avg(valor), 2) FROM captura 
+                        WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
+                                            WHERE idEmpresa = 1 AND sensor.unidadeMedida = '%' AND idLote = 1 AND dtMedicao = now())) AS MediaTempLote
+FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
+WHERE idEmpresa = 1 AND sensor.unidadeMedida = '%' AND idLote = 1 ORDER BY idCaptura DESC LIMIT 12;
