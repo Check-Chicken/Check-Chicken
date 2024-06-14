@@ -849,7 +849,7 @@ button:nth-child(1) {
     align-items: center;
     justify-content: center;
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     width: 3vw;
     height: 5vh;
