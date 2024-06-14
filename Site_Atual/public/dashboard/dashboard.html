@@ -28,7 +28,7 @@
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="obterDadosGrafico()">
     <script data-jsd-embedded data-key="793a0f03-074a-45ca-8c0e-7c5a79f4a6fa" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
     <nav>
         <div class="navbar">
@@ -201,7 +201,13 @@
     let idUsuario = sessionStorage.ID_USUARIO
     let idEmpresa = sessionStorage.ID_EMPRESA
 
+    let proximaAtualizacao;
+
     function obterDadosGrafico() {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
 
         fetch(`/data/grafico/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -333,10 +339,10 @@
             configUmidade
         );
 
-        setTimeout(() => atualizarGrafico(dadosTemperatura, myChartTemp, myChartUmi), 2000);
+        setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
     }
 
-    function atualizarGrafico(dados, myChart) {
+    function atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi) {
 
         fetch(`/data/grafico/tempoReal/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -346,48 +352,86 @@
                     // alertar(novoRegistro, idEmpresa);
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico:`);
-                    console.log(dados);
+                    console.log(dadosTemperatura, dadosUmidade);
 
-                    let avisoCaptura = document.getElementById(`avisoCaptura${idEmpresa}`)
-                    avisoCaptura.innerHTML = ""
+                    // let avisoCaptura = document.getElementById(`avisoCaptura${idEmpresa}`)
+                    // avisoCaptura.innerHTML = ""
 
 
-                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                    if (novoRegistro.resultado[0].dtMedicao == dadosTemperatura.labelsTemp[dadosTemperatura.labelsTemp.length - 1]) {
                         console.log("---------------------------------------------------------------")
-                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        console.log("Como não há dados de temperatura novos para captura, o gráfico de temperatura não atualizará.")
                         avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                         console.log("Horário do novo dado capturado:")
-                        console.log(novoRegistro[0].momento_grafico)
+                        console.log(novoRegistro.resultado[0].dtMedicao)
                         console.log("Horário do último dado capturado:")
-                        console.log(dados.labels[dados.labels.length - 1])
+                        console.log(dadosTemperatura.labelsTemp[dadosTemperatura.labelsTemp.length - 1])
                         console.log("---------------------------------------------------------------")
                     } else {
                         // tirando e colocando valores no gráfico
-                        dados.labels.shift(); // apagar o primeiro
-                        dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+                        dadosTemperatura.labelsTemp.shift(); // apagar o primeiro
+                        dadosTemperatura.labelsTemp.push(novoRegistro.resultado[0].dtMedicao); // incluir um novo momento
 
-                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                        dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+                        dadosTemperatura.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dadosTemperatura.datasets[0].data.push(novoRegistro.resultado[0].umidade); // incluir uma nova medida de umidade
 
-                        dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[1].data.push(novoRegistro[0].temperatura); // incluir uma nova medida de temperatura
+                        dadosTemperatura.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                        dadosTemperatura.datasets[1].data.push(novoRegistro.resultado[0].temperatura); // incluir uma nova medida de temperatura
 
-                        myChart.update();
+                        myChartTemp.update();
+                    }
+
+                    if (novoRegistro.resultado1[0].dtMedicao == dadosUmidade.labelsUmi[dadosUmidade.labelsUmi.length - 1]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados de umidade novos para captura, o gráfico de umidade não atualizará.")
+                        avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro.resultado1[0].dtMedicao)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dadosUmidade.labelsUmi[dadosUmidade.labelsUmi.length - 1])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        // tirando e colocando valores no gráfico
+                        dadosUmidade.labelsUmi.shift(); // apagar o primeiro
+                        dadosUmidade.labelsUmi.push(novoRegistro.resultado1[0].dtMedicao); // incluir um novo momento
+
+                        dadosUmidade.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dadosUmidade.datasets[0].data.push(novoRegistro.resultado1[0].umidade); // incluir uma nova medida de umidade
+
+                        dadosUmidade.datasets[1].data.shift();  // apagar o primeiro de umidade
+                        dadosUmidade.datasets[1].data.push(novoRegistro.resultado1[0].Umidade); // incluir uma nova medida de umidade
+
+                        myChartTemp.update();
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
             }
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
+    }
+
+    function obterKpis() {
+        fetch(`/data/kpi/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ Kpi's: ${error.message}`);
+            });
     }
 
 

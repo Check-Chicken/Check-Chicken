@@ -7,8 +7,8 @@ router.get("/grafico/:idEmpresa", function (req, res) {
     dataController.obterDadosGrafico(req, res);
 });
 
-// router.get("/grafico/tempoReal/${idEmpresa}", function (req, res) {
-//     dataController.obterDadosGrafico(req, res);
-// });
+router.get("/kpi/:idEmpresa", function (req, res) {
+    dataController.obterKpis(req, res);
+});
 
 module.exports = router;
