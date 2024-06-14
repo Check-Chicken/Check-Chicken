@@ -260,13 +260,13 @@ margin-left: 22.5vw;
 #corpo_kpi {
   display: flex;
   flex-direction: row;
+  margin-left: 18vw;
   gap: 3vw;
 }
 
 #kpi1,
-#kpi2,
-#kpi3,
-#kpi4 {
+#kpi2
+ {
   background-color: #f9f9f9;
   width: 15vw;
   height: 13vh;
@@ -275,11 +275,14 @@ margin-left: 22.5vw;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  text-align: center;
 }
 
 #titulo_kpi {
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 600;
+
 }
 
 .info_kpi {

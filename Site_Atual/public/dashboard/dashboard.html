@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/imgs/logo_galinha.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/logo_semfundo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,8 +45,8 @@
                     </div>
                 </div>
                 <div class="menu-items">
-                    <div class="logo" width="50%">
-                        <img src="../assets/imgs/logo_semfundo.png" >
+                    <div class="logo">
+                        <img src="../assets/imgs/logo_semfundo.png">
                     </div>
                     <div class="foto-usuario">
 
@@ -127,25 +127,14 @@
         <div id="grid_corpo">
             <div id="corpo_kpi">
                 <div id="kpi1">
-                    <div id="titulo_kpi">Umidade média</div>
+                    <div id="titulo_kpi">Temperatura média do lote</div>
                     <div id="countdown" class="info_kpi" style="display: none;"></div>
                 </div>
-<<<<<<< HEAD
-              
-=======
                 <div id="kpi2">
-                    <div id="titulo_kpi">Temperatura média</div>
+                    <div id="titulo_kpi">Umidade média do lote</div>
                     <div id="numeroQuestao" class="info_kpi" style="display: block;"></div>
                 </div>
-                <div id="kpi3">
-                    <div id="titulo_kpi">Perguntas Totais</div>
-                    <div class="info_kpi">10</div>
-                </div>
->>>>>>> ff962cf79bd14ca326a61cba5b778c46dc18c9dc
-                <div id="kpi4">
-                    <div id="titulo_kpi">Umidade média do lote</div>
-                    <div class="info_kpi">4</div>
-                </div>
+              
             </div>
             <div class="modal_encerrado" id="modal_encerramento">
                 <form class="modal-content animate">
@@ -278,6 +267,8 @@
         console.log('----------------------------------------------')
         console.log(resposta.resultado[0].valor)
 
+       
+
         tempReverse = resposta.resultado.reverse()
         umiReverse = resposta.resultado1.reverse()
 
@@ -350,8 +341,36 @@
             configUmidade
         );
 
+   
+
         setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
     }
+
+    // funcao para alterar a cor da caixa dependendo do valor capturado
+function alterarCorTemp(valor, caixa) {
+    // Seleciona a caixa pela classe e define a cor com base no valor 
+    if (valor >= 35) {
+        caixa.style.backgroundColor = '#FF5151';
+    } else if (valor >= 32.1 && valor <=33.9) {
+        caixa.style.backgroundColor = '#4BB262';
+    } else if (valor <= 32 || valor >= 34) {
+        caixa.style.backgroundColor = '#F5B91E';
+    }else{
+        caixa.style.backgroundColor = '#4BAFE8';
+    }
+}
+function alterarCorUmid(valor, caixa) {
+    // Seleciona a caixa pela classe e define a cor com base no valor
+    if (valor > 70) {
+        caixa.style.backgroundColor = '#FF5151';
+    } else if (valor >= 60 && valor <=70) {
+        caixa.style.backgroundColor = '#4BB262';
+    } else if (valor >=67 && valor<=55) {
+        caixa.style.backgroundColor = '#F5B91E';
+    }else{
+        caixa.style.backgroundColor = '#4BAFE8';
+    }
+}
 
     function atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi) {
 
@@ -367,8 +386,7 @@
                     // let avisoCaptura = document.getElementById(`avisoCaptura${idEmpresa}`)
                     // avisoCaptura.innerHTML = "" 
 
-                    let umiLote = 0;
-                    let tempLote = 0;
+                 
 
                     if (novoRegistro.resultado[0].dtMedicao == dadosTemperatura.labels[labelsTemp.length - 1]) {
                         console.log("---------------------------------------------------------------")
@@ -387,8 +405,12 @@
                         dadosTemperatura.datasets[0].data.shift();  // apagar o primeiro de temperatura
                         dadosTemperatura.datasets[0].data.push(novoRegistro.resultado[0].valor); // incluir uma nova medida de temperatura
 
+                        let temperaturaAtual = novoRegistro.resultado[0].valor;
+
+
                         myChartTemp.update();
                     }
+                    
 
                     if (novoRegistro.resultado1[0].dtMedicao == dadosUmidade.labels[labelsUmi.length - 1]) {
                         console.log("---------------------------------------------------------------")
@@ -409,14 +431,18 @@
                         dadosUmidade.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dadosUmidade.datasets[0].data.push(novoRegistro.resultado1[0].valor); // incluir uma nova medida de umidade
 
+                        let umidadeAtual = novoRegistro.resultado1[0].valor;
+
                         myChartUmi.update();
 
                         umiLote = novoRegistro.resultado[0].MediaUmiLote; 
-                        tempLote = novoRegistro.resultado1[0].MediaTempLote;
+                        tempLote = novoRegistro.resultad1[0].MediaTempLote;
 
-                        countdown.innerHTML=umiLote;
-                        numeroQuestao.innerHTML=tempLote;
+                        countdown.innerHTML = umidadeAtual;
+                        numeroQuestao.innerHTML = temperaturaAtual;
                     }
+                    alterarCorTemp(temperaturaAtual, document.getElementById('countdown'));
+                    alterarCorUmid(umidadeAtual, document.getElementById('numeroQuestao'));
 
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
