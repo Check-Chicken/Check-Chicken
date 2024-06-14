@@ -127,7 +127,7 @@
         <div id="grid_corpo">
             <div id="corpo_kpi">
                 <div id="kpi1">
-                    <div id="titulo_kpi">Tempo Restante</div>
+                    <div id="titulo_kpi">Temperatura média do lote</div>
                     <div id="countdown" class="info_kpi" style="display: none;"></div>
                 </div>
                 <div id="kpi2">
@@ -274,6 +274,9 @@
         console.log('----------------------------------------------')
         console.log(resposta.resultado[0].valor)
 
+        let tempMediaLote = resposta.resultado[0].MediaTempLote;
+        let umiMediaLote = resposta.resultado1[0].MediaUmiLote;
+
         tempReverse = resposta.resultado.reverse()
         umiReverse = resposta.resultado1.reverse()
 
@@ -346,6 +349,9 @@
             configUmidade
         );
 
+        querySelector.getElementById('countdown') = umiLote;
+        querySelector.getElementById('numeroQuestao') = tempLote;
+
         setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
     }
 
@@ -361,8 +367,10 @@
                     console.log(dadosTemperatura, dadosUmidade);
 
                     // let avisoCaptura = document.getElementById(`avisoCaptura${idEmpresa}`)
-                    // avisoCaptura.innerHTML = ""
+                    // avisoCaptura.innerHTML = "" 
 
+                    let umiLote = 0;
+                    let tempLote = 0;
 
                     if (novoRegistro.resultado[0].dtMedicao == dadosTemperatura.labels[labelsTemp.length - 1]) {
                         console.log("---------------------------------------------------------------")
@@ -404,7 +412,14 @@
                         dadosUmidade.datasets[0].data.push(novoRegistro.resultado1[0].valor); // incluir uma nova medida de umidade
 
                         myChartUmi.update();
+
+                        umiLote = novoRegistro.resultado[0].MediaUmiLote; 
+                        tempLote = novoRegistro.resultad1[0].MediaTempLote;
+
+                        querySelector.getElementById('countdown') = umiLote;
+                        querySelector.getElementById('numeroQuestao') = tempLote;
                     }
+
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
@@ -421,20 +436,20 @@
 
     }
 
-    function obterKpis() {
-        fetch(`/data/kpi/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (resposta) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-            }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ Kpi's: ${error.message}`);
-            });
-    }
+    // function obterKpis() {
+    //     fetch(`/data/kpi/${idEmpresa}`, { cache: 'no-store' }).then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (resposta) {
+    //                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+    //             });
+    //         } else {
+    //             console.error('Nenhum dado encontrado ou erro na API');
+    //         }
+    //     })
+    //         .catch(function (error) {
+    //             console.error(`Erro na obtenção dos dados p/ Kpi's: ${error.message}`);
+    //         });
+    // }
 
 
     function regras() {
