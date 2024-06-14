@@ -12,22 +12,11 @@ function listar() {
   return database.executar(instrucaoSql);
 }
 
-function buscarPorCnpj(cnpj) {
+function buscarPorEmpresa(nome) {
   var instrucaoSql = `SELECT * FROM empresa WHERE nome = '${nome}'`;
 
   return database.executar(instrucaoSql);
 }
 
-// function cadastrarEmpresa(nome, cnpj, ddd, prefixo, sufixo) {
-//   var instrucaoSql = `INSERT INTO empresa (nome, cnpj, ddd, prefixo, sufixo) VALUES ('${nome}', '${cnpj}', '${ddd}', '${prefixo}', '${sufixo}')`;
 
-//   return database.executar(instrucaoSql);
-// }
-
-// function cadastrarEndereco(cep, complemento, numero) {
-//   var instrucaoSql = `INSERT INTO endereco (cep, complemento, numero) VALUES ('${cep}', '${complemento}', '${numero}')`;
-
-//   return database.executar(instrucaoSql);
-// }
-
-module.exports = { buscarPorCnpj, buscarPorId, listar };
+module.exports = { buscarPorEmpresa, buscarPorId, listar };
