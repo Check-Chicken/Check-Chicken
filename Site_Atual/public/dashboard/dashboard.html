@@ -127,11 +127,11 @@
         <div id="grid_corpo">
             <div id="corpo_kpi">
                 <div id="kpi1">
-                    <div id="titulo_kpi">Temperatura média do lote</div>
+                    <div id="titulo_kpi">Umidade média</div>
                     <div id="countdown" class="info_kpi" style="display: none;"></div>
                 </div>
                 <div id="kpi2">
-                    <div id="titulo_kpi">Pergunta Atual</div>
+                    <div id="titulo_kpi">Temperatura média</div>
                     <div id="numeroQuestao" class="info_kpi" style="display: block;"></div>
                 </div>
                 <div id="kpi3">
@@ -274,9 +274,6 @@
         console.log('----------------------------------------------')
         console.log(resposta.resultado[0].valor)
 
-        let tempMediaLote = resposta.resultado[0].MediaTempLote;
-        let umiMediaLote = resposta.resultado1[0].MediaUmiLote;
-
         tempReverse = resposta.resultado.reverse()
         umiReverse = resposta.resultado1.reverse()
 
@@ -349,9 +346,6 @@
             configUmidade
         );
 
-        querySelector.getElementById('countdown') = umiLote;
-        querySelector.getElementById('numeroQuestao') = tempLote;
-
         setTimeout(() => atualizarGrafico(dadosTemperatura, dadosUmidade, myChartTemp, myChartUmi), 2000);
     }
 
@@ -414,10 +408,10 @@
                         myChartUmi.update();
 
                         umiLote = novoRegistro.resultado[0].MediaUmiLote; 
-                        tempLote = novoRegistro.resultad1[0].MediaTempLote;
+                        tempLote = novoRegistro.resultado1[0].MediaTempLote;
 
-                        querySelector.getElementById('countdown') = umiLote;
-                        querySelector.getElementById('numeroQuestao') = tempLote;
+                        countdown.innerHTML=umiLote;
+                        numeroQuestao.innerHTML=tempLote;
                     }
 
 
