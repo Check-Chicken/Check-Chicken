@@ -36,13 +36,13 @@ function obterDadosGrafico(req, res) {
         });
 }
 
-function obterDadosGraficoTempoReal() {
+function obterDadosGraficoTempoReal(req, res) {
     idEmpresa = req.params.idEmpresa
 
-    dataModel.obterDadosTemperaturaTempoReal(idEmpresa, limiteLinha)
+    dataModel.obterDadosTemperaturaTempoReal(idEmpresa)
         .then(function (resultado1) {
 
-            dataModel.obterDadosUmidadeTempoReal(idEmpresa, limiteLinha)
+            dataModel.obterDadosUmidadeTempoReal(idEmpresa)
                 .then(function (resultado) {
 
                     let umidade = resultado

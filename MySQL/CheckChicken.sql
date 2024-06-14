@@ -145,7 +145,8 @@ INSERT INTO sensor (tipo, unidadeMedida, fkLote, fkEmpresa) VALUES
 	('LM-35', '°C', 7, 2);
 
 -- Inserindo dados na tabela captura
-INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES
+/* 
+	INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES
 	(65, '2024-05-06 22:00:00', 1),
     (30, '2024-05-06 22:00:00', 2),
 	(61, '2024-05-06 22:00:00', 3),
@@ -160,6 +161,7 @@ INSERT INTO captura (valor, dtMedicao, fkSensor) VALUES
     (20.7, '2024-05-06 22:00:00', 12),
     (71, '2024-05-06 22:00:00', 13),
     (22.2, '2024-05-06 22:00:00', 14);
+*/
 
 SELECT * FROM parametro;
 SELECT * FROM empresa;

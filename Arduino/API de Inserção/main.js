@@ -61,13 +61,12 @@ const serial = async (
     // Processa os dados recebidos do Arduino
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         console.log(data);
-        const valores = data.split(';');
+        const valores = data.split(',');
         const dht11Umidade = parseFloat(valores[0]);
         // const dht11Temperatura = parseFloat(valores[1]);
         const lm35Temperatura = parseFloat(valores[1]);
         // const luminosidade = parseFloat(valores[3]);
         // const chave = parseInt(valores[4]);
-
         // Armazena os valores dos sensores nos arrays correspondentes
         valoresDht11Umidade.push(dht11Umidade);
         // valoresDht11Temperatura.push(dht11Temperatura);

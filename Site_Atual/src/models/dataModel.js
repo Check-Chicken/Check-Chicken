@@ -6,7 +6,7 @@ function obterDadosTemperatura(idEmpresa, limiteLinha) {
                         WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
                                             WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '°C' AND idLote = 1 AND dtMedicao = now())) AS MediaTempLote
                         FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
-                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '°C' AND idLote = 1 ORDER BY dtMedicao DESC LIMIT ${limiteLinha};`;
+                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '°C' AND idLote = 1 ORDER BY idCaptura DESC LIMIT ${limiteLinha};`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -17,7 +17,7 @@ function obterDadosUmidade(idEmpresa, limiteLinha) {
                         WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
                                             WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '%' AND idLote = 1 AND dtMedicao = now())) AS MediaUmiLote
                         FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
-                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '%' AND idLote = 1 ORDER BY dtMedicao DESC LIMIT ${limiteLinha};`;
+                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '%' AND idLote = 1 ORDER BY idCaptura DESC LIMIT ${limiteLinha};`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -28,7 +28,7 @@ function obterDadosTemperaturaTempoReal(idEmpresa) {
                         WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
                                             WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '°C' AND idLote = 1 AND dtMedicao = now())) AS MediaTempLote
                         FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
-                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '°C' AND idLote = 1 ORDER BY dtMedicao DESC LIMIT 1;`;
+                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '°C' AND idLote = 1 ORDER BY idCaptura DESC LIMIT 1;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -39,7 +39,7 @@ function obterDadosUmidadeTempoReal(idEmpresa) {
                         WHERE fkSensor = (SELECT idSensor FROM sensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
                                             WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '%' AND idLote = 1 AND dtMedicao = now())) AS MediaUmiLote
                         FROM captura JOIN sensor ON idSensor = fkSensor JOIN lote ON idLote = fkLote JOIN empresa ON idEmpresa = lote.fkEmpresa
-                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '%' AND idLote = 1 ORDER BY dtMedicao DESC LIMIT 1;`;
+                        WHERE idEmpresa = ${idEmpresa} AND sensor.unidadeMedida = '%' AND idLote = 1 ORDER BY idCaptura DESC LIMIT 1;`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
